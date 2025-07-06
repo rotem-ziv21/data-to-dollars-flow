@@ -989,25 +989,13 @@ export default function Index() {
                   
                   <motion.div
                     className="text-center"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
                   >
-                    <motion.p 
-                      className="text-2xl md:text-3xl font-black text-gray-800 leading-relaxed"
-                      whileInView={{ 
-                        scale: [1, 1.05, 1],
-                        color: ["#1f2937", "#6366f1", "#1f2937"]
-                      }}
-                      transition={{ 
-                        duration: 2,
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        ease: "easeInOut"
-                      }}
-                    >
+                    <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
                       זו השיטה הכי זולה והכי מדויקת ליצירת מכירות חוזרות.
-                    </motion.p>
+                    </p>
                   </motion.div>
                 </motion.div>
               </div>
