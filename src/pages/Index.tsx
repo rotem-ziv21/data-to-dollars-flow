@@ -195,9 +195,11 @@ export default function Index() {
                     transition={{ duration: 0.6 }}
                     className="text-center"
                   >
-                    <p className="text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
-                      לא מערכת. לא קורס.<br />לא קמפיינר
-                    </p>
+                    <div className="text-3xl md:text-4xl font-black text-white mb-6 leading-tight space-y-2">
+                      <p>לא מערכת</p>
+                      <p>לא קורס</p>
+                      <p>לא קמפיינר</p>
+                    </div>
                     <p className="text-xl md:text-2xl text-white/90 mb-6 leading-relaxed">
                       שרוצה כסף לפני שהראה לך תוצאות.
                     </p>
