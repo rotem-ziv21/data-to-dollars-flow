@@ -154,12 +154,7 @@ export default function Index() {
                 <motion.div 
                   className="inline-block rounded-full px-8 py-4 backdrop-blur-sm"
                   animate={{ 
-                    scale: [1, 1.05, 1],
-                    boxShadow: [
-                      "0 0 20px rgba(250, 204, 21, 0.3)",
-                      "0 0 40px rgba(250, 204, 21, 0.6)",
-                      "0 0 20px rgba(250, 204, 21, 0.3)"
-                    ]
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{ 
                     duration: 2, 
