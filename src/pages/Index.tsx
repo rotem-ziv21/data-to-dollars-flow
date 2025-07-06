@@ -243,26 +243,26 @@ export default function Index() {
 
           {/* Bottom Cards */}
           <motion.div
-            className="grid md:grid-cols-3 gap-8 mt-24 mb-16 px-4"
+            className="grid md:grid-cols-3 gap-6 mt-20 mb-12 px-4"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
           >
             {[
-              { icon: CheckCircle, color: "text-green-600", bgColor: "bg-green-100", text: "מסע לקוח שיוצר לקוחות איכותיים" },
-              { icon: Target, color: "text-blue-600", bgColor: "bg-blue-100", text: "בלי להוציא שקל על שיווק" },
-              { icon: Zap, color: "text-purple-600", bgColor: "bg-purple-100", text: "כל התוכנות הדרושות – עלינו!" }
+              { icon: Users, color: "text-green-600", bgColor: "bg-green-100", text: "מסע לקוח שיוצר לקוחות איכותיים" },
+              { icon: TrendingUp, color: "text-blue-600", bgColor: "bg-blue-100", text: "בלי להוציא שקל על שיווק" },
+              { icon: Database, color: "text-purple-600", bgColor: "bg-purple-100", text: "כל התוכנות הדרושות – עלינו!" }
             ].map((item, i) => (
-              <GlowCard key={i} className="p-8 text-center transform hover:scale-105 transition-all duration-300" delay={i * 0.1}>
+              <GlowCard key={i} className="p-6 text-center transform hover:scale-105 transition-all duration-300" delay={i * 0.1}>
                 <motion.div
-                  whileHover={{ y: -10 }}
+                  whileHover={{ y: -8 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="space-y-6"
+                  className="space-y-4"
                 >
-                  <div className={`w-20 h-20 md:w-24 md:h-24 ${item.bgColor} rounded-full flex items-center justify-center mx-auto`}>
-                    <item.icon className={`w-10 h-10 md:w-12 md:h-12 ${item.color}`} />
+                  <div className={`w-16 h-16 ${item.bgColor} rounded-2xl flex items-center justify-center mx-auto`}>
+                    <item.icon className={`w-8 h-8 ${item.color}`} />
                   </div>
-                  <p className="text-xl md:text-2xl font-bold text-gray-800 leading-tight">{item.text}</p>
+                  <p className="text-lg md:text-xl font-bold text-gray-800 leading-tight">{item.text}</p>
                 </motion.div>
               </GlowCard>
             ))}
