@@ -1030,77 +1030,80 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ההצעה שלנו - עיצוב מקצועי */}
-      <section className="py-24 bg-white">
+      {/* ההצעה שלנו - עיצוב מקצועי ומושך */}
+      <section className="py-24 bg-slate-50">
         <div className="max-w-4xl mx-auto px-8">
           
-          {/* כותרת פשוטה */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          {/* כותרת */}
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-6">
               ההצעה שלנו
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 font-medium">
               בול בשביל עסקים כמוך
             </p>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
           </div>
 
           {/* ההצעה המרכזית */}
-          <div className="bg-gray-50 rounded-2xl p-12 mb-16 border border-gray-100">
-            <div className="text-center space-y-8">
+          <div className="bg-white rounded-3xl p-12 mb-20 shadow-xl border border-gray-100">
+            <div className="text-center space-y-10">
               
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-xl mb-6">
-                <span className="text-2xl">🎁</span>
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl shadow-lg">
+                <span className="text-3xl">🎁</span>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">
+              <h3 className="text-3xl font-black text-gray-900">
                 שני חודשי ליווי – על בסיס הצלחה בלבד
               </h3>
               
-              <div className="space-y-6 max-w-2xl mx-auto">
-                <div className="flex items-start gap-4 text-right">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-3 flex-shrink-0"></div>
-                  <p className="text-lg text-gray-700">
-                    שלם רק על תוצאה: פגישות שנקבעו, מכירות שבוצעו או לידים איכותיים שנכנסו
-                  </p>
-                </div>
-                
-                <div className="flex items-start gap-4 text-right">
-                  <div className="w-2 h-2 bg-green-600 rounded-full mt-3 flex-shrink-0"></div>
-                  <p className="text-lg font-bold text-green-700">
-                    לא הבאנו תוצאה – לא שילמת
-                  </p>
+              <div className="bg-gray-50 rounded-2xl p-8 max-w-2xl mx-auto">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4 text-right">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-gray-700 font-medium">
+                      שלם רק על תוצאה: פגישות שנקבעו, מכירות שבוצעו או לידים איכותיים שנכנסו
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-4 text-right">
+                    <div className="w-2 h-2 bg-green-600 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg font-black text-green-700">
+                      לא הבאנו תוצאה – לא שילמת
+                    </p>
+                  </div>
                 </div>
               </div>
               
-              <div className="bg-white rounded-xl p-6 border border-gray-200 max-w-xl mx-auto">
-                <p className="text-gray-700 font-medium">
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-200 max-w-xl mx-auto">
+                <p className="text-lg font-semibold text-gray-800">
                   אנחנו מציעים את זה כי אנחנו יודעים שזה עובד –<br />
-                  וזה גם יוצר אמון מההתחלה.
+                  <span className="text-purple-700 font-black">Win–Win מההתחלה</span>
                 </p>
               </div>
             </div>
           </div>
 
           {/* מה קורה בפגישה */}
-          <div className="mb-16">
+          <div className="bg-white rounded-3xl p-12 mb-20 shadow-xl border border-gray-100">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-xl mb-6">
-                <span className="text-2xl">📞</span>
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl shadow-lg mb-6">
+                <span className="text-3xl">📞</span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-3xl font-black text-gray-900 mb-4">
                 מה קורה בפגישת "כסף מהדאטא"?
               </h3>
-              <p className="text-lg text-gray-600">
+              <p className="text-xl text-gray-600 font-medium">
                 פגישה של עד שעה בזום – ללא עלות וללא התחייבות
               </p>
             </div>
             
-            <div className="bg-blue-50 rounded-2xl p-10 border border-blue-100">
-              <p className="text-lg font-semibold text-gray-900 mb-8 text-center">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-10 border border-blue-200">
+              <p className="text-xl font-bold text-gray-900 mb-10 text-center">
                 במהלך הפגישה:
               </p>
               
-              <div className="space-y-4 max-w-2xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-10">
                 {[
                   "נבין מה יש לך היום בדאטא בייס",
                   "ננתח פילוחים", 
@@ -1108,15 +1111,15 @@ export default function Index() {
                   "נזהה את קהלי היעד",
                   "ונסיים עם תוכנית פעולה מדויקת"
                 ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 text-right">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2.5 flex-shrink-0"></div>
-                    <p className="text-gray-700">{item}</p>
+                  <div key={index} className="flex items-start gap-4 text-right bg-white rounded-xl p-4 shadow-sm">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-700 font-medium">{item}</p>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-10 bg-white rounded-xl p-6 border border-blue-200 max-w-xl mx-auto text-center">
-                <p className="font-semibold text-gray-900">
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-8 border border-yellow-200 max-w-2xl mx-auto text-center">
+                <p className="text-xl font-black text-orange-700">
                   שתראה לך איך אפשר להפוך את הלידים הרדומים לרווחים
                 </p>
               </div>
@@ -1124,17 +1127,23 @@ export default function Index() {
           </div>
 
           {/* כפתור פעולה */}
-          <div className="text-center space-y-6">
-            <Button 
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 text-xl font-semibold rounded-xl transition-colors duration-200 w-full max-w-lg mx-auto"
-            >
-              לתיאום שיחת "כסף מהדאטא"
-            </Button>
+          <div className="text-center space-y-8">
+            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-16 py-8 text-2xl font-bold rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl w-full max-w-2xl mx-auto"
+              >
+                <span className="flex items-center justify-center gap-3">
+                  🔵 לתיאום שיחת "כסף מהדאטא"
+                  <ArrowLeft className="w-6 h-6" />
+                </span>
+              </Button>
+            </div>
             
-            <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-6 py-4 inline-block">
-              <p className="text-yellow-800 font-medium">
-                📍 ההצעה זמינה כרגע ללא עלות – למתאמים ראשונים בלבד
+            <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-300 rounded-2xl px-8 py-6 shadow-lg inline-block">
+              <p className="text-lg font-bold text-yellow-800 flex items-center justify-center gap-3">
+                <span className="text-xl">📍</span>
+                ההצעה זמינה כרגע ללא עלות – למתאמים ראשונים בלבד
               </p>
             </div>
           </div>
