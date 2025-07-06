@@ -878,33 +878,6 @@ export default function Index() {
                 זה לא דיוור גנרי עם שם פרטי בלבד.<br />
                 זו הודעה שמרגישה כאילו נכתבה רק אליו<br />
               </motion.p>
-              
-              {/* דוגמה מסופרמרקטים */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="bg-white/90 backdrop-blur-xl rounded-2xl p-8 border border-gray-200/30 box-shadow-soft"
-              >
-                <h4 className="text-2xl md:text-3xl font-black text-secondary mb-6">
-                  תחשבו על סופרמרקטים:
-                </h4>
-                
-                <div className="space-y-4 text-lg md:text-xl text-gray-700 leading-relaxed">
-                  <p>
-                    איך רשתות כמו שופרסל, רמי לוי או ויקטורי יודעים בדיוק מתי להחזיר אותך עם הצעה משתלמת?
-                  </p>
-                  <p className="font-bold text-primary">
-                    הם משתמשים בדאטא שלך.
-                  </p>
-                  <p>
-                    זו השיטה הכי זולה והכי מדויקת ליצירת מכירות חוזרות.
-                  </p>
-                  <p className="text-xl md:text-2xl font-black text-accent">
-                    ואנחנו מביאים אותה לעסק שלך – בלי צורך להחזיק צוות, לשלם למדיה או להקים קמפיינים.
-                  </p>
-                </div>
-              </motion.div>
             </motion.div>
           </div>
           
@@ -953,6 +926,36 @@ export default function Index() {
                   </p>
                 </motion.div>
               ))}
+            </div>
+          </motion.div>
+          
+          {/* דוגמה מסופרמרקטים - מתחת לקוביות */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-200/30 box-shadow-soft mt-16 max-w-5xl mx-auto"
+          >
+            <h4 className="text-3xl md:text-4xl font-black text-secondary mb-8 text-center">
+              תחשבו על סופרמרקטים:
+            </h4>
+            
+            <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed text-center">
+              <p className="text-xl md:text-2xl">
+                איך רשתות כמו שופרסל, רמי לוי או ויקטורי יודעים בדיוק מתי להחזיר אותך עם הצעה משתלמת?
+              </p>
+              <p className="text-2xl md:text-3xl font-bold text-primary">
+                הם משתמשים בדאטא שלך.
+              </p>
+              <p className="text-xl md:text-2xl">
+                זו השיטה הכי זולה והכי מדויקת ליצירת מכירות חוזרות.
+              </p>
+              <motion.p 
+                className="text-2xl md:text-3xl font-black text-accent bg-gradient-to-br from-accent/10 to-secondary/5 rounded-2xl p-6 border border-accent/20"
+                whileHover={{ scale: 1.02 }}
+              >
+                ואנחנו מביאים אותה לעסק שלך – בלי צורך להחזיק צוות, לשלם למדיה או להקים קמפיינים.
+              </motion.p>
             </div>
           </motion.div>
         </div>
