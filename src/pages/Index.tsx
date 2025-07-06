@@ -188,19 +188,31 @@ export default function Index() {
                   שלך
                 </h3>
                 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <p className="text-2xl font-black text-white text-center mb-4">
-                    לא מערכת. לא קורס. לא קמפיינר
-                  </p>
-                  <p className="text-lg text-white/80 text-center mb-4">
-                    שרוצה כסף לפני שהראה לך תוצאות.
-                  </p>
-                  
-                  <div className="bg-white/5 rounded-xl p-4">
-                    <p className="text-xl font-bold text-white text-center">
-                      אנחנו עושים את העבודה בשבילך – על בסיס הדאטא הקיימת שלך.
+                <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-3xl p-8 border-2 border-white/30 box-shadow-intense">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center"
+                  >
+                    <p className="text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
+                      לא מערכת. לא קורס.<br />לא קמפיינר
                     </p>
-                  </div>
+                    <p className="text-xl md:text-2xl text-white/90 mb-6 leading-relaxed">
+                      שרוצה כסף לפני שהראה לך תוצאות.
+                    </p>
+                    
+                    <motion.div 
+                      className="bg-gradient-to-r from-secondary/20 to-accent/20 rounded-2xl p-6 border-2 border-secondary/30"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <p className="text-2xl md:text-3xl font-black text-white leading-tight">
+                        אנחנו עושים את העבודה בשבילך –<br />
+                        על בסיס הדאטא הקיימת שלך.
+                      </p>
+                    </motion.div>
+                  </motion.div>
                 </div>
               </motion.div>
 
