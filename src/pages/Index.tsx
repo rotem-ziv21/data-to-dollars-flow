@@ -97,7 +97,8 @@ export default function Index() {
       </motion.header>
 
       {/* Hero */}
-      <section className="min-h-screen flex items-center pt-20 relative">
+      <section className="min-h-screen flex items-center pt-20 relative bg-gradient-to-br from-primary via-primary/90 to-secondary/20">
+        <div className="absolute inset-0 bg-black/20" />
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Video Section - Left */}
@@ -107,7 +108,7 @@ export default function Index() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 p-8">
+              <div className="relative rounded-3xl overflow-hidden bg-white/10 backdrop-blur-xl p-8 border border-white/20">
                 <motion.div
                   className="bg-gradient-to-r from-secondary to-accent w-32 h-32 rounded-full flex items-center justify-center mx-auto animate-pulse-glow"
                   whileHover={{ rotate: 360, scale: 1.1 }}
@@ -116,9 +117,9 @@ export default function Index() {
                   <Play className="w-16 h-16 text-white" fill="white" />
                 </motion.div>
                 <div className="mt-8 text-center">
-                  <p className="text-xl font-bold text-gray-800">
+                  <p className="text-xl font-bold text-white leading-relaxed">
                     "אם יש לך רשימות לידים, דאטה מהקמפיינים או קהל שלא הגיב – אל תזרוק אותם לפח. 
-                    <span className="text-primary"> אנחנו יודעים להחזיר אותם לחיים.</span>"
+                    <span className="text-secondary"> אנחנו יודעים להחזיר אותם לחיים.</span>"
                   </p>
                 </div>
               </div>
@@ -138,7 +139,7 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <span className="text-primary">השירות שמייצר</span>
+                <span className="text-secondary">השירות שמייצר</span>
                 <br />
                 <motion.span 
                   className="bg-gradient-to-l from-secondary via-accent to-primary bg-clip-text text-transparent"
@@ -171,11 +172,11 @@ export default function Index() {
                     "הרדומים"
                   </motion.span> שלך
                 </h2>
-                <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-accent mb-6">
                   ויהפוך דאטה מתה לרווחים בפועל
                 </h3>
                 
-                <div className="bg-primary/20 backdrop-blur-sm rounded-2xl p-6 border border-primary/30">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                   <p className="text-xl text-white/90 mb-4 leading-relaxed">
                     לא מערכת. לא קורס. לא קמפיינר שרוצה כסף לפני שהראה לך תוצאות.
                   </p>
