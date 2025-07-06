@@ -881,43 +881,91 @@ export default function Index() {
               </motion.p>
               
               <motion.div
-                className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border-2 border-secondary/30 box-shadow-soft"
+                className="bg-white/95 backdrop-blur-xl rounded-3xl p-8 border-2 border-secondary/20 box-shadow-soft relative overflow-hidden"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
                 whileHover={{ scale: 1.02 }}
               >
-                <p className="text-xl md:text-2xl font-black text-secondary mb-6">
-                  בזכות זה אנחנו רואים:
-                </p>
-                <div className="space-y-4 text-right">
-                  <motion.div 
-                    className="flex items-center justify-end gap-4 p-6 bg-gradient-to-l from-green-50 to-green-100/50 rounded-2xl border border-green-200/60 shadow-sm"
-                    whileInView={{ x: [50, 0] }}
-                    transition={{ duration: 0.6, delay: 0.9 }}
-                    whileHover={{ scale: 1.02, x: -5 }}
-                  >
-                    <span className="text-lg md:text-xl font-bold text-gray-800">– אחוזי פתיחה גבוהים במיוחד</span>
-                    <div className="w-4 h-4 bg-green-500 rounded-full animate-pulse shadow-lg"></div>
-                  </motion.div>
-                  <motion.div 
-                    className="flex items-center justify-end gap-4 p-6 bg-gradient-to-l from-blue-50 to-blue-100/50 rounded-2xl border border-blue-200/60 shadow-sm"
-                    whileInView={{ x: [50, 0] }}
-                    transition={{ duration: 0.6, delay: 1.1 }}
-                    whileHover={{ scale: 1.02, x: -5 }}
-                  >
-                    <span className="text-lg md:text-xl font-bold text-gray-800">– מותג חזק יותר שנשאר בתודעה</span>
-                    <div className="w-4 h-4 bg-blue-500 rounded-full animate-pulse shadow-lg"></div>
-                  </motion.div>
-                  <motion.div 
-                    className="flex items-center justify-end gap-4 p-6 bg-gradient-to-l from-purple-50 to-purple-100/50 rounded-2xl border border-purple-200/60 shadow-sm"
-                    whileInView={{ x: [50, 0] }}
-                    transition={{ duration: 0.6, delay: 1.3 }}
-                    whileHover={{ scale: 1.02, x: -5 }}
-                  >
-                    <span className="text-lg md:text-xl font-bold text-gray-800">– יותר שיחות שבאמת מובילות לסגירה</span>
-                    <div className="w-4 h-4 bg-purple-500 rounded-full animate-pulse shadow-lg"></div>
-                  </motion.div>
+                {/* Background gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-accent/5 to-primary/5 rounded-3xl"></div>
+                
+                <div className="relative z-10">
+                  <div className="text-center mb-8">
+                    <motion.div
+                      className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary to-accent text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg"
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <span className="text-2xl">✨</span>
+                      <span>בזכות זה אנחנו רואים:</span>
+                    </motion.div>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <motion.div 
+                      className="group relative bg-gradient-to-l from-green-500/10 via-green-400/5 to-transparent rounded-2xl p-6 border-2 border-green-200/40 hover:border-green-300/60 shadow-lg hover:shadow-xl transition-all duration-300"
+                      whileInView={{ x: [50, 0], opacity: [0, 1] }}
+                      transition={{ duration: 0.6, delay: 0.9 }}
+                      whileHover={{ scale: 1.03, x: -8 }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-l from-green-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="relative flex items-center justify-end gap-4">
+                        <span className="text-xl font-black text-gray-800 group-hover:text-green-700 transition-colors">
+                          – אחוזי פתיחה גבוהים במיוחד
+                        </span>
+                        <motion.div 
+                          className="w-6 h-6 bg-gradient-to-br from-green-400 to-green-600 rounded-full shadow-lg border-2 border-white"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
+                        >
+                          <div className="w-full h-full bg-green-500 rounded-full animate-ping opacity-75"></div>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+
+                    <motion.div 
+                      className="group relative bg-gradient-to-l from-blue-500/10 via-blue-400/5 to-transparent rounded-2xl p-6 border-2 border-blue-200/40 hover:border-blue-300/60 shadow-lg hover:shadow-xl transition-all duration-300"
+                      whileInView={{ x: [50, 0], opacity: [0, 1] }}
+                      transition={{ duration: 0.6, delay: 1.1 }}
+                      whileHover={{ scale: 1.03, x: -8 }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-l from-blue-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="relative flex items-center justify-end gap-4">
+                        <span className="text-xl font-black text-gray-800 group-hover:text-blue-700 transition-colors">
+                          – מותג חזק יותר שנשאר בתודעה
+                        </span>
+                        <motion.div 
+                          className="w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full shadow-lg border-2 border-white"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 2, repeat: Infinity, delay: 0.4 }}
+                        >
+                          <div className="w-full h-full bg-blue-500 rounded-full animate-ping opacity-75"></div>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+
+                    <motion.div 
+                      className="group relative bg-gradient-to-l from-purple-500/10 via-purple-400/5 to-transparent rounded-2xl p-6 border-2 border-purple-200/40 hover:border-purple-300/60 shadow-lg hover:shadow-xl transition-all duration-300"
+                      whileInView={{ x: [50, 0], opacity: [0, 1] }}
+                      transition={{ duration: 0.6, delay: 1.3 }}
+                      whileHover={{ scale: 1.03, x: -8 }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-l from-purple-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="relative flex items-center justify-end gap-4">
+                        <span className="text-xl font-black text-gray-800 group-hover:text-purple-700 transition-colors">
+                          – יותר שיחות שבאמת מובילות לסגירה
+                        </span>
+                        <motion.div 
+                          className="w-6 h-6 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full shadow-lg border-2 border-white"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
+                        >
+                          <div className="w-full h-full bg-purple-500 rounded-full animate-ping opacity-75"></div>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
