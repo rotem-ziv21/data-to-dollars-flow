@@ -284,81 +284,120 @@ export default function Index() {
             transition={{ duration: 0.8 }}
             className="mb-20"
           >
-            <div className="inline-block bg-gradient-to-r from-primary to-secondary p-1 rounded-3xl mb-8">
-              <div className="bg-white rounded-3xl px-8 py-4">
-                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  💬 הטיעון הנפוץ
-                </span>
-              </div>
-            </div>
             <motion.h2 
-              className="text-5xl md:text-7xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 bg-clip-text text-transparent mb-8 leading-tight"
+              className="text-5xl md:text-7xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 bg-clip-text text-transparent mb-12 leading-tight"
               whileInView={{ y: [20, 0], opacity: [0, 1] }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               "אבל כבר שילמתי<br />עשרות אלפים על שיווק…"
             </motion.h2>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-20">
-            {[
-              { text: "בדיוק.", colorFrom: "from-primary", colorTo: "to-primary", delay: 0, emoji: "✅" },
-              { text: "הדאטה אצלך.", colorFrom: "from-secondary", colorTo: "to-secondary", delay: 0.2, emoji: "📊" },
-              { text: "אתה יודע שיש לך שירות טוב.", colorFrom: "from-green-500", colorTo: "to-green-600", delay: 0.4, emoji: "⭐" },
-              { text: "אתה רק צריך מישהו שייקח את כל מה שצברת – ויהפוך את זה לתוצאה.", colorFrom: "from-accent", colorTo: "to-accent", delay: 0.6, emoji: "🎯" }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: item.delay }}
-                whileHover={{ scale: 1.05, rotate: i % 2 === 0 ? 1 : -1 }}
-                className={i >= 2 ? "md:col-span-1" : ""}
-              >
-                <div className={`bg-gradient-to-br ${item.colorFrom} ${item.colorTo} p-[2px] rounded-3xl`}>
-                  <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 h-full">
-                    <div className="text-4xl mb-4">{item.emoji}</div>
-                    <p className={`text-xl md:text-2xl font-black bg-gradient-to-r ${item.colorFrom} ${item.colorTo} bg-clip-text text-transparent leading-tight`}>
-                      {item.text}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="max-w-4xl mx-auto mb-16"
           >
-            <div className="bg-gradient-to-br from-primary via-secondary to-accent p-[3px] rounded-3xl">
-              <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-12 md:p-16">
-                <motion.div
-                  className="w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-8"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                >
-                  <TrendingUp className="w-12 h-12 text-white" />
-                </motion.div>
-                <motion.p 
-                  className="text-4xl md:text-5xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6 leading-tight"
-                  whileInView={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  רוב העסקים לא צריכים עוד לידים.
-                </motion.p>
-                <motion.p 
-                  className="text-3xl md:text-4xl font-black bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent leading-tight"
-                  whileInView={{ y: [10, 0], opacity: [0.8, 1] }}
-                  transition={{ duration: 1, delay: 0.5 }}
-                >
-                  הם צריכים לעבוד נכון עם מה שכבר יש.
-                </motion.p>
-              </div>
+            <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-12 border border-gray-200/50 box-shadow-soft">
+              <p className="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed mb-6">
+                רוב העסקים מקבלים לידים – וסוגרים אולי 10% מהם.
+              </p>
+              <p className="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed mb-6">
+                אבל מה עם כל ה־90% שלא סגרו?
+              </p>
+              <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-relaxed mb-4">
+                זו בדיוק הדרך שלך למקסם את הרווח מהדאטא שכבר שילמת עליה –
+              </p>
+              <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent leading-relaxed">
+                במקום לרדוף אחרי עוד לידים חדשים.
+              </p>
             </div>
           </motion.div>
+
+          <div className="max-w-4xl mx-auto space-y-12">
+            {/* What we DON'T do */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="bg-red-50/80 backdrop-blur-xl rounded-3xl p-10 border-2 border-red-200/50"
+            >
+              <div className="flex items-center justify-center mb-8">
+                <div className="bg-red-500 text-white px-6 py-3 rounded-2xl text-2xl font-black">
+                  ❌ מה אנחנו לא עושים?
+                </div>
+              </div>
+              <div className="space-y-4 text-right">
+                <p className="text-xl font-bold text-red-700 flex items-center justify-end gap-3">
+                  <span>✘ לא מוכרים לך מערכת טכנולוגית חדשה</span>
+                </p>
+                <p className="text-xl font-bold text-red-700 flex items-center justify-end gap-3">
+                  <span>✘ לא שולחים אותך לקורסים</span>
+                </p>
+                <p className="text-xl font-bold text-red-700 flex items-center justify-end gap-3">
+                  <span>✘ לא מציעים קמפיין עם תקציב פרסום</span>
+                </p>
+              </div>
+            </motion.div>
+
+            {/* What we DO */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="bg-green-50/80 backdrop-blur-xl rounded-3xl p-10 border-2 border-green-200/50"
+            >
+              <div className="flex items-center justify-center mb-8">
+                <div className="bg-green-500 text-white px-6 py-3 rounded-2xl text-2xl font-black">
+                  ✅ מה כן?
+                </div>
+              </div>
+              <div className="space-y-4 text-right">
+                <p className="text-xl font-bold text-green-700 flex items-center justify-end gap-3">
+                  <span>✔️ מנתחים את הדאטא הקיימת שלך</span>
+                </p>
+                <p className="text-xl font-bold text-green-700 flex items-center justify-end gap-3">
+                  <span>✔️ מפצחים את הפילוחים</span>
+                </p>
+                <p className="text-xl font-bold text-green-700 flex items-center justify-end gap-3">
+                  <span>✔️ בונים קמפיינים חכמים</span>
+                </p>
+                <p className="text-xl font-bold text-green-700 flex items-center justify-end gap-3">
+                  <span>✔️ ואתה מקבל לידים – לשיחה או סגירה</span>
+                </p>
+              </div>
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="bg-gradient-to-br from-primary via-secondary to-accent p-[3px] rounded-3xl"
+            >
+              <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-12 text-center">
+                <div className="text-4xl mb-6">🟢</div>
+                <p className="text-3xl md:text-4xl font-black text-primary mb-6">
+                  רוצה לראות איך זה נראה אצלך?
+                </p>
+                <p className="text-xl md:text-2xl font-bold text-gray-700 mb-8">
+                  לתיאום שיחת "כסף מהדאטא" – ללא עלות וללא התחייבות
+                </p>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button 
+                    size="lg" 
+                    className="gradient-secondary hover:opacity-90 hover:scale-105 transition-all duration-300 text-white px-12 py-6 text-xl font-black rounded-3xl box-shadow-intense"
+                  >
+                    לחיצה כאן לתיאום שיחה
+                  </Button>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
