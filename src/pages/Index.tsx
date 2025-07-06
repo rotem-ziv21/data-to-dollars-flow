@@ -565,128 +565,248 @@ export default function Index() {
       </section>
 
       {/* About Aviv - What Makes Us Different */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-slate-100 rounded-full px-4 py-2 mb-6">
-              <Award className="w-5 h-5 text-slate-600 ml-2" />
-              <span className="text-slate-600 font-medium">למה לסמוך עלינו?</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 leading-tight">
-              מה מייחד אותנו
+      <section className="py-32 relative overflow-hidden">
+        {/* Background Design */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-purple-50/30"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto px-8 relative z-10">
+          {/* Header */}
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div 
+              className="inline-flex items-center gap-3 bg-primary/90 backdrop-blur-md border border-primary/30 text-white px-8 py-4 rounded-2xl mb-8 box-shadow-soft hover:bg-primary transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="bg-white/20 p-2 rounded-xl">
+                <Award className="w-6 h-6" />
+              </div>
+              <span className="text-xl font-bold">למה לסמוך עלינו?</span>
+            </motion.div>
+            <h2 className="text-5xl md:text-7xl font-black text-primary mb-8 leading-tight">
+              מה מייחד אותנו –<br />
+              <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+                ולמה זה באמת עובד?
+              </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              ניסיון מוכח עם המותגים המובלים בישראל
-            </p>
-          </div>
+          </motion.div>
 
-          {/* Profile Card */}
-          <div className="bg-slate-50 rounded-2xl p-8 mb-12">
-            <div className="flex flex-col lg:flex-row gap-8 items-center">
-              <div className="flex-shrink-0">
-                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+          {/* Main Content */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {/* Left Column - Avatar & Stats */}
+            <motion.div
+              className="lg:col-span-1"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <GlowCard className="p-8 text-center h-full">
+                <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gradient-to-br from-secondary to-accent">
                   <img 
                     src="/lovable-uploads/05706208-e8be-40d1-b0b5-ebce152b911c.png"
                     alt="אביב שמש - מייסד Optione"
                     className="w-full h-full object-cover"
                   />
                 </div>
-              </div>
-              <div className="text-center lg:text-right flex-1">
-                <h3 className="text-2xl font-bold text-slate-800 mb-2">אביב שמש</h3>
-                <p className="text-slate-600 font-medium mb-4">מייסד Optione</p>
-                <div className="flex justify-center lg:justify-start gap-8 mb-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">2000+</div>
-                    <div className="text-sm text-slate-600">בעלי עסקים בליווי</div>
+                <h3 className="text-2xl md:text-3xl font-black mb-2">
+                  <span className="text-secondary">אביב שמש</span>
+                </h3>
+                <p className="text-lg font-bold text-gray-600 mb-8">מייסד Optione</p>
+                
+                <div className="space-y-6">
+                  <motion.div 
+                    className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div className="text-4xl font-black mb-2">
+                      <AnimatedCounter end={2000} />+
+                    </div>
+                    <div className="text-sm font-bold">בעלי עסקים שעברו תחתיו בליווים, סדנאות והכשרות</div>
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div className="text-4xl font-black mb-2">10+</div>
+                    <div className="text-sm font-bold">שנות ניסיון</div>
+                  </motion.div>
+                  
+                  <div className="flex justify-center gap-1 mt-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-green-600">10+</div>
-                    <div className="text-sm text-slate-600">שנות ניסיון</div>
-                  </div>
                 </div>
-                <div className="flex justify-center lg:justify-start gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+              </GlowCard>
+            </motion.div>
 
-          {/* Key Points */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <div className="bg-white border border-slate-200 rounded-xl p-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 rounded-lg p-3 flex-shrink-0">
-                  <Target className="w-6 h-6 text-blue-600" />
-                </div>
-                <div className="text-right">
-                  <h4 className="text-lg font-bold text-slate-800 mb-2">מומחה לשיווק ומכירות</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    יועץ עסקי בכיר עם התמחות בפיצוח אסטרטגי מבוסס דאטה ולמעלה מעשור של ניסיון בליווי עסקים להגדלת מכירות. בעברו ניהל את מחלקת המכירות של חברת הייעוץ העסקי הגדולה בישראל.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white border border-slate-200 rounded-xl p-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-purple-100 rounded-lg p-3 flex-shrink-0">
-                  <Zap className="w-6 h-6 text-purple-600" />
-                </div>
-                <div className="text-right">
-                  <h4 className="text-lg font-bold text-slate-800 mb-2">שיטת "שמש" הייחודית</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    <strong>שיווק | מכירה | שיטה</strong> – מודל עבודה מוכח שמוביל עסקים לתוצאות אמיתיות ומדידות.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Client Logos */}
-          <div className="bg-slate-50 rounded-2xl p-8 mb-12">
-            <h4 className="text-xl font-bold text-slate-800 mb-6 text-center">עבד עם המותגים הגדולים</h4>
-            <p className="text-slate-600 text-center mb-8">
-              <strong>חלי ממן, כללית שירותי בריאות, מנדי גפנר, אספרסו קלאב, כלל חברה לביטוח, דנטלון</strong> ועוד מותגים מהשורה הראשונה בישראל.
-            </p>
-            
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-              {[
-                { src: "/lovable-uploads/4e30c075-8a49-4de8-ac81-86f2df88c108.png", alt: "כלל ביטוח" },
-                { src: "/lovable-uploads/95f0e530-803c-478f-ad7b-ee3363030c84.png", alt: "כללית" },
-                { src: "/lovable-uploads/fcb54499-0248-40a8-b561-caa4486588dc.png", alt: "דנטלון" },
-                { src: "/lovable-uploads/981cc350-a982-4231-8537-6ac83883e9ce.png", alt: "אספרסו קלאב" },
-                { src: "/lovable-uploads/78df8547-a9ee-4e74-b6a6-b1dc55d32456.png", alt: "חלי ממן" }
-              ].map((logo, index) => (
-                <div key={index} className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <img 
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="h-16 w-auto object-contain mx-auto"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="bg-slate-800 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              מוכן לראות איך זה עובד אצלך?
-            </h3>
-            <p className="text-slate-300 mb-6 text-lg">
-              בניגוד לחברות שעושות "אימייל מרקטינג" כללי – <strong>אנחנו מגיעים מהשטח עם תוצאות אמיתיות.</strong>
-            </p>
-            <Button 
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-medium rounded-lg"
+            {/* Right Column - Content */}
+            <motion.div
+              className="lg:col-span-2 space-y-6"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              תיאום פגישה "כסף מדאטא"
-            </Button>
+              {/* Key Points */}
+              <div className="grid gap-6">
+                <motion.div 
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-r-8 border-primary box-shadow-soft"
+                  whileHover={{ scale: 1.02, x: 10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
+                      <Target className="w-8 h-8 text-primary" />
+                    </div>
+                    <div className="text-right">
+                      <h4 className="text-xl font-black text-primary mb-2">מומחה לשיווק ומכירות</h4>
+                      <p className="text-gray-700 leading-relaxed">
+                        יועץ עסקי בכיר עם התמחות בפיצוח אסטרטגי מבוסס דאטה ולמעלה מעשור של ניסיון בליווי עסקים להגדלת מכירות. בעברו ניהל את מחלקת המכירות של חברת הייעוץ העסקי הגדולה בישראל והכשיר יועצים עסקיים.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-r-8 border-secondary box-shadow-soft"
+                  whileHover={{ scale: 1.02, x: 10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="bg-secondary/10 rounded-full p-3 flex-shrink-0">
+                      <TrendingUp className="w-8 h-8 text-secondary" />
+                    </div>
+                    <div className="text-right">
+                      <h4 className="text-xl font-black text-secondary mb-4">עבד עם המותגים הגדולים</h4>
+                      <p className="text-gray-700 leading-relaxed mb-6">
+                        <strong>חלי ממן, כללית שירותי בריאות, מנדי גפנר, אספרסו קלאב, בנקים מובלים, כלל חברה לביטוח, ספיר זיסמן, דנטלון</strong> ועוד מותגים מהשורה הראשונה בישראל.
+                      </p>
+                      
+                      {/* Logos Grid */}
+                      <div className="grid grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center">
+                        <motion.div 
+                          className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <img 
+                            src="/lovable-uploads/4e30c075-8a49-4de8-ac81-86f2df88c108.png" 
+                            alt="כלל ביטוח" 
+                            className="h-20 w-auto object-contain"
+                          />
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <img 
+                            src="/lovable-uploads/95f0e530-803c-478f-ad7b-ee3363030c84.png" 
+                            alt="כללית" 
+                            className="h-20 w-auto object-contain"
+                          />
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <img 
+                            src="/lovable-uploads/fcb54499-0248-40a8-b561-caa4486588dc.png" 
+                            alt="דנטלון" 
+                            className="h-20 w-auto object-contain"
+                          />
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <img 
+                            src="/lovable-uploads/981cc350-a982-4231-8537-6ac83883e9ce.png" 
+                            alt="אספרסו קלאב" 
+                            className="h-20 w-auto object-contain"
+                          />
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <img 
+                            src="/lovable-uploads/78df8547-a9ee-4e74-b6a6-b1dc55d32456.png" 
+                            alt="חלי ממן" 
+                            className="h-20 w-auto object-contain"
+                          />
+                        </motion.div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-r-8 border-accent box-shadow-soft"
+                  whileHover={{ scale: 1.02, x: 10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="bg-accent/10 rounded-full p-3 flex-shrink-0">
+                      <Zap className="w-8 h-8 text-accent" />
+                    </div>
+                    <div className="text-right">
+                      <h4 className="text-xl font-black text-accent mb-2">שיטת "שמש" הייחודית</h4>
+                      <div className="text-gray-700 leading-relaxed">
+                        <p className="mb-2">
+                          <strong className="text-accent">שיווק | מכירה | שיטה</strong> – מודל עבודה שמוביל עסקים לתוצאות אמיתיות.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <GlowCard className="max-w-4xl mx-auto p-12 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 border-2 border-gradient-to-r from-primary/20 to-accent/20">
+              <div className="text-center">
+                <motion.p 
+                  className="text-3xl md:text-4xl font-black text-primary mb-6"
+                  whileInView={{ scale: [0.9, 1] }}
+                  transition={{ duration: 0.6 }}
+                >
+                  מוכן לראות איך זה עובד אצלך?
+                </motion.p>
+                <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                  בניגוד לחברות שעושות "אימייל מרקטינג" כללי –<br />
+                  <strong>אנחנו מגיעים מהשטח עם תוצאות אמיתיות.</strong>
+                </p>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button 
+                    size="lg" 
+                    className="gradient-secondary hover:opacity-90 text-white px-12 py-6 text-xl font-black rounded-3xl box-shadow-intense"
+                  >
+                     תיאום פגישה "כסף מדאטא"
+                  </Button>
+                </motion.div>
+              </div>
+            </GlowCard>
+          </motion.div>
         </div>
       </section>
 
