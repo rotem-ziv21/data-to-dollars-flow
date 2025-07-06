@@ -939,14 +939,36 @@ export default function Index() {
           >
             <div className="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-3xl p-12 border border-gray-200/30 shadow-xl">
               
-              <motion.h4 
-                className="text-4xl md:text-5xl font-black text-gray-900 text-center mb-12"
+              <motion.div 
+                className="text-center mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                תחשבו על סופרמרקטים:
-              </motion.h4>
+                <motion.h4 
+                  className="text-4xl md:text-6xl font-black mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent leading-tight"
+                  whileInView={{ scale: [0.9, 1] }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  תחשבו על סופרמרקטים:
+                </motion.h4>
+                <motion.div 
+                  className="w-32 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 mx-auto rounded-full"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: 128 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                />
+                <motion.div
+                  className="flex justify-center items-center mt-4 gap-4"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                </motion.div>
+              </motion.div>
               
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 
