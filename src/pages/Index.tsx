@@ -292,7 +292,7 @@ export default function Index() {
               </div>
             </div>
             <motion.h2 
-              className="text-5xl md:text-7xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-8 leading-tight"
+              className="text-5xl md:text-7xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 bg-clip-text text-transparent mb-8 leading-tight"
               whileInView={{ y: [20, 0], opacity: [0, 1] }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
