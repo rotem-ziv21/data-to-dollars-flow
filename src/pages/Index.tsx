@@ -809,30 +809,78 @@ export default function Index() {
       </section>
 
       {/* Technology Section */}
-      <section className="py-32 relative">
-        <div className="max-w-6xl mx-auto px-8 text-center">
+      <section className="py-32 relative bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-16"
+            className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-4 bg-primary/10 px-8 py-4 rounded-full mb-8">
-              <Sparkles className="w-8 h-8 text-primary" />
-              <span className="text-2xl font-black text-primary">הטכנולוגיה שלנו</span>
-            </div>
-            <h2 className="text-5xl md:text-6xl font-black text-primary mb-8">
-              אבל לא רק האסטרטגיה – גם הטכנולוגיה משנה את המשחק:
+            <h2 className="text-4xl md:text-6xl font-black text-primary mb-8 leading-tight">
+              אבל לא רק האסטרטגיה –<br />
+              <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+                גם הטכנולוגיה משנה את המשחק:
+              </span>
             </h2>
           </motion.div>
 
-          <GlowCard className="p-16 max-w-5xl mx-auto">
-            <div className="text-right space-y-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <motion.div 
+                className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-xl p-8 border border-gray-200/50 box-shadow-soft"
+                whileHover={{ scale: 1.02, rotateY: 2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img 
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+                  alt="טכנולוגיה מתקדמת לניתוח דאטה"
+                  className="w-full h-80 object-cover rounded-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent rounded-2xl"></div>
+                
+                {/* Floating tech elements */}
+                <motion.div
+                  className="absolute top-4 right-4 bg-primary text-white px-4 py-2 rounded-xl text-sm font-bold"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  AI Powered
+                </motion.div>
+                
+                <motion.div
+                  className="absolute bottom-4 left-4 bg-secondary text-white px-4 py-2 rounded-xl text-sm font-bold"
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+                >
+                  Smart Analytics
+                </motion.div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Column - Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-right space-y-8"
+            >
               <motion.p 
                 className="text-2xl md:text-3xl font-black text-primary leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
               >
                 כל איש קשר בדאטה שלך מקבל הודעה מותאמת אישית,<br />
                 לפי השיחה האחרונה, המוצר שהתעניין בו, האם נשלחה לו הצעה, ועוד.
@@ -842,7 +890,7 @@ export default function Index() {
                 className="text-xl md:text-2xl font-bold text-gray-700 leading-relaxed"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
               >
                 זה לא דיוור גנרי עם שם פרטי בלבד.<br />
                 זו הודעה שמרגישה כאילו נכתבה רק אליו –<br />
@@ -850,44 +898,44 @@ export default function Index() {
               </motion.p>
               
               <motion.div
-                className="bg-gradient-to-br from-secondary/10 to-accent/10 rounded-3xl p-8 border-2 border-secondary/30"
+                className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border-2 border-secondary/30 box-shadow-soft"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
                 whileHover={{ scale: 1.02 }}
               >
                 <p className="text-xl md:text-2xl font-black text-secondary mb-6">
                   בזכות זה אנחנו רואים:
                 </p>
                 <div className="space-y-4 text-right">
-                  <motion.p 
-                    className="text-lg md:text-xl font-bold text-gray-800 flex items-center justify-end gap-3"
+                  <motion.div 
+                    className="flex items-center justify-end gap-4 p-4 bg-green-50 rounded-2xl border border-green-200"
                     whileInView={{ x: [50, 0] }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
+                    transition={{ duration: 0.6, delay: 0.9 }}
                   >
-                    <span>– אחוזי פתיחה גבוהים במיוחד</span>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  </motion.p>
-                  <motion.p 
-                    className="text-lg md:text-xl font-bold text-gray-800 flex items-center justify-end gap-3"
+                    <span className="text-lg md:text-xl font-bold text-gray-800">– אחוזי פתיחה גבוהים במיוחד</span>
+                    <div className="w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
+                  </motion.div>
+                  <motion.div 
+                    className="flex items-center justify-end gap-4 p-4 bg-blue-50 rounded-2xl border border-blue-200"
                     whileInView={{ x: [50, 0] }}
-                    transition={{ duration: 0.6, delay: 1 }}
+                    transition={{ duration: 0.6, delay: 1.1 }}
                   >
-                    <span>– אחוז תגובה שמכפיל את הסטנדרט</span>
-                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  </motion.p>
-                  <motion.p 
-                    className="text-lg md:text-xl font-bold text-gray-800 flex items-center justify-end gap-3"
+                    <span className="text-lg md:text-xl font-bold text-gray-800">– אחוז תגובה שמכפיל את הסטנדרט</span>
+                    <div className="w-4 h-4 bg-blue-500 rounded-full animate-pulse"></div>
+                  </motion.div>
+                  <motion.div 
+                    className="flex items-center justify-end gap-4 p-4 bg-purple-50 rounded-2xl border border-purple-200"
                     whileInView={{ x: [50, 0] }}
-                    transition={{ duration: 0.6, delay: 1.2 }}
+                    transition={{ duration: 0.6, delay: 1.3 }}
                   >
-                    <span>– יותר שיחות שבאמת מובילות לסגירה</span>
-                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                  </motion.p>
+                    <span className="text-lg md:text-xl font-bold text-gray-800">– יותר שיחות שבאמת מובילות לסגירה</span>
+                    <div className="w-4 h-4 bg-purple-500 rounded-full animate-pulse"></div>
+                  </motion.div>
                 </div>
               </motion.div>
-            </div>
-          </GlowCard>
+            </motion.div>
+          </div>
         </div>
       </section>
 
