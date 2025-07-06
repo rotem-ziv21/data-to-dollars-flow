@@ -227,10 +227,11 @@ export default function Index() {
       </section>
 
       {/* Problem Statement */}
-      <section className="py-32 relative">
-        <div className="max-w-6xl mx-auto px-8 text-center relative z-10">
+      <section className="py-24 bg-gradient-to-r from-gray-100 to-gray-50 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+        <div className="max-w-5xl mx-auto px-8 text-center relative z-10">
           <motion.h2 
-            className="text-5xl md:text-7xl font-black text-primary mb-16 leading-tight"
+            className="text-4xl md:text-6xl font-black text-primary mb-16 leading-tight"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -238,7 +239,7 @@ export default function Index() {
             "אבל כבר שילמתי<br />עשרות אלפים על שיווק…"
           </motion.h2>
           
-          <div className="space-y-8 mb-16">
+          <div className="space-y-12 mb-16">
             {[
               { text: "בדיוק.", colorText: "text-primary", colorBorder: "border-primary", delay: 0 },
               { text: "הדאטה אצלך.", colorText: "text-secondary", colorBorder: "border-secondary", delay: 0.2 },
@@ -250,10 +251,11 @@ export default function Index() {
                 initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: item.delay }}
-                whileHover={{ scale: 1.05, rotateX: 5 }}
+                whileHover={{ scale: 1.02 }}
+                className="max-w-4xl mx-auto"
               >
-                <GlowCard className={`p-10 border-r-8 ${item.colorBorder}`}>
-                  <p className={`text-3xl md:text-4xl font-black ${item.colorText}`}>
+                <GlowCard className={`p-8 md:p-12 border-r-8 ${item.colorBorder}`}>
+                  <p className={`text-2xl md:text-3xl font-black ${item.colorText} leading-relaxed`}>
                     {item.text}
                   </p>
                 </GlowCard>
@@ -261,23 +263,25 @@ export default function Index() {
             ))}
           </div>
 
-          <GlowCard className="p-16 border-t-8 border-primary">
-            <div className="flex items-center justify-center mb-8">
-              <div className="bg-primary/20 rounded-full p-8">
-                <TrendingUp className="w-16 h-16 text-primary" />
+          <div className="max-w-4xl mx-auto">
+            <GlowCard className="p-12 md:p-16 border-t-8 border-primary">
+              <div className="flex items-center justify-center mb-8">
+                <div className="bg-primary/20 rounded-full p-8">
+                  <TrendingUp className="w-16 h-16 text-primary" />
+                </div>
               </div>
-            </div>
-            <motion.p 
-              className="text-4xl md:text-5xl font-black text-primary mb-8"
-              whileInView={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              רוב העסקים לא צריכים עוד לידים.
-            </motion.p>
-            <p className="text-3xl md:text-4xl font-black text-secondary">
-              הם צריכים לעבוד נכון עם מה שכבר יש.
-            </p>
-          </GlowCard>
+              <motion.p 
+                className="text-3xl md:text-4xl font-black text-primary mb-8 leading-tight"
+                whileInView={{ scale: [1, 1.02, 1] }}
+                transition={{ duration: 2 }}
+              >
+                רוב העסקים לא צריכים עוד לידים.
+              </motion.p>
+              <p className="text-2xl md:text-3xl font-black text-secondary leading-tight">
+                הם צריכים לעבוד נכון עם מה שכבר יש.
+              </p>
+            </GlowCard>
+          </div>
         </div>
       </section>
 
