@@ -808,7 +808,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Technology Stats */}
+      {/* Technology Section */}
       <section className="py-32 relative">
         <div className="max-w-6xl mx-auto px-8 text-center">
           <motion.div
@@ -822,66 +822,71 @@ export default function Index() {
               <span className="text-2xl font-black text-primary">הטכנולוגיה שלנו</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-black text-primary mb-8">
-              משנה את כללי המשחק
+              אבל לא רק האסטרטגיה – גם הטכנולוגיה משנה את המשחק:
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-12 mb-16">
-            {[
-              { number: 95, suffix: "%", label: "אחוזי פתיחה", colorText: "text-green-600", colorBorder: "border-green-500", colorBg: "bg-green-100", colorBar: "bg-green-500", delay: 0 },
-              { number: 78, suffix: "%", label: "אחוז תגובה", colorText: "text-blue-600", colorBorder: "border-blue-500", colorBg: "bg-blue-100", colorBar: "bg-blue-500", delay: 0.3 },
-              { number: 340, suffix: "%", label: "עלייה בסגירות", colorText: "text-purple-600", colorBorder: "border-purple-500", colorBg: "bg-purple-100", colorBar: "bg-purple-500", delay: 0.6 }
-            ].map((stat, i) => (
-              <GlowCard key={i} className={`p-12 border-t-8 ${stat.colorBorder}`} delay={stat.delay}>
-                <motion.div
-                  whileHover={{ scale: 1.1, rotateY: 10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <motion.div 
-                    className={`text-7xl md:text-8xl font-black ${stat.colorText} mb-4`}
-                    whileInView={{ scale: [0, 1.2, 1] }}
-                    transition={{ duration: 1, delay: stat.delay }}
+          <GlowCard className="p-16 max-w-5xl mx-auto">
+            <div className="text-right space-y-8">
+              <motion.p 
+                className="text-2xl md:text-3xl font-black text-primary leading-tight"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                כל איש קשר בדאטה שלך מקבל הודעה מותאמת אישית,<br />
+                לפי השיחה האחרונה, המוצר שהתעניין בו, האם נשלחה לו הצעה, ועוד.
+              </motion.p>
+              
+              <motion.p 
+                className="text-xl md:text-2xl font-bold text-gray-700 leading-relaxed"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                זה לא דיוור גנרי עם שם פרטי בלבד.<br />
+                זו הודעה שמרגישה כאילו נכתבה רק אליו –<br />
+                כי המערכת שלנו בונה את המסר לפי הדאטא שלו בפועל.
+              </motion.p>
+              
+              <motion.div
+                className="bg-gradient-to-br from-secondary/10 to-accent/10 rounded-3xl p-8 border-2 border-secondary/30"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <p className="text-xl md:text-2xl font-black text-secondary mb-6">
+                  בזכות זה אנחנו רואים:
+                </p>
+                <div className="space-y-4 text-right">
+                  <motion.p 
+                    className="text-lg md:text-xl font-bold text-gray-800 flex items-center justify-end gap-3"
+                    whileInView={{ x: [50, 0] }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
                   >
-                    <AnimatedCounter end={stat.number} />{stat.suffix}
-                  </motion.div>
-                  <p className="text-xl font-bold text-gray-800 mb-2">{stat.label}</p>
-                  <div className={`w-full h-2 ${stat.colorBg} rounded-full overflow-hidden`}>
-                    <motion.div
-                      className={`h-full ${stat.colorBar}`}
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${Math.min(stat.number, 100)}%` }}
-                      transition={{ duration: 2, delay: stat.delay + 0.5 }}
-                    />
-                  </div>
-                </motion.div>
-              </GlowCard>
-            ))}
-          </div>
-
-          <GlowCard className="p-16">
-            <div className="flex items-center justify-center mb-8">
-              <div className="bg-gradient-to-r from-primary via-secondary to-accent rounded-full p-8">
-                <Database className="w-20 h-20 text-white" />
-              </div>
+                    <span>– אחוזי פתיחה גבוהים במיוחד</span>
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </motion.p>
+                  <motion.p 
+                    className="text-lg md:text-xl font-bold text-gray-800 flex items-center justify-end gap-3"
+                    whileInView={{ x: [50, 0] }}
+                    transition={{ duration: 0.6, delay: 1 }}
+                  >
+                    <span>– אחוז תגובה שמכפיל את הסטנדרט</span>
+                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  </motion.p>
+                  <motion.p 
+                    className="text-lg md:text-xl font-bold text-gray-800 flex items-center justify-end gap-3"
+                    whileInView={{ x: [50, 0] }}
+                    transition={{ duration: 0.6, delay: 1.2 }}
+                  >
+                    <span>– יותר שיחות שבאמת מובילות לסגירה</span>
+                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                  </motion.p>
+                </div>
+              </motion.div>
             </div>
-            <motion.p 
-              className="text-3xl md:text-4xl font-black text-primary mb-8"
-              whileInView={{ opacity: [0.8, 1, 0.8] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              כל איש קשר מקבל הודעה מותאמת אישית
-            </motion.p>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              המערכת שלנו יוצרת הודעה שנראית כאילו נכתבה במיוחד עבורו
-            </p>
-            <motion.div
-              className="bg-gradient-to-r from-accent/20 to-primary/20 rounded-3xl p-8 border-2 border-accent/30"
-              whileHover={{ scale: 1.02, rotateX: 2 }}
-            >
-              <p className="text-2xl md:text-3xl font-black text-accent">
-                זה ההבדל בין "עוד מייל" – לבין קמפיין שמרגיש כמו שיחה אישית חכמה.
-              </p>
-            </motion.div>
           </GlowCard>
         </div>
       </section>
