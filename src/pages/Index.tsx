@@ -935,85 +935,150 @@ export default function Index() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-16 max-w-7xl mx-auto"
+            className="mt-20 max-w-7xl mx-auto relative"
           >
-            <div className="grid lg:grid-cols-2 gap-12 items-center bg-gradient-to-br from-white/95 via-blue-50/30 to-green-50/30 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-200/30 box-shadow-soft">
+            {/* Decorative Background Elements */}
+            <div className="absolute -top-10 -left-10 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-green-400/20 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+            
+            <div className="grid lg:grid-cols-2 gap-16 items-center bg-gradient-to-br from-white/95 via-slate-50/80 to-blue-50/60 backdrop-blur-2xl rounded-3xl p-10 md:p-16 border border-white/40 shadow-2xl relative overflow-hidden">
+              
+              {/* Decorative Pattern Overlay */}
+              <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 via-transparent to-secondary/10"></div>
+              </div>
               
               {/* Left Column - Content */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
-                className="text-right space-y-6"
+                className="text-right space-y-8 relative z-10"
               >
-                <h4 className="text-3xl md:text-4xl font-black text-secondary mb-8">
-                  תחשבו על סופרמרקטים:
-                </h4>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.1 }}
+                >
+                  <h4 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent leading-tight">
+                    תחשבו על סופרמרקטים:
+                  </h4>
+                  <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-green-500 mr-auto rounded-full"></div>
+                </motion.div>
                 
-                <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
-                  <motion.p 
-                    className="text-xl md:text-2xl"
+                <div className="space-y-8">
+                  <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1.1 }}
-                  >
-                    איך רשתות כמו <span className="font-bold text-blue-600">שופרסל</span>, <span className="font-bold text-green-600">רמי לוי</span> או <span className="font-bold text-purple-600">ויקטורי</span> יודעים בדיוק מתי להחזיר אותך עם הצעה משתלמת?
-                  </motion.p>
-                  
-                  <motion.div 
-                    className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-6 border border-primary/20"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 1.2 }}
-                    whileHover={{ scale: 1.02 }}
+                    className="bg-white/70 backdrop-blur-lg rounded-2xl p-6 border border-white/50 shadow-lg"
                   >
-                    <p className="text-2xl md:text-3xl font-black text-primary text-center">
-                      הם משתמשים בדאטא שלך.
+                    <p className="text-xl md:text-2xl text-gray-800 leading-relaxed">
+                      איך רשתות כמו 
+                      <span className="inline-flex mx-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-bold text-lg">שופרסל</span>
+                      <span className="inline-flex mx-2 px-3 py-1 bg-green-100 text-green-700 rounded-full font-bold text-lg">רמי לוי</span>
+                      או 
+                      <span className="inline-flex mx-2 px-3 py-1 bg-purple-100 text-purple-700 rounded-full font-bold text-lg">ויקטורי</span>
+                      יודעים בדיוק מתי להחזיר אותך עם הצעה משתלמת?
                     </p>
                   </motion.div>
                   
-                  <motion.p
-                    className="text-xl md:text-2xl"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1.3 }}
+                  <motion.div 
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 1.3 }}
+                    whileHover={{ scale: 1.02, y: -5 }}
                   >
-                    זו השיטה הכי זולה והכי מדויקת ליצירת מכירות חוזרות.
-                  </motion.p>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-lg"></div>
+                    <div className="relative bg-gradient-to-br from-primary/90 via-primary to-secondary/80 rounded-3xl p-8 border border-white/20 shadow-2xl">
+                      <div className="text-center">
+                        <Database className="w-16 h-16 text-white mx-auto mb-4" />
+                        <p className="text-2xl md:text-4xl font-black text-white mb-2">
+                          הם משתמשים בדאטא שלך
+                        </p>
+                        <div className="w-20 h-1 bg-white/60 mx-auto rounded-full"></div>
+                      </div>
+                    </div>
+                  </motion.div>
                   
                   <motion.div
-                    className="bg-gradient-to-br from-accent/15 via-secondary/10 to-primary/5 rounded-2xl p-8 border-2 border-accent/30"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 1.4 }}
+                    className="bg-white/70 backdrop-blur-lg rounded-2xl p-6 border border-white/50 shadow-lg"
+                  >
+                    <p className="text-xl md:text-2xl text-gray-800 leading-relaxed font-semibold">
+                      זו השיטה הכי זולה והכי מדויקת ליצירת מכירות חוזרות.
+                    </p>
+                  </motion.div>
+                  
+                  <motion.div
+                    className="relative"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.5 }}
                     whileHover={{ scale: 1.02, rotateX: 2 }}
                   >
-                    <p className="text-2xl md:text-3xl font-black text-accent text-center leading-tight">
-                      ואנחנו מביאים אותה לעסק שלך – בלי צורך להחזיק צוות, לשלם למדיה או להקים קמפיינים.
-                    </p>
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent/30 to-secondary/30 rounded-3xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-accent/95 via-accent to-secondary/90 rounded-3xl p-8 border-2 border-white/30 shadow-2xl">
+                      <div className="text-center">
+                        <Sparkles className="w-12 h-12 text-white mx-auto mb-4" />
+                        <p className="text-2xl md:text-3xl font-black text-white leading-tight">
+                          ואנחנו מביאים אותה לעסק שלך
+                        </p>
+                        <p className="text-lg md:text-xl text-white/90 mt-3 font-medium">
+                          בלי צורך להחזיק צוות, לשלם למדיה או להקים קמפיינים
+                        </p>
+                      </div>
+                    </div>
                   </motion.div>
                 </div>
               </motion.div>
 
-              {/* Right Column - Image */}
+              {/* Right Column - Enhanced Image */}
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 0.8, delay: 1.1 }}
                 className="relative"
               >
-                <motion.div 
-                  className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-xl border border-gray-200/50 box-shadow-soft"
-                  whileHover={{ scale: 1.02, rotateY: -2 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <img 
-                    src={supermarketDataImage}
-                    alt="ניתוח דאטה של סופרמרקטים והתאמה אישית"
-                    className="w-full h-auto object-cover rounded-3xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/10 rounded-3xl" />
-                </motion.div>
+                <div className="relative">
+                  {/* Image Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-green-400/30 rounded-3xl blur-2xl scale-105"></div>
+                  
+                  <motion.div 
+                    className="relative rounded-3xl overflow-hidden bg-white/90 backdrop-blur-xl border-2 border-white/60 shadow-2xl"
+                    whileHover={{ scale: 1.02, rotateY: -3, rotateX: 2 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                  >
+                    <img 
+                      src={supermarketDataImage}
+                      alt="ניתוח דאטה של סופרמרקטים והתאמה אישית"
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-blue-500/20"></div>
+                    
+                    {/* Floating Elements Over Image */}
+                    <motion.div
+                      className="absolute top-6 right-6 bg-white/90 backdrop-blur-lg rounded-2xl p-4 shadow-lg"
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1.8, type: "spring" }}
+                    >
+                      <TrendingUp className="w-8 h-8 text-green-600" />
+                    </motion.div>
+                    
+                    <motion.div
+                      className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-lg rounded-2xl p-4 shadow-lg"
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 2, type: "spring" }}
+                    >
+                      <Database className="w-8 h-8 text-blue-600" />
+                    </motion.div>
+                  </motion.div>
+                </div>
               </motion.div>
             </div>
           </motion.div>
