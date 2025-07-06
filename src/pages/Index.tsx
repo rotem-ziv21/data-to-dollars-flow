@@ -88,7 +88,7 @@ export default function Index() {
             whileHover={{ scale: 1.05 }}
           >
             <img 
-              src="/lovable-uploads/a192ce18-e4fe-4b99-9f53-ead383b46f7f.png" 
+              src="/lovable-uploads/770b5634-76b0-4acf-a31b-00fdf6c13161.png" 
               alt="Optione - פשוט לשלוט בעסק" 
               className="h-12 md:h-16"
             />
