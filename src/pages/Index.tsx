@@ -472,59 +472,64 @@ export default function Index() {
             </div>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto space-y-12">
-            {/* What we DON'T do */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="bg-red-50/80 backdrop-blur-xl rounded-3xl p-10 border-2 border-red-200/50"
-            >
-              <div className="flex items-center justify-center mb-8">
-                <div className="bg-red-500 text-white px-6 py-3 rounded-2xl text-2xl font-black">
-                  ❌ מה אנחנו לא עושים?
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* What we DON'T do & What we DO - Side by side */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* What we DON'T do */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                whileHover={{ scale: 1.02 }}
+                className="bg-red-50/80 backdrop-blur-xl rounded-2xl p-8 border-2 border-red-200/50"
+              >
+                <div className="flex items-center justify-center mb-6">
+                  <div className="bg-red-500 text-white px-4 py-2 rounded-xl text-lg font-black">
+                    ❌ מה אנחנו לא עושים?
+                  </div>
                 </div>
-              </div>
-              <div className="space-y-4 text-right">
-                <p className="text-xl font-bold text-red-700 flex items-center justify-end gap-3">
-                  <span>✘ לא מוכרים לך מערכת טכנולוגית חדשה</span>
-                </p>
-                <p className="text-xl font-bold text-red-700 flex items-center justify-end gap-3">
-                  <span>✘ לא שולחים אותך לקורסים</span>
-                </p>
-                <p className="text-xl font-bold text-red-700 flex items-center justify-end gap-3">
-                  <span>✘ לא מציעים קמפיין עם תקציב פרסום</span>
-                </p>
-              </div>
-            </motion.div>
+                <div className="space-y-3 text-center">
+                  <p className="text-lg font-bold text-red-700">
+                    לא מוכרים לך מערכת טכנולוגית חדשה
+                  </p>
+                  <p className="text-lg font-bold text-red-700">
+                    לא שולחים אותך לקורסים
+                  </p>
+                  <p className="text-lg font-bold text-red-700">
+                    לא מציעים קמפיין עם תקציב פרסום
+                  </p>
+                </div>
+              </motion.div>
 
-            {/* What we DO */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="bg-green-50/80 backdrop-blur-xl rounded-3xl p-10 border-2 border-green-200/50"
-            >
-              <div className="flex items-center justify-center mb-8">
-                <div className="bg-green-500 text-white px-6 py-3 rounded-2xl text-2xl font-black">
-                  ✅ מה כן?
+              {/* What we DO */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                whileHover={{ scale: 1.02 }}
+                className="bg-green-50/80 backdrop-blur-xl rounded-2xl p-8 border-2 border-green-200/50"
+              >
+                <div className="flex items-center justify-center mb-6">
+                  <div className="bg-green-500 text-white px-4 py-2 rounded-xl text-lg font-black">
+                    ✅ מה כן?
+                  </div>
                 </div>
-              </div>
-              <div className="space-y-4 text-right">
-                <p className="text-xl font-bold text-green-700 flex items-center justify-end gap-3">
-                  <span>✔️ מנתחים את הדאטא הקיימת שלך</span>
-                </p>
-                <p className="text-xl font-bold text-green-700 flex items-center justify-end gap-3">
-                  <span>✔️ מפצחים את הפילוחים</span>
-                </p>
-                <p className="text-xl font-bold text-green-700 flex items-center justify-end gap-3">
-                  <span>✔️ בונים קמפיינים חכמים</span>
-                </p>
-                <p className="text-xl font-bold text-green-700 flex items-center justify-end gap-3">
-                  <span>✔️ ואתה מקבל לידים – לשיחה או סגירה</span>
-                </p>
-              </div>
-            </motion.div>
+                <div className="space-y-3 text-center">
+                  <p className="text-lg font-bold text-green-700">
+                    מנתחים את הדאטא הקיימת שלך
+                  </p>
+                  <p className="text-lg font-bold text-green-700">
+                    מפצחים את הפילוחים
+                  </p>
+                  <p className="text-lg font-bold text-green-700">
+                    בונים קמפיינים חכמים
+                  </p>
+                  <p className="text-lg font-bold text-green-700">
+                    ואתה מקבל לידים – לשיחה או סגירה
+                  </p>
+                </div>
+              </motion.div>
+            </div>
 
             {/* CTA */}
             <motion.div
