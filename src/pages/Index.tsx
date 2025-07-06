@@ -216,6 +216,7 @@ export default function Index() {
               </motion.div>
 
               <motion.div
+                className="text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 30 }}
@@ -224,9 +225,17 @@ export default function Index() {
               >
                 <Button 
                   size="lg" 
-                  className="gradient-secondary hover:opacity-90 text-white px-12 py-6 text-2xl font-black rounded-2xl box-shadow-intense"
+                  className="gradient-secondary hover:opacity-90 hover:scale-105 transition-all duration-300 text-white px-16 py-8 text-xl md:text-2xl font-black rounded-3xl box-shadow-intense relative overflow-hidden group w-full max-w-md mx-auto"
                 >
-                  🔵 לתיאום שיחת "כסף מהדאטא" ←
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100"
+                    animate={{ x: ['-100%', '100%'] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                  <span className="relative z-10 flex items-center justify-center gap-3">
+                    לתיאום שיחת "כסף מהדאטא"
+                    <ArrowLeft className="w-6 h-6" />
+                  </span>
                 </Button>
               </motion.div>
             </motion.div>
