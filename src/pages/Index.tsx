@@ -312,131 +312,96 @@ export default function Index() {
                   transition={{ duration: 1, delay: 0.6 }}
                 >
                   <div className="relative w-96 h-96 mx-auto mb-8">
-                    {/* Background circle for contrast */}
-                    <div className="absolute inset-0 rounded-full bg-gray-100 shadow-2xl border-8 border-white"></div>
+                    {/* Main circle background - Green */}
+                    <div className="absolute inset-0 rounded-full bg-green-500 shadow-2xl"></div>
                     
-                    {/* 90% Arc - Red (לא נסגרו) - Takes most of the circle */}
+                    {/* 90% Red section - positioned at top */}
                     <motion.div
-                      className="absolute inset-2 rounded-full"
+                      className="absolute inset-0 rounded-full"
                       style={{
-                        background: `conic-gradient(from 0deg, #dc2626 0deg, #ef4444 180deg, #f87171 324deg, transparent 324deg)`,
-                        clipPath: 'circle(50% at 50% 50%)'
+                        background: `conic-gradient(from -90deg, #ef4444 0deg, #ef4444 324deg, transparent 324deg)`,
                       }}
-                      initial={{ rotate: -90, scale: 0.8 }}
-                      whileInView={{ rotate: 270, scale: 1 }}
-                      transition={{ duration: 2.5, delay: 0.8, ease: "easeOut" }}
-                    />
-                    
-                    {/* 10% Arc - Green (נסגרו) - Small slice at the top */}
-                    <motion.div
-                      className="absolute inset-2 rounded-full"
-                      style={{
-                        background: `conic-gradient(from 324deg, #16a34a 324deg, #22c55e 360deg, transparent 0deg)`,
-                        clipPath: 'circle(50% at 50% 50%)'
-                      }}
-                      initial={{ rotate: -90, scale: 0.8 }}
-                      whileInView={{ rotate: 270, scale: 1 }}
-                      transition={{ duration: 2.5, delay: 1.5, ease: "easeOut" }}
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
                     />
 
-                    {/* White separators for clarity */}
-                    <div className="absolute inset-2 rounded-full">
-                      {/* Separator line at 0deg */}
-                      <div 
-                        className="absolute w-1 h-full bg-white origin-bottom"
-                        style={{ 
-                          left: '50%', 
-                          top: '0',
-                          transform: 'translateX(-50%) rotate(0deg)',
-                          transformOrigin: 'center bottom'
-                        }}
-                      />
-                      {/* Separator line at 324deg */}
-                      <div 
-                        className="absolute w-1 h-full bg-white origin-bottom"
-                        style={{ 
-                          left: '50%', 
-                          top: '0',
-                          transform: 'translateX(-50%) rotate(324deg)',
-                          transformOrigin: 'center bottom'
-                        }}
-                      />
-                    </div>
-                    
-                    {/* Center content */}
-                    <div className="absolute inset-16 bg-white rounded-full flex items-center justify-center shadow-inner border-4 border-gray-50">
-                      <div className="text-center">
-                        <motion.div 
-                          className="text-4xl font-black text-red-500 mb-2"
+                    {/* Center white circle */}
+                    <div className="absolute inset-12 bg-white rounded-full shadow-inner flex items-center justify-center">
+                      <div className="text-center space-y-6">
+                        <motion.div
                           initial={{ opacity: 0, scale: 0 }}
                           whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 2.5, duration: 0.8, type: "spring" }}
+                          transition={{ delay: 2, duration: 0.8 }}
                         >
-                          90%
+                          <div className="text-6xl font-black text-red-500 mb-2">90%</div>
+                          <div className="text-lg font-bold text-gray-600">לא נסגרו</div>
                         </motion.div>
-                        <motion.div 
-                          className="text-lg font-bold text-gray-600 mb-3"
-                          initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          transition={{ delay: 3 }}
-                        >
-                          לא נסגרו
-                        </motion.div>
-                        <motion.div 
-                          className="w-16 h-0.5 bg-gray-300 mx-auto mb-3"
-                          initial={{ width: 0 }}
-                          whileInView={{ width: '4rem' }}
-                          transition={{ delay: 3.2 }}
-                        />
-                        <motion.div 
-                          className="text-2xl font-black text-green-500"
+                        
+                        <div className="w-20 h-0.5 bg-gray-300 mx-auto"></div>
+                        
+                        <motion.div
                           initial={{ opacity: 0, scale: 0 }}
                           whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 3.5, duration: 0.8, type: "spring" }}
+                          transition={{ delay: 2.5, duration: 0.8 }}
                         >
-                          10%
-                        </motion.div>
-                        <motion.div 
-                          className="text-sm font-bold text-gray-600"
-                          initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          transition={{ delay: 3.7 }}
-                        >
-                          נסגרו
+                          <div className="text-3xl font-black text-green-500 mb-2">10%</div>
+                          <div className="text-lg font-bold text-gray-600">נסגרו</div>
                         </motion.div>
                       </div>
                     </div>
                     
-                    {/* Labels with arrows pointing to sections */}
+                    {/* Label for 90% - Red */}
                     <motion.div 
-                      className="absolute left-1/2 -top-12 transform -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg border-4 border-white"
+                      className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg"
                       initial={{ scale: 0, opacity: 0, y: 20 }}
                       whileInView={{ scale: 1, opacity: 1, y: 0 }}
-                      transition={{ delay: 3.5, type: "spring", stiffness: 200 }}
-                      whileHover={{ scale: 1.1 }}
+                      transition={{ delay: 3, type: "spring" }}
                     >
                       <div className="flex items-center gap-2">
                         <span>✗</span>
                         <span>90% לא נסגרו</span>
                       </div>
-                      {/* Arrow pointing down to red section */}
+                      {/* Arrow pointing down */}
                       <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rotate-45"></div>
                     </motion.div>
 
+                    {/* Label for 10% - Green */}
                     <motion.div 
-                      className="absolute top-8 -right-16 bg-green-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg border-4 border-white"
-                      initial={{ scale: 0, opacity: 0, y: -20 }}
-                      whileInView={{ scale: 1, opacity: 1, y: 0 }}
-                      transition={{ delay: 4, type: "spring", stiffness: 200 }}
-                      whileHover={{ scale: 1.1 }}
+                      className="absolute -right-16 top-1/2 transform -translate-y-1/2 bg-green-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg"
+                      initial={{ scale: 0, opacity: 0, x: -20 }}
+                      whileInView={{ scale: 1, opacity: 1, x: 0 }}
+                      transition={{ delay: 3.5, type: "spring" }}
                     >
                       <div className="flex items-center gap-2">
                         <span>✓</span>
                         <span>10% נסגרו</span>
                       </div>
-                      {/* Arrow pointing to green section */}
-                      <div className="absolute -bottom-2 left-1/4 w-4 h-4 bg-green-500 rotate-45"></div>
+                      {/* Arrow pointing left */}
+                      <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-green-500 rotate-45"></div>
                     </motion.div>
+
+                    {/* White separator lines */}
+                    <div className="absolute inset-0">
+                      <div 
+                        className="absolute w-1 h-full bg-white origin-bottom opacity-60"
+                        style={{ 
+                          left: '50%', 
+                          top: '0',
+                          transform: 'translateX(-50%) rotate(-90deg)',
+                          transformOrigin: 'center bottom'
+                        }}
+                      />
+                      <div 
+                        className="absolute w-1 h-full bg-white origin-bottom opacity-60"
+                        style={{ 
+                          left: '50%', 
+                          top: '0',
+                          transform: 'translateX(-50%) rotate(-54deg)',
+                          transformOrigin: 'center bottom'
+                        }}
+                      />
+                    </div>
                   </div>
                   
                   <motion.div 
