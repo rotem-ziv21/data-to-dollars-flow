@@ -152,7 +152,7 @@ export default function Index() {
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
                 <motion.div 
-                  className="inline-block border-2 border-yellow-400 rounded-full px-8 py-4 bg-yellow-400/20 backdrop-blur-sm"
+                  className="inline-block rounded-full px-8 py-4 bg-yellow-400/20 backdrop-blur-sm"
                   animate={{ 
                     scale: [1, 1.05, 1],
                     boxShadow: [
