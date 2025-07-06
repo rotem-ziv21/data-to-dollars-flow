@@ -141,19 +141,7 @@ export default function Index() {
               >
                 <span className="text-secondary">השירות שמייצר</span>
                 <br />
-                <motion.span 
-                  className="bg-gradient-to-l from-secondary via-accent to-primary bg-clip-text text-transparent"
-                  animate={{ 
-                    backgroundPosition: ['0%', '100%', '0%']
-                  }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity, 
-                    ease: "linear" 
-                  }}
-                >
-                  כסף מהדאטה שלך
-                </motion.span>
+                <span className="text-accent font-black">כסף מהדאטה שלך</span>
               </motion.h1>
 
               <motion.div
