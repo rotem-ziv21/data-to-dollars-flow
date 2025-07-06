@@ -97,133 +97,116 @@ export default function Index() {
       </motion.header>
 
       {/* Hero */}
-      <section className="min-h-screen flex items-center justify-center pt-20 relative">
-        <motion.div 
-          className="max-w-7xl mx-auto px-8 text-center relative z-10"
-          style={{ y, opacity }}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="mb-12"
-          >
-            <motion.h1 
-              className="text-4xl md:text-6xl font-black mb-6 leading-tight"
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <span className="text-primary">השירות שמייצר</span>
-              <br />
-              <motion.span 
-                className="bg-gradient-to-l from-secondary via-accent to-primary bg-clip-text text-transparent"
-                animate={{ 
-                  backgroundPosition: ['0%', '100%', '0%']
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity, 
-                  ease: "linear" 
-                }}
-              >
-                כסף מהדאטה שלך
-              </motion.span>
-            </motion.h1>
-          </motion.div>
-          
-          <GlowCard className="p-12 mb-12 max-w-4xl mx-auto">
+      <section className="min-h-screen flex items-center pt-20 relative">
+        <div className="max-w-7xl mx-auto px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Video Section - Left */}
             <motion.div
-              className="flex items-center justify-center mb-8"
-              whileHover={{ rotate: 360 }}
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
+              className="relative"
             >
-              <div className="bg-gradient-to-r from-secondary to-accent w-24 h-24 rounded-full flex items-center justify-center animate-pulse-glow">
-                <Play className="w-12 h-12 text-white" fill="white" />
+              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 p-8">
+                <motion.div
+                  className="bg-gradient-to-r from-secondary to-accent w-32 h-32 rounded-full flex items-center justify-center mx-auto animate-pulse-glow"
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <Play className="w-16 h-16 text-white" fill="white" />
+                </motion.div>
+                <div className="mt-8 text-center">
+                  <p className="text-xl font-bold text-gray-800">
+                    "אם יש לך רשימות לידים, דאטה מהקמפיינים או קהל שלא הגיב – אל תזרוק אותם לפח. 
+                    <span className="text-primary"> אנחנו יודעים להחזיר אותם לחיים.</span>"
+                  </p>
+                </div>
               </div>
             </motion.div>
-            <motion.p 
-              className="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
+
+            {/* Content Section - Right */}
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-right relative"
             >
-              "אם יש לך רשימות לידים, דאטה מהקמפיינים או קהל שלא הגיב – אל תזרוק אותם לפח. 
-              <span className="text-primary"> אנחנו יודעים להחזיר אותם לחיים.</span>"
-            </motion.p>
-          </GlowCard>
+              {/* Reviews in top right corner */}
+              <motion.div
+                className="absolute -top-4 -right-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1 }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-sm font-bold text-gray-800">140+ לקוחות מרוצים</p>
+                <div className="flex items-center gap-1 mt-1">
+                  <span className="text-xs text-gray-600">Meta</span>
+                  <span className="text-xs text-gray-600">Google</span>
+                </div>
+              </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="mb-16"
-          >
-            <GlowCard className="p-12">
-              <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
-                השירות שיחזיר לחיים את הלידים 
-                <motion.span 
-                  className="text-secondary"
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  "הרדומים"
-                </motion.span> שלך
-              </h2>
-              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-8">
-                ויהפוך דאטה מתה לרווחים בפועל
-              </h3>
-              
-              <div className="bg-gradient-to-r from-primary/10 via-secondary/5 to-accent/10 rounded-3xl p-8 border-2 border-primary/20">
-                <motion.p 
-                  className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
-                  whileInView={{ opacity: [0.7, 1, 0.7] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  לא מערכת. לא קורס. לא קמפיינר שרוצה כסף לפני שהראה לך תוצאות.
-                </motion.p>
-                <p className="text-2xl md:text-3xl font-black text-primary">
-                  אנחנו עושים את העבודה בשבילך – על בסיס הדאטא הקיימת שלך.
-                </p>
-              </div>
-            </GlowCard>
-          </motion.div>
+              <motion.h1 
+                className="text-4xl md:text-6xl font-black mb-6 leading-tight text-white"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                השיטה המוכחת ליצירת פגישות איכותיות
+                <br />
+                ועסקאות פרימיום לפי דרישה בחשפת:
+              </motion.h1>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-12 mb-16">
-            {[
-              { icon: CheckCircle, color: "text-green-600", text: "מסע לקוח שיוצר לקוחות איכותיים", delay: 0 },
-              { icon: Target, color: "text-blue-600", text: "בלי להוציא שקל על שיווק", delay: 0.2 },
-              { icon: Zap, color: "text-purple-600", text: "כל התוכנות הדרושות – עלינו!", delay: 0.4 }
-            ].map((item, i) => (
-              <GlowCard key={i} className="p-6 md:p-8" delay={item.delay}>
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+              <motion.p
+                className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                ונוביה בשלבילכם פאנל אוטומטי שמכין לקוחות פרימיום שמכינים ושלכם
+                אלפי ועשרות אלפי שקלים על השירות שלכם עם שיטת "ימותו בקלדלי"..
+              </motion.p>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+              >
+                <Button 
+                  size="lg" 
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-12 py-6 text-xl font-bold rounded-2xl shadow-xl"
                 >
-                  <item.icon className={`w-12 h-12 md:w-16 md:h-16 ${item.color} mx-auto mb-4 md:mb-6`} />
-                  <p className="text-lg md:text-xl font-bold text-gray-800 leading-tight">{item.text}</p>
-                </motion.div>
-              </GlowCard>
-            ))}
+                  קבע פגישת דמו ב- ZOOM
+                </Button>
+              </motion.div>
+            </motion.div>
           </div>
 
+          {/* Bottom Cards */}
           <motion.div
-            whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(255, 122, 69, 0.4)" }}
-            whileTap={{ scale: 0.95 }}
+            className="grid md:grid-cols-3 gap-6 mt-16"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
           >
-            <Button 
-              size="lg" 
-              className="gradient-secondary hover:opacity-90 text-white px-16 py-8 text-3xl font-black rounded-3xl box-shadow-intense transition-all duration-300 relative overflow-hidden group"
-            >
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                animate={{ x: ['-100%', '100%'] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              />
-              <span className="relative z-10">🔵 לתיאום שיחת "כסף מהדאטא" ←</span>
-            </Button>
+            {[
+              { icon: "⚙️", text: "פגישות קבועות על טייס אוטומטי" },
+              { icon: "🎯", text: "תתחיל שמכין ומזמן את הלידים" },
+              { icon: "💰", text: "כסף לזקן שמיירל לקוחות איכותיים" }
+            ].map((item, i) => (
+              <GlowCard key={i} className="p-6 text-center" delay={i * 0.1}>
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <p className="text-lg font-bold text-blue-600">{item.text}</p>
+              </GlowCard>
+            ))}
           </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Problem Statement */}
