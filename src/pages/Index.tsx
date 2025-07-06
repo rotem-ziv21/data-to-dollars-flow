@@ -312,101 +312,157 @@ export default function Index() {
                   transition={{ duration: 1, delay: 0.6 }}
                 >
                   <div className="relative w-96 h-96 mx-auto mb-8">
-                    {/* Outer glow effect */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-200 to-green-200 blur-2xl opacity-30"></div>
+                    {/* Background circle for contrast */}
+                    <div className="absolute inset-0 rounded-full bg-gray-100 shadow-2xl border-8 border-white"></div>
                     
-                    {/* 90% Arc - Red gradient */}
+                    {/* 90% Arc - Red with clear separation */}
                     <motion.div
-                      className="absolute inset-0 rounded-full shadow-2xl"
+                      className="absolute inset-2 rounded-full"
                       style={{
-                        background: `conic-gradient(from 0deg, #dc2626 0deg, #ef4444 162deg, #f87171 324deg, transparent 324deg)`,
-                        filter: 'drop-shadow(0 10px 30px rgba(220, 38, 38, 0.3))'
+                        background: `conic-gradient(from 18deg, #dc2626 18deg, #ef4444 180deg, #f87171 342deg, transparent 342deg)`,
+                        clipPath: 'circle(50% at 50% 50%)'
                       }}
                       initial={{ rotate: -90, scale: 0.8 }}
                       whileInView={{ rotate: 270, scale: 1 }}
                       transition={{ duration: 2.5, delay: 0.8, ease: "easeOut" }}
-                    >
-                      <div className="absolute inset-6 bg-white rounded-full flex items-center justify-center shadow-inner">
-                        <div className="text-center">
-                          <motion.div 
-                            className="text-7xl font-black text-red-500 mb-3"
-                            initial={{ opacity: 0, scale: 0 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 2.5, duration: 0.8, type: "spring" }}
-                          >
-                            90%
-                          </motion.div>
-                          <motion.div 
-                            className="text-xl font-bold text-gray-600"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ delay: 3 }}
-                          >
-                            לא נסגרו
-                          </motion.div>
-                        </div>
-                      </div>
-                    </motion.div>
+                    />
                     
-                    {/* 10% Arc - Green gradient */}
+                    {/* 10% Arc - Green with clear visibility */}
                     <motion.div
-                      className="absolute inset-0 rounded-full"
+                      className="absolute inset-2 rounded-full"
                       style={{
-                        background: `conic-gradient(from 324deg, #16a34a 324deg, #22c55e 342deg, #4ade80 360deg, transparent 0deg)`,
-                        filter: 'drop-shadow(0 5px 15px rgba(34, 197, 94, 0.4))'
+                        background: `conic-gradient(from 342deg, #16a34a 342deg, #22c55e 18deg, transparent 18deg)`,
+                        clipPath: 'circle(50% at 50% 50%)'
                       }}
                       initial={{ rotate: -90, scale: 0.8 }}
                       whileInView={{ rotate: 270, scale: 1 }}
                       transition={{ duration: 2.5, delay: 1.5, ease: "easeOut" }}
                     />
+
+                    {/* White separators for clarity */}
+                    <div className="absolute inset-2 rounded-full">
+                      {/* Separator line 1 */}
+                      <div 
+                        className="absolute w-0.5 h-full bg-white origin-bottom"
+                        style={{ 
+                          left: '50%', 
+                          top: '0',
+                          transform: 'translateX(-50%) rotate(18deg)',
+                          transformOrigin: 'center bottom'
+                        }}
+                      />
+                      {/* Separator line 2 */}
+                      <div 
+                        className="absolute w-0.5 h-full bg-white origin-bottom"
+                        style={{ 
+                          left: '50%', 
+                          top: '0',
+                          transform: 'translateX(-50%) rotate(342deg)',
+                          transformOrigin: 'center bottom'
+                        }}
+                      />
+                    </div>
                     
-                    {/* 10% Label with enhanced styling */}
+                    {/* Center content */}
+                    <div className="absolute inset-16 bg-white rounded-full flex items-center justify-center shadow-inner border-4 border-gray-50">
+                      <div className="text-center">
+                        <motion.div 
+                          className="text-4xl font-black text-red-500 mb-2"
+                          initial={{ opacity: 0, scale: 0 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 2.5, duration: 0.8, type: "spring" }}
+                        >
+                          90%
+                        </motion.div>
+                        <motion.div 
+                          className="text-lg font-bold text-gray-600 mb-3"
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ delay: 3 }}
+                        >
+                          לא נסגרו
+                        </motion.div>
+                        <motion.div 
+                          className="w-16 h-0.5 bg-gray-300 mx-auto mb-3"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: '4rem' }}
+                          transition={{ delay: 3.2 }}
+                        />
+                        <motion.div 
+                          className="text-2xl font-black text-green-500"
+                          initial={{ opacity: 0, scale: 0 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 3.5, duration: 0.8, type: "spring" }}
+                        >
+                          10%
+                        </motion.div>
+                        <motion.div 
+                          className="text-sm font-bold text-gray-600"
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ delay: 3.7 }}
+                        >
+                          נסגרו
+                        </motion.div>
+                      </div>
+                    </div>
+                    
+                    {/* Labels with arrows pointing to sections */}
                     <motion.div 
-                      className="absolute top-8 right-8 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-2xl font-black text-xl shadow-lg border-2 border-white"
-                      initial={{ scale: 0, opacity: 0, rotate: -45 }}
-                      whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
+                      className="absolute -top-8 left-8 bg-red-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg border-4 border-white"
+                      initial={{ scale: 0, opacity: 0, y: 20 }}
+                      whileInView={{ scale: 1, opacity: 1, y: 0 }}
                       transition={{ delay: 3.5, type: "spring", stiffness: 200 }}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span>✗</span>
+                        <span>90% הולכים לאיבוד</span>
+                      </div>
+                      {/* Arrow pointing to red section */}
+                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rotate-45"></div>
+                    </motion.div>
+
+                    <motion.div 
+                      className="absolute top-6 -right-12 bg-green-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg border-4 border-white"
+                      initial={{ scale: 0, opacity: 0, y: -20 }}
+                      whileInView={{ scale: 1, opacity: 1, y: 0 }}
+                      transition={{ delay: 4, type: "spring", stiffness: 200 }}
+                      whileHover={{ scale: 1.1 }}
                     >
                       <div className="flex items-center gap-2">
                         <span>✓</span>
                         <span>10% נסגרו</span>
                       </div>
+                      {/* Arrow pointing to green section */}
+                      <div className="absolute -bottom-2 left-1/3 w-4 h-4 bg-green-500 rotate-45"></div>
                     </motion.div>
-
-                    {/* Animated pulse rings */}
-                    <motion.div
-                      className="absolute inset-0 rounded-full border-4 border-red-200"
-                      animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.1, 0.3] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                    <motion.div
-                      className="absolute inset-2 rounded-full border-2 border-green-200"
-                      animate={{ scale: [1, 1.05, 1], opacity: [0.4, 0.1, 0.4] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                    />
                   </div>
                   
-                  <motion.p 
-                    className="text-2xl font-bold text-gray-700 max-w-md mx-auto leading-relaxed"
+                  <motion.div 
+                    className="space-y-4"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 4 }}
+                    transition={{ delay: 4.5 }}
                   >
-                    המצב הנוכחי ברוב העסקים:<br />
-                    <span className="text-red-600">90% מהלידים הולכים לאיבוד</span>
-                  </motion.p>
+                    <p className="text-2xl font-bold text-gray-700 leading-relaxed">
+                      המצב הנוכחי ברוב העסקים:
+                    </p>
+                    <p className="text-3xl font-black bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+                      90% מהלידים הולכים לאיבוד!
+                    </p>
+                  </motion.div>
 
                   {/* Enhanced call-to-action */}
                   <motion.div
                     className="mt-12"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 4.5 }}
+                    transition={{ delay: 5 }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <div className="bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 text-white px-10 py-5 rounded-full font-black text-2xl shadow-2xl mx-auto inline-block relative overflow-hidden">
+                    <div className="bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 text-white px-12 py-6 rounded-full font-black text-2xl shadow-2xl mx-auto inline-block relative overflow-hidden">
                       <motion.div
                         className="absolute inset-0 bg-white/20"
                         animate={{ x: ['-100%', '100%'] }}
