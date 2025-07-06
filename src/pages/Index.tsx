@@ -1030,20 +1030,20 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ההצעה שלנו - עיצוב משופר */}
+      {/* ההצעה שלנו - עיצוב ליניארי */}
       <section className="py-32 relative bg-gradient-to-br from-slate-50 via-white to-purple-50/20 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-accent/5 to-primary/5 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <div className="max-w-5xl mx-auto px-8 relative z-10">
           {/* כותרת ראשית */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
             <motion.h2 
               className="text-5xl md:text-7xl font-black mb-6"
@@ -1057,138 +1057,153 @@ export default function Index() {
             <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
           </motion.div>
 
-          {/* התוכן המרכזי */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-            
-            {/* ההצעה העסקית - שמאל */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="order-2 lg:order-1"
-            >
-              <GlowCard className="p-10 h-full bg-gradient-to-br from-white/95 to-white/90">
-                <div className="text-center space-y-8">
+          {/* ההצעה העסקית */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
+            <GlowCard className="p-12 bg-gradient-to-br from-white/95 to-white/90 text-center">
+              <motion.div
+                className="w-24 h-24 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.8 }}
+              >
+                <span className="text-5xl">🎁</span>
+              </motion.div>
+              
+              <h3 className="text-3xl md:text-4xl font-black text-gray-800 mb-12 leading-tight">
+                ההצעה שלנו – בול בשביל עסקים כמוך
+              </h3>
+              
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                {[
+                  { 
+                    icon: "⏰", 
+                    title: "שני חודשי ליווי",
+                    subtitle: "על בסיס הצלחה בלבד",
+                    color: "from-blue-500 to-cyan-600"
+                  },
+                  { 
+                    icon: "💰", 
+                    title: "שלם רק על תוצאה",
+                    subtitle: "פגישות, מכירות או לידים איכותיים",
+                    color: "from-green-500 to-emerald-600"
+                  },
+                  { 
+                    icon: "✅", 
+                    title: "לא הבאנו תוצאה",
+                    subtitle: "לא שילמת",
+                    color: "from-red-500 to-pink-600",
+                    highlight: true
+                  }
+                ].map((item, index) => (
                   <motion.div
-                    className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mx-auto shadow-2xl"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.8 }}
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.2 }}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    className={`p-8 rounded-3xl border-2 ${item.highlight ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-300' : 'bg-white/80 border-gray-200'} shadow-lg`}
                   >
-                    <span className="text-4xl">🎁</span>
+                    <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+                      <span className="text-2xl">{item.icon}</span>
+                    </div>
+                    <h4 className={`text-xl font-bold mb-2 ${item.highlight ? 'text-green-700' : 'text-gray-800'}`}>
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">{item.subtitle}</p>
                   </motion.div>
-                  
-                  <h3 className="text-2xl md:text-3xl font-black text-gray-800 leading-tight">
-                    ההצעה שלנו –<br />
-                    <span className="text-primary">בול בשביל עסקים כמוך</span>
-                  </h3>
-                  
-                  <div className="space-y-6">
-                    {[
-                      { icon: "⏰", text: "שני חודשי ליווי", subtext: "על בסיס הצלחה בלבד" },
-                      { icon: "💰", text: "שלם רק על תוצאה", subtext: "פגישות, מכירות או לידים איכותיים" },
-                      { icon: "✅", text: "לא הבאנו תוצאה", subtext: "לא שילמת", highlight: true }
-                    ].map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.2 }}
-                        className={`p-6 rounded-2xl border ${item.highlight ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-green-200' : 'bg-gray-50/50 border-gray-200'}`}
-                      >
-                        <div className="flex items-center gap-4">
-                          <span className="text-3xl">{item.icon}</span>
-                          <div className="text-right">
-                            <p className={`text-lg font-bold ${item.highlight ? 'text-green-700' : 'text-gray-800'}`}>
-                              {item.text}
-                            </p>
-                            <p className="text-sm text-gray-600">{item.subtext}</p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
+                ))}
+              </div>
 
-                  <motion.div
-                    className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-6 border border-purple-200"
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <p className="text-lg font-bold text-gray-700">
-                      אנחנו מציעים את זה כי אנחנו יודעים שזה עובד –<br />
-                      <span className="text-purple-600 font-black">Win–Win מההתחלה</span>
-                    </p>
-                  </motion.div>
+              <motion.div
+                className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-3xl p-8 border-2 border-purple-200"
+                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                <p className="text-xl font-bold text-gray-700 leading-relaxed">
+                  אנחנו מציעים את זה כי אנחנו יודעים שזה עובד –<br />
+                  <span className="text-purple-600 font-black text-2xl">Win–Win מההתחלה</span>
+                </p>
+              </motion.div>
+            </GlowCard>
+          </motion.div>
+
+          {/* מה קורה בפגישה */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mb-16"
+          >
+            <GlowCard className="p-12 bg-gradient-to-br from-white/95 to-white/90 text-center">
+              <motion.div
+                className="w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.8 }}
+              >
+                <span className="text-5xl">📞</span>
+              </motion.div>
+              
+              <h3 className="text-3xl md:text-4xl font-black text-gray-800 mb-8 leading-tight">
+                מה קורה בפגישת "כסף מהדאטא"?
+              </h3>
+              
+              <motion.div
+                className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-8 border-2 border-blue-200 mb-12"
+                whileHover={{ scale: 1.02 }}
+              >
+                <p className="text-2xl font-bold text-blue-700 mb-4">
+                  פגישה של עד שעה בזום
+                </p>
+                <p className="text-xl font-bold text-green-600">
+                  ללא עלות וללא התחייבות
+                </p>
+              </motion.div>
+
+              <div className="max-w-3xl mx-auto">
+                <p className="text-xl font-bold text-gray-800 mb-8">במהלך הפגישה:</p>
+                <div className="grid md:grid-cols-2 gap-6 mb-12">
+                  {[
+                    "נבין מה יש לך היום בדאטא בייס",
+                    "ננתח פילוחים", 
+                    "נבין את ההצעה העסקית שלך",
+                    "נזהה את קהלי היעד",
+                    "ונסיים עם תוכנית פעולה מדויקת"
+                  ].map((item, index) => (
+                    <motion.div 
+                      key={index}
+                      className="flex items-center gap-4 bg-white/90 rounded-2xl p-6 border border-gray-100 shadow-sm"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 * index }}
+                      whileHover={{ scale: 1.03, backgroundColor: 'rgba(59, 130, 246, 0.05)' }}
+                    >
+                      <div className="w-3 h-3 bg-blue-500 rounded-full flex-shrink-0"></div>
+                      <p className="text-gray-700 font-medium text-right">{item}</p>
+                    </motion.div>
+                  ))}
                 </div>
-              </GlowCard>
-            </motion.div>
 
-            {/* מה קורה בפגישה - ימין */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="order-1 lg:order-2"
-            >
-              <GlowCard className="p-10 h-full bg-gradient-to-br from-white/95 to-white/90">
-                <div className="text-center space-y-8">
-                  <motion.div
-                    className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl flex items-center justify-center mx-auto shadow-2xl"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.8 }}
-                  >
-                    <span className="text-4xl">📞</span>
-                  </motion.div>
-                  
-                  <h3 className="text-2xl md:text-3xl font-black text-gray-800 leading-tight">
-                    מה קורה בפגישת<br />
-                    <span className="text-secondary">"כסף מהדאטא"?</span>
-                  </h3>
-                  
-                  <motion.div
-                    className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-200"
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <p className="text-lg font-bold text-blue-700 mb-4">
-                      פגישה של עד שעה בזום<br />
-                      <span className="text-green-600">ללא עלות וללא התחייבות</span>
-                    </p>
-                  </motion.div>
-
-                  <div className="space-y-4">
-                    <p className="text-lg font-bold text-gray-800 mb-4">במהלך הפגישה:</p>
-                    {[
-                      "נבין מה יש לך היום בדאטא בייס",
-                      "ננתח פילוחים", 
-                      "נבין את ההצעה העסקית שלך",
-                      "נזהה את קהלי היעד",
-                      "ונסיים עם תוכנית פעולה מדויקת"
-                    ].map((item, index) => (
-                      <motion.div 
-                        key={index}
-                        className="flex items-center gap-3 text-right bg-white/70 rounded-xl p-3 border border-gray-100"
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.1 * index }}
-                        whileHover={{ scale: 1.02, backgroundColor: 'rgba(59, 130, 246, 0.05)' }}
-                      >
-                        <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                        <p className="text-gray-700 font-medium">{item}</p>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  <motion.div
-                    className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-6 border-2 border-yellow-200"
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <p className="text-lg font-black text-orange-700">
-                      שתראה לך איך אפשר להפוך<br />
-                      את הלידים הרדומים לרווחים
-                    </p>
-                  </motion.div>
-                </div>
-              </GlowCard>
-            </motion.div>
-          </div>
+                <motion.div
+                  className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-3xl p-8 border-2 border-yellow-200"
+                  whileHover={{ scale: 1.02 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.8 }}
+                >
+                  <p className="text-2xl font-black text-orange-700 leading-tight">
+                    שתראה לך איך אפשר להפוך<br />
+                    את הלידים הרדומים לרווחים
+                  </p>
+                </motion.div>
+              </div>
+            </GlowCard>
+          </motion.div>
 
           {/* כפתורי פעולה */}
           <motion.div
@@ -1203,7 +1218,7 @@ export default function Index() {
             >
               <Button 
                 size="lg" 
-                className="gradient-secondary hover:opacity-90 transition-all duration-300 text-white px-20 py-10 text-2xl md:text-3xl font-black rounded-3xl box-shadow-intense relative overflow-hidden group min-w-[600px]"
+                className="gradient-secondary hover:opacity-90 transition-all duration-300 text-white px-16 py-10 text-2xl md:text-3xl font-black rounded-3xl box-shadow-intense relative overflow-hidden group w-full max-w-2xl mx-auto"
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100"
@@ -1222,7 +1237,7 @@ export default function Index() {
               animate={{ scale: [1, 1.02, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-300 rounded-3xl px-8 py-6 shadow-lg">
+              <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-300 rounded-3xl px-10 py-6 shadow-lg max-w-2xl mx-auto">
                 <p className="text-xl font-black text-yellow-800 flex items-center justify-center gap-3">
                   <span className="text-2xl">📍</span>
                   ההצעה זמינה כרגע ללא עלות – למתאמים ראשונים בלבד
