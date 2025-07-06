@@ -396,22 +396,28 @@ export default function Index() {
                     </p>
                   </motion.div>
 
-                  {/* Call-to-action - Smaller */}
+                  {/* Call-to-action - Text only */}
                   <motion.div
                     className="mt-6"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 4.5 }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
                   >
-                    <div className="bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-xl mx-auto inline-block relative overflow-hidden">
-                      <motion.div
-                        className="absolute inset-0 bg-white/20"
-                        animate={{ x: ['-100%', '100%'] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                      />
-                      <span className="relative z-10">← זה הזהב הנסתר שלך! →</span>
+                    <div className="text-center">
+                      <motion.p 
+                        className="text-2xl font-black bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 bg-clip-text text-transparent"
+                        animate={{ 
+                          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                        }}
+                        transition={{ 
+                          duration: 3, 
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                        style={{ backgroundSize: '200% 200%' }}
+                      >
+                        ← כאן נמצא הגידול ברווח שלך! →
+                      </motion.p>
                     </div>
                   </motion.div>
                 </motion.div>
