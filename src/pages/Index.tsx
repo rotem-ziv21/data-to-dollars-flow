@@ -578,11 +578,14 @@ export default function Index() {
             transition={{ duration: 0.8 }}
           >
             <motion.div 
-              className="inline-flex items-center gap-4 bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-full mb-8 box-shadow-intense"
-              whileHover={{ scale: 1.05 }}
+              className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-2xl mb-8 box-shadow-soft hover:bg-white/20 transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <Award className="w-8 h-8" />
-              <span className="text-2xl font-black">למה לסמוך עלינו?</span>
+              <div className="bg-white/20 p-2 rounded-xl">
+                <Award className="w-6 h-6" />
+              </div>
+              <span className="text-xl font-bold">למה לסמוך עלינו?</span>
             </motion.div>
             <h2 className="text-5xl md:text-7xl font-black text-primary mb-8 leading-tight">
               מה מייחד אותנו –<br />
