@@ -840,33 +840,15 @@ export default function Index() {
               className="relative"
             >
               <motion.div 
-                className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-xl p-8 border border-gray-200/50 box-shadow-soft w-full"
+                className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-xl border border-gray-200/50 box-shadow-soft w-full"
                 whileHover={{ scale: 1.02, rotateY: 2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img 
                   src={funnelImage}
                   alt="משפך המרת דאטה להודעות מותאמות אישית"
-                  className="w-full h-64 object-contain rounded-2xl"
+                  className="w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent rounded-2xl"></div>
-                
-                {/* Floating tech elements */}
-                <motion.div
-                  className="absolute top-4 right-4 bg-primary text-white px-4 py-2 rounded-xl text-sm font-bold"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  AI Powered
-                </motion.div>
-                
-                <motion.div
-                  className="absolute bottom-4 left-4 bg-secondary text-white px-4 py-2 rounded-xl text-sm font-bold"
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
-                >
-                  Smart Analytics
-                </motion.div>
               </motion.div>
             </motion.div>
 
