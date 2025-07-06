@@ -847,7 +847,7 @@ export default function Index() {
                 <img 
                   src={funnelImage}
                   alt="משפך המרת דאטה להודעות מותאמות אישית"
-                  className="w-full h-full object-contain p-6"
+                  className="w-full h-full object-contain p-2"
                 />
               </motion.div>
             </motion.div>
