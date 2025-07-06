@@ -392,41 +392,82 @@ export default function Index() {
                 transition={{ delay: 1 }}
               >
                 <div className="text-center mb-8">
-                  <p className="text-2xl font-bold text-gray-600 mb-6">הדמיה: 100 לידים שקיבלת</p>
+                  <p className="text-2xl font-bold text-gray-600 mb-8">הדמיה: 100 לידים שקיבלת</p>
                   
-                  {/* Leads Grid */}
-                  <div className="grid grid-cols-10 gap-2 max-w-2xl mx-auto mb-8">
-                    {[...Array(100)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
-                          i < 10 
-                            ? 'bg-green-500 text-white' 
-                            : 'bg-red-100 border-2 border-red-300 text-red-600'
-                        }`}
-                        initial={{ scale: 0, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        transition={{ 
-                          delay: 1.5 + (i * 0.02),
-                          duration: 0.3 
-                        }}
-                        whileHover={{ scale: 1.2 }}
-                      >
-                        {i < 10 ? '✓' : '✗'}
-                      </motion.div>
+                  {/* Leads Grid - First row (10 green - converted) */}
+                  <div className="max-w-3xl mx-auto mb-4">
+                    <div className="grid grid-cols-10 gap-3 mb-6">
+                      {[...Array(10)].map((_, i) => (
+                        <motion.div
+                          key={`green-${i}`}
+                          className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md"
+                          initial={{ scale: 0, opacity: 0 }}
+                          whileInView={{ scale: 1, opacity: 1 }}
+                          transition={{ 
+                            delay: 1.5 + (i * 0.1),
+                            duration: 0.4 
+                          }}
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          ✓
+                        </motion.div>
+                      ))}
+                    </div>
+                    
+                    {/* 9 rows of red X (90 not converted) */}
+                    {[...Array(9)].map((rowIndex) => (
+                      <div key={`row-${rowIndex}`} className="grid grid-cols-10 gap-3 mb-3">
+                        {[...Array(10)].map((_, colIndex) => {
+                          const totalIndex = 10 + (rowIndex * 10) + colIndex;
+                          return (
+                            <motion.div
+                              key={`red-${totalIndex}`}
+                              className="w-12 h-12 bg-red-100 border-2 border-red-300 rounded-full flex items-center justify-center text-red-500 font-bold text-lg shadow-sm"
+                              initial={{ scale: 0, opacity: 0 }}
+                              whileInView={{ scale: 1, opacity: 1 }}
+                              transition={{ 
+                                delay: 2.0 + (totalIndex * 0.02),
+                                duration: 0.3 
+                              }}
+                              whileHover={{ scale: 1.1, borderColor: '#ef4444' }}
+                            >
+                              ✗
+                            </motion.div>
+                          );
+                        })}
+                      </div>
                     ))}
                   </div>
                   
-                  <div className="flex justify-center gap-8 text-lg font-bold">
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                  {/* Legend */}
+                  <motion.div 
+                    className="flex justify-center gap-12 text-xl font-bold mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 4 }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</div>
                       <span className="text-green-600">10 נסגרו</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 bg-red-300 border border-red-400 rounded-full"></div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-6 h-6 bg-red-100 border-2 border-red-300 rounded-full flex items-center justify-center text-red-500 text-sm font-bold">✗</div>
                       <span className="text-red-600">90 לא נסגרו</span>
                     </div>
-                  </div>
+                  </motion.div>
+
+                  {/* Call-to-action button */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 4.5 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-black text-xl shadow-lg mx-auto inline-block">
+                      ← זה הזהב שלך! →
+                    </div>
+                  </motion.div>
                 </div>
               </motion.div>
 
