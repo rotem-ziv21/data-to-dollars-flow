@@ -876,7 +876,7 @@ export default function Index() {
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
                 זה לא דיוור גנרי עם שם פרטי בלבד.<br />
-                זו הודעה שמרגישה כאילו נכתבה רק אליו –<br />
+                זו הודעה שמרגישה כאילו נכתבה רק אליו<br />
               </motion.p>
             </motion.div>
           </div>
