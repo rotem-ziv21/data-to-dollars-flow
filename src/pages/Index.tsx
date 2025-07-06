@@ -878,6 +878,54 @@ export default function Index() {
                 זה לא דיוור גנרי עם שם פרטי בלבד.<br />
                 זו הודעה שמרגישה כאילו נכתבה רק אליו –<br />
               </motion.p>
+              
+              {/* תוצאות שאנחנו רואים */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 rounded-2xl p-8 border border-primary/20"
+              >
+                <h3 className="text-2xl md:text-3xl font-black text-primary mb-6">
+                  בזכות זה אנחנו רואים:
+                </h3>
+                
+                <div className="grid md:grid-cols-1 gap-4">
+                  {[
+                    { 
+                      icon: TrendingUp,
+                      text: "אחוזי פתיחה גבוהים במיוחד",
+                      color: "from-green-500 to-emerald-600"
+                    },
+                    { 
+                      icon: Target,
+                      text: "אחוז תגובה שמכפיל את הסטנדרט", 
+                      color: "from-blue-500 to-cyan-600"
+                    },
+                    { 
+                      icon: Award,
+                      text: "יותר שיחות שבאמת מובילות לסגירה",
+                      color: "from-purple-500 to-violet-600"
+                    }
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20, scale: 0.9 }}
+                      whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                      whileHover={{ scale: 1.02, x: 5 }}
+                      className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-4"
+                    >
+                      <div className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-lg flex items-center justify-center shadow-lg flex-shrink-0`}>
+                        <item.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <p className="text-lg font-bold text-gray-800 leading-tight text-right">
+                        {item.text}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
