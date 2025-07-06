@@ -392,7 +392,7 @@ export default function Index() {
                       המצב הנוכחי ברוב העסקים:
                     </p>
                     <p className="text-xl font-black bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
-                      90% מהלידים הולכים לאיבוד!
+                      90% מהלידים הולכים לפח!
                     </p>
                   </motion.div>
 
