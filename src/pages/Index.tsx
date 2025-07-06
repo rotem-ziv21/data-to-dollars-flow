@@ -693,7 +693,7 @@ export default function Index() {
                           <img 
                             src="/lovable-uploads/4e30c075-8a49-4de8-ac81-86f2df88c108.png" 
                             alt="כלל ביטוח" 
-                            className="h-12 w-auto object-contain"
+                            className="h-16 w-auto object-contain"
                           />
                         </motion.div>
                         
@@ -704,7 +704,7 @@ export default function Index() {
                           <img 
                             src="/lovable-uploads/95f0e530-803c-478f-ad7b-ee3363030c84.png" 
                             alt="כללית" 
-                            className="h-12 w-auto object-contain"
+                            className="h-16 w-auto object-contain"
                           />
                         </motion.div>
                         
@@ -715,7 +715,7 @@ export default function Index() {
                           <img 
                             src="/lovable-uploads/fcb54499-0248-40a8-b561-caa4486588dc.png" 
                             alt="דנטלון" 
-                            className="h-12 w-auto object-contain"
+                            className="h-16 w-auto object-contain"
                           />
                         </motion.div>
                         
@@ -726,7 +726,7 @@ export default function Index() {
                           <img 
                             src="/lovable-uploads/981cc350-a982-4231-8537-6ac83883e9ce.png" 
                             alt="אספרסו קלאב" 
-                            className="h-12 w-auto object-contain"
+                            className="h-16 w-auto object-contain"
                           />
                         </motion.div>
                         
@@ -737,7 +737,7 @@ export default function Index() {
                           <img 
                             src="/lovable-uploads/78df8547-a9ee-4e74-b6a6-b1dc55d32456.png" 
                             alt="חלי ממן" 
-                            className="h-12 w-auto object-contain"
+                            className="h-16 w-auto object-contain"
                           />
                         </motion.div>
                       </div>
