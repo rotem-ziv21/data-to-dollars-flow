@@ -622,7 +622,7 @@ export default function Index() {
                     <div className="text-4xl font-black mb-2">
                       <AnimatedCounter end={2000} />+
                     </div>
-                    <div className="text-sm font-bold">בעלי עסקים בליווי</div>
+                    <div className="text-sm font-bold">בעלי עסקים שעברו תחתיו בליווים, סדנאות והכשרות</div>
                   </motion.div>
                   
                   <motion.div 
