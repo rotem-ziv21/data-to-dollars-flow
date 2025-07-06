@@ -892,28 +892,31 @@ export default function Index() {
                 </p>
                 <div className="space-y-4 text-right">
                   <motion.div 
-                    className="flex items-center justify-end gap-4 p-4 bg-green-50 rounded-2xl border border-green-200"
+                    className="flex items-center justify-end gap-4 p-6 bg-gradient-to-l from-green-50 to-green-100/50 rounded-2xl border border-green-200/60 shadow-sm"
                     whileInView={{ x: [50, 0] }}
                     transition={{ duration: 0.6, delay: 0.9 }}
+                    whileHover={{ scale: 1.02, x: -5 }}
                   >
                     <span className="text-lg md:text-xl font-bold text-gray-800">– אחוזי פתיחה גבוהים במיוחד</span>
-                    <div className="w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
+                    <div className="w-4 h-4 bg-green-500 rounded-full animate-pulse shadow-lg"></div>
                   </motion.div>
                   <motion.div 
-                    className="flex items-center justify-end gap-4 p-4 bg-blue-50 rounded-2xl border border-blue-200"
+                    className="flex items-center justify-end gap-4 p-6 bg-gradient-to-l from-blue-50 to-blue-100/50 rounded-2xl border border-blue-200/60 shadow-sm"
                     whileInView={{ x: [50, 0] }}
                     transition={{ duration: 0.6, delay: 1.1 }}
+                    whileHover={{ scale: 1.02, x: -5 }}
                   >
-                    <span className="text-lg md:text-xl font-bold text-gray-800">– אחוז תגובה שמכפיל את הסטנדרט</span>
-                    <div className="w-4 h-4 bg-blue-500 rounded-full animate-pulse"></div>
+                    <span className="text-lg md:text-xl font-bold text-gray-800">– מותג חזק יותר שנשאר בתודעה</span>
+                    <div className="w-4 h-4 bg-blue-500 rounded-full animate-pulse shadow-lg"></div>
                   </motion.div>
                   <motion.div 
-                    className="flex items-center justify-end gap-4 p-4 bg-purple-50 rounded-2xl border border-purple-200"
+                    className="flex items-center justify-end gap-4 p-6 bg-gradient-to-l from-purple-50 to-purple-100/50 rounded-2xl border border-purple-200/60 shadow-sm"
                     whileInView={{ x: [50, 0] }}
                     transition={{ duration: 0.6, delay: 1.3 }}
+                    whileHover={{ scale: 1.02, x: -5 }}
                   >
                     <span className="text-lg md:text-xl font-bold text-gray-800">– יותר שיחות שבאמת מובילות לסגירה</span>
-                    <div className="w-4 h-4 bg-purple-500 rounded-full animate-pulse"></div>
+                    <div className="w-4 h-4 bg-purple-500 rounded-full animate-pulse shadow-lg"></div>
                   </motion.div>
                 </div>
               </motion.div>
