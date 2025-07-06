@@ -141,7 +141,7 @@ export default function Index() {
               >
                 <span className="text-secondary">השירות שמייצר</span>
                 <br />
-                <span className="text-accent font-black">כסף מהדאטה שלך</span>
+                <span className="text-white">כסף מהדאטה שלך</span>
               </motion.h1>
 
               <motion.div
@@ -150,37 +150,33 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <h2 className="text-2xl md:text-3xl font-black mb-4 leading-tight text-white">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 leading-tight text-white/90">
                   השירות שיחזיר לחיים את הלידים 
-                  <motion.span 
-                    className="text-secondary"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    {" "}"הרדומים"{" "}
-                  </motion.span> 
-                  <span className="text-secondary font-black">שלך</span>
+                  <span className="text-secondary font-black"> "הרדומים" </span> 
+                  <span className="text-white">שלך</span>
                 </h2>
-                <h3 className="text-xl md:text-2xl font-bold text-accent mb-8">
-                  ויהפוך דאטה מתה לרווחים בפועל
-                </h3>
                 
-                <div className="bg-white/15 backdrop-blur-sm rounded-3xl p-8 border-2 border-secondary/30 mb-6">
-                  <motion.div
-                    className="text-center mb-6"
-                    whileInView={{ scale: [1, 1.02, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    <p className="text-2xl md:text-3xl font-black text-white leading-tight mb-4">
-                      לא מערכת. לא קורס. לא קמפיינר
-                    </p>
-                    <p className="text-lg text-white/90">
-                      שרוצה כסף לפני שהראה לך תוצאות.
-                    </p>
-                  </motion.div>
+                {/* המשפט החשוב מודגש */}
+                <motion.div 
+                  className="bg-secondary/20 backdrop-blur-sm rounded-3xl p-8 border-2 border-secondary mb-8"
+                  whileInView={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <h3 className="text-3xl md:text-4xl font-black text-secondary text-center leading-tight">
+                    ויהפוך דאטה מתה לרווחים בפועל
+                  </h3>
+                </motion.div>
+                
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 mb-6">
+                  <p className="text-2xl font-black text-white text-center mb-4">
+                    לא מערכת. לא קורס. לא קמפיינר
+                  </p>
+                  <p className="text-lg text-white/80 text-center mb-4">
+                    שרוצה כסף לפני שהראה לך תוצאות.
+                  </p>
                   
-                  <div className="bg-secondary/20 rounded-2xl p-6 border border-secondary/40">
-                    <p className="text-xl md:text-2xl font-black text-secondary text-center">
+                  <div className="bg-white/10 rounded-xl p-4 border border-white/20">
+                    <p className="text-xl font-bold text-white text-center">
                       אנחנו עושים את העבודה בשבילך – על בסיס הדאטא הקיימת שלך.
                     </p>
                   </div>
