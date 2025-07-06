@@ -152,13 +152,13 @@ export default function Index() {
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
                 <motion.div 
-                  className="inline-block border-2 border-white rounded-full px-8 py-4 bg-white/10 backdrop-blur-sm"
+                  className="inline-block border-2 border-yellow-400 rounded-full px-8 py-4 bg-yellow-400/20 backdrop-blur-sm"
                   animate={{ 
                     scale: [1, 1.05, 1],
                     boxShadow: [
-                      "0 0 20px rgba(255, 255, 255, 0.2)",
-                      "0 0 40px rgba(255, 255, 255, 0.4)",
-                      "0 0 20px rgba(255, 255, 255, 0.2)"
+                      "0 0 20px rgba(250, 204, 21, 0.3)",
+                      "0 0 40px rgba(250, 204, 21, 0.6)",
+                      "0 0 20px rgba(250, 204, 21, 0.3)"
                     ]
                   }}
                   transition={{ 
@@ -167,8 +167,8 @@ export default function Index() {
                     ease: "easeInOut"
                   }}
                 >
-                  <h2 className="text-2xl md:text-3xl font-black text-white">
-                    ויהפוך דאטה מתה לרווחים בפועל
+                  <h2 className="text-2xl md:text-3xl font-black text-yellow-300">
+                    ويהפוך דאטה מתה לרווחים בפועל
                   </h2>
                 </motion.div>
               </motion.div>
