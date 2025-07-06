@@ -831,13 +831,13 @@ export default function Index() {
             </h2>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left Column - Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative flex items-center"
+              className="relative"
             >
               <motion.div 
                 className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-xl p-8 border border-gray-200/50 box-shadow-soft w-full"
