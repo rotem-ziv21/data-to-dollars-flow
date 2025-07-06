@@ -271,61 +271,94 @@ export default function Index() {
       </section>
 
       {/* Problem Statement */}
-      <section className="py-24 bg-gradient-to-r from-gray-100 to-gray-50 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
-        <div className="max-w-5xl mx-auto px-8 text-center relative z-10">
-          <motion.h2 
-            className="text-4xl md:text-6xl font-black text-primary mb-16 leading-tight"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+      <section className="py-32 relative bg-gradient-to-br from-slate-50 via-white to-purple-50/30 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-8 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
+            className="mb-20"
           >
-            "אבל כבר שילמתי<br />עשרות אלפים על שיווק…"
-          </motion.h2>
+            <div className="inline-block bg-gradient-to-r from-primary to-secondary p-1 rounded-3xl mb-8">
+              <div className="bg-white rounded-3xl px-8 py-4">
+                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  💬 הטיעון הנפוץ
+                </span>
+              </div>
+            </div>
+            <motion.h2 
+              className="text-5xl md:text-7xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-8 leading-tight"
+              whileInView={{ y: [20, 0], opacity: [0, 1] }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              "אבל כבר שילמתי<br />עשרות אלפים על שיווק…"
+            </motion.h2>
+          </motion.div>
           
-          <div className="space-y-12 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-20">
             {[
-              { text: "בדיוק.", colorText: "text-primary", colorBorder: "border-primary", delay: 0 },
-              { text: "הדאטה אצלך.", colorText: "text-secondary", colorBorder: "border-secondary", delay: 0.2 },
-              { text: "אתה יודע שיש לך שירות טוב.", colorText: "text-green-600", colorBorder: "border-green-500", delay: 0.4 },
-              { text: "אתה רק צריך מישהו שייקח את כל מה שצברת – ויהפוך את זה לתוצאה.", colorText: "text-accent", colorBorder: "border-accent", delay: 0.6 }
+              { text: "בדיוק.", colorFrom: "from-primary", colorTo: "to-primary", delay: 0, emoji: "✅" },
+              { text: "הדאטה אצלך.", colorFrom: "from-secondary", colorTo: "to-secondary", delay: 0.2, emoji: "📊" },
+              { text: "אתה יודע שיש לך שירות טוב.", colorFrom: "from-green-500", colorTo: "to-green-600", delay: 0.4, emoji: "⭐" },
+              { text: "אתה רק צריך מישהו שייקח את כל מה שצברת – ויהפוך את זה לתוצאה.", colorFrom: "from-accent", colorTo: "to-accent", delay: 0.6, emoji: "🎯" }
             ].map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: item.delay }}
-                whileHover={{ scale: 1.02 }}
-                className="max-w-4xl mx-auto"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: item.delay }}
+                whileHover={{ scale: 1.05, rotate: i % 2 === 0 ? 1 : -1 }}
+                className={i >= 2 ? "md:col-span-1" : ""}
               >
-                <GlowCard className={`p-8 md:p-12 border-r-8 ${item.colorBorder}`}>
-                  <p className={`text-2xl md:text-3xl font-black ${item.colorText} leading-relaxed`}>
-                    {item.text}
-                  </p>
-                </GlowCard>
+                <div className={`bg-gradient-to-br ${item.colorFrom} ${item.colorTo} p-[2px] rounded-3xl`}>
+                  <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 h-full">
+                    <div className="text-4xl mb-4">{item.emoji}</div>
+                    <p className={`text-xl md:text-2xl font-black bg-gradient-to-r ${item.colorFrom} ${item.colorTo} bg-clip-text text-transparent leading-tight`}>
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <GlowCard className="p-12 md:p-16 border-t-8 border-primary">
-              <div className="flex items-center justify-center mb-8">
-                <div className="bg-primary/20 rounded-full p-8">
-                  <TrendingUp className="w-16 h-16 text-primary" />
-                </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="bg-gradient-to-br from-primary via-secondary to-accent p-[3px] rounded-3xl">
+              <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-12 md:p-16">
+                <motion.div
+                  className="w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-8"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                >
+                  <TrendingUp className="w-12 h-12 text-white" />
+                </motion.div>
+                <motion.p 
+                  className="text-4xl md:text-5xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6 leading-tight"
+                  whileInView={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  רוב העסקים לא צריכים עוד לידים.
+                </motion.p>
+                <motion.p 
+                  className="text-3xl md:text-4xl font-black bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent leading-tight"
+                  whileInView={{ y: [10, 0], opacity: [0.8, 1] }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                >
+                  הם צריכים לעבוד נכון עם מה שכבר יש.
+                </motion.p>
               </div>
-              <motion.p 
-                className="text-3xl md:text-4xl font-black text-primary mb-8 leading-tight"
-                whileInView={{ scale: [1, 1.02, 1] }}
-                transition={{ duration: 2 }}
-              >
-                רוב העסקים לא צריכים עוד לידים.
-              </motion.p>
-              <p className="text-2xl md:text-3xl font-black text-secondary leading-tight">
-                הם צריכים לעבוד נכון עם מה שכבר יש.
-              </p>
-            </GlowCard>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
