@@ -974,7 +974,7 @@ export default function Index() {
                   className="order-1 lg:order-2 text-right space-y-8"
                 >
                   <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-                    איך רשתות כמו <span className="font-bold text-blue-600">שופרסל</span>, <span className="font-bold text-green-600">רמי לוי</span> או <span className="font-bold text-purple-600">ויקטורי</span> יודעים בדיוק מתי להחזיר אותך עם הצעה משתלמת?
+                    איך רשתות כמו <span className="font-bold text-red-600">שופרסל</span>, <span className="font-bold text-red-600">רמי לוי</span> או <span className="font-bold text-orange-600">ויקטורי</span> יודעים בדיוק מתי להחזיר אותך עם הצעה משתלמת?
                   </p>
                   
                   <motion.div 
