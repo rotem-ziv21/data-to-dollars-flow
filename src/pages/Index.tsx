@@ -890,7 +890,7 @@ export default function Index() {
                   בזכות זה אנחנו רואים:
                 </h3>
                 
-                <div className="grid md:grid-cols-1 gap-4">
+                <div className="grid md:grid-cols-3 gap-6">
                   {[
                     { 
                       icon: TrendingUp,
