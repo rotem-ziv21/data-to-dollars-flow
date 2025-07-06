@@ -1012,17 +1012,18 @@ export default function Index() {
                 </motion.div>
               </div>
               
-              {/* Bottom CTA */}
+              {/* Bottom CTA - עיצוב חדש פשוט */}
               <motion.div 
-                className="mt-12 bg-gradient-to-br from-accent/10 to-secondary/5 rounded-2xl p-8 border border-accent/20 text-center"
+                className="mt-12 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                whileHover={{ scale: 1.01 }}
               >
-                <p className="text-2xl md:text-3xl font-black text-accent leading-tight">
-                  ואנחנו מביאים אותה לעסק שלך – בלי צורך להחזיק צוות, לשלם למדיה או להקים קמפיינים.
-                </p>
+                <div className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-3xl px-8 py-6 border border-pink-200/50 inline-block max-w-4xl mx-auto">
+                  <p className="text-xl md:text-2xl font-bold text-gray-800 leading-relaxed">
+                    ואנחנו מביאים אותה לעסק שלך – בלי צורך להחזיק צוות, לשלם למדיה או להקים קמפיינים.
+                  </p>
+                </div>
               </motion.div>
             </div>
           </motion.div>
