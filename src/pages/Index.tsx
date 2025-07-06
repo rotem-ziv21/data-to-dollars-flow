@@ -156,20 +156,52 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                השיטה המוכחת ליצירת פגישות איכותיות
+                <span className="text-primary">השירות שמייצר</span>
                 <br />
-                ועסקאות פרימיום לפי דרישה בחשפת:
+                <motion.span 
+                  className="bg-gradient-to-l from-secondary via-accent to-primary bg-clip-text text-transparent"
+                  animate={{ 
+                    backgroundPosition: ['0%', '100%', '0%']
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity, 
+                    ease: "linear" 
+                  }}
+                >
+                  כסף מהדאטה שלך
+                </motion.span>
               </motion.h1>
 
-              <motion.p
-                className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+              <motion.div
+                className="mb-8"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                ונוביה בשלבילכם פאנל אוטומטי שמכין לקוחות פרימיום שמכינים ושלכם
-                אלפי ועשרות אלפי שקלים על השירות שלכם עם שיטת "ימותו בקלדלי"..
-              </motion.p>
+                <h2 className="text-3xl md:text-4xl font-black mb-4 leading-tight text-white">
+                  השירות שיחזיר לחיים את הלידים 
+                  <motion.span 
+                    className="text-secondary"
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    "הרדומים"
+                  </motion.span> שלך
+                </h2>
+                <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6">
+                  ויהפוך דאטה מתה לרווחים בפועל
+                </h3>
+                
+                <div className="bg-primary/20 backdrop-blur-sm rounded-2xl p-6 border border-primary/30">
+                  <p className="text-xl text-white/90 mb-4 leading-relaxed">
+                    לא מערכת. לא קורס. לא קמפיינר שרוצה כסף לפני שהראה לך תוצאות.
+                  </p>
+                  <p className="text-2xl font-black text-secondary">
+                    אנחנו עושים את העבודה בשבילך – על בסיס הדאטא הקיימת שלך.
+                  </p>
+                </div>
+              </motion.div>
 
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -180,9 +212,9 @@ export default function Index() {
               >
                 <Button 
                   size="lg" 
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-12 py-6 text-xl font-bold rounded-2xl shadow-xl"
+                  className="gradient-secondary hover:opacity-90 text-white px-12 py-6 text-2xl font-black rounded-2xl box-shadow-intense"
                 >
-                  קבע פגישת דמו ב- ZOOM
+                  🔵 לתיאום שיחת "כסף מהדאטא" ←
                 </Button>
               </motion.div>
             </motion.div>
@@ -196,13 +228,18 @@ export default function Index() {
             transition={{ delay: 1 }}
           >
             {[
-              { icon: "⚙️", text: "פגישות קבועות על טייס אוטומטי" },
-              { icon: "🎯", text: "תתחיל שמכין ומזמן את הלידים" },
-              { icon: "💰", text: "כסף לזקן שמיירל לקוחות איכותיים" }
+              { icon: CheckCircle, color: "text-green-600", text: "מסע לקוח שיוצר לקוחות איכותיים" },
+              { icon: Target, color: "text-blue-600", text: "בלי להוציא שקל על שיווק" },
+              { icon: Zap, color: "text-purple-600", text: "כל התוכנות הדרושות – עלינו!" }
             ].map((item, i) => (
               <GlowCard key={i} className="p-6 text-center" delay={i * 0.1}>
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <p className="text-lg font-bold text-blue-600">{item.text}</p>
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <item.icon className={`w-12 h-12 md:w-16 md:h-16 ${item.color} mx-auto mb-4 md:mb-6`} />
+                  <p className="text-lg md:text-xl font-bold text-gray-800 leading-tight">{item.text}</p>
+                </motion.div>
               </GlowCard>
             ))}
           </motion.div>
