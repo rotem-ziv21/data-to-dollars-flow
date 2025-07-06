@@ -297,23 +297,23 @@ export default function Index() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-6xl mx-auto mb-16"
+            className="max-w-4xl mx-auto mb-12"
           >
-            <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-16 md:p-20 border border-gray-200/30 box-shadow-soft">
+            <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-200/30 box-shadow-soft">
               
               {/* Visual Data Representation */}
-              <div className="flex justify-center items-center mb-16">
+              <div className="flex justify-center items-center mb-8">
                 
-                {/* Enhanced Pie Chart Visual */}
+                {/* Enhanced Pie Chart Visual - Smaller */}
                 <motion.div 
                   className="text-center"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 1, delay: 0.6 }}
                 >
-                  <div className="relative w-96 h-96 mx-auto mb-8">
+                  <div className="relative w-64 h-64 mx-auto mb-6">
                     {/* Main circle background - Green */}
-                    <div className="absolute inset-0 rounded-full bg-green-500 shadow-2xl"></div>
+                    <div className="absolute inset-0 rounded-full bg-green-500 shadow-xl"></div>
                     
                     {/* 90% Red section - positioned at top */}
                     <motion.div
@@ -327,85 +327,85 @@ export default function Index() {
                     />
 
                     {/* Center white circle */}
-                    <div className="absolute inset-12 bg-white rounded-full shadow-inner flex items-center justify-center">
-                      <div className="text-center space-y-6">
+                    <div className="absolute inset-8 bg-white rounded-full shadow-inner flex items-center justify-center">
+                      <div className="text-center space-y-3">
                         <motion.div
                           initial={{ opacity: 0, scale: 0 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 2, duration: 0.8 }}
                         >
-                          <div className="text-6xl font-black text-red-500 mb-2">90%</div>
-                          <div className="text-lg font-bold text-gray-600">לא נסגרו</div>
+                          <div className="text-4xl font-black text-red-500 mb-1">90%</div>
+                          <div className="text-sm font-bold text-gray-600">לא נסגרו</div>
                         </motion.div>
                         
-                        <div className="w-20 h-0.5 bg-gray-300 mx-auto"></div>
+                        <div className="w-12 h-0.5 bg-gray-300 mx-auto"></div>
                         
                         <motion.div
                           initial={{ opacity: 0, scale: 0 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 2.5, duration: 0.8 }}
                         >
-                          <div className="text-3xl font-black text-green-500 mb-2">10%</div>
-                          <div className="text-lg font-bold text-gray-600">נסגרו</div>
+                          <div className="text-xl font-black text-green-500 mb-1">10%</div>
+                          <div className="text-sm font-bold text-gray-600">נסגרו</div>
                         </motion.div>
                       </div>
                     </div>
                     
                     {/* Label for 90% - Red */}
                     <motion.div 
-                      className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg"
+                      className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg"
                       initial={{ scale: 0, opacity: 0, y: 20 }}
                       whileInView={{ scale: 1, opacity: 1, y: 0 }}
                       transition={{ delay: 3, type: "spring" }}
                     >
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1">
                         <span>✗</span>
                         <span>90% לא נסגרו</span>
                       </div>
                       {/* Arrow pointing down */}
-                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rotate-45"></div>
+                      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-red-500 rotate-45"></div>
                     </motion.div>
 
                     {/* Label for 10% - Green */}
                     <motion.div 
-                      className="absolute -right-16 top-1/2 transform -translate-y-1/2 bg-green-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg"
+                      className="absolute -right-12 top-1/2 transform -translate-y-1/2 bg-green-500 text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg"
                       initial={{ scale: 0, opacity: 0, x: -20 }}
                       whileInView={{ scale: 1, opacity: 1, x: 0 }}
                       transition={{ delay: 3.5, type: "spring" }}
                     >
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1">
                         <span>✓</span>
                         <span>10% נסגרו</span>
                       </div>
                       {/* Arrow pointing left */}
-                      <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-green-500 rotate-45"></div>
+                      <div className="absolute -left-1 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-green-500 rotate-45"></div>
                     </motion.div>
                   </div>
                   
                   <motion.div 
-                    className="space-y-4"
+                    className="space-y-2"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 4.5 }}
+                    transition={{ delay: 4 }}
                   >
-                    <p className="text-2xl font-bold text-gray-700 leading-relaxed">
+                    <p className="text-lg font-bold text-gray-700">
                       המצב הנוכחי ברוב העסקים:
                     </p>
-                    <p className="text-3xl font-black bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+                    <p className="text-xl font-black bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
                       90% מהלידים הולכים לאיבוד!
                     </p>
                   </motion.div>
 
-                  {/* Enhanced call-to-action */}
+                  {/* Call-to-action - Smaller */}
                   <motion.div
-                    className="mt-12"
+                    className="mt-6"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 5 }}
+                    transition={{ delay: 4.5 }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <div className="bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 text-white px-12 py-6 rounded-full font-black text-2xl shadow-2xl mx-auto inline-block relative overflow-hidden">
+                    <div className="bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-xl mx-auto inline-block relative overflow-hidden">
                       <motion.div
                         className="absolute inset-0 bg-white/20"
                         animate={{ x: ['-100%', '100%'] }}
@@ -417,31 +417,38 @@ export default function Index() {
                 </motion.div>
               </div>
 
-              {/* Main Message */}
+              {/* Text Content - Condensed */}
+              <div className="text-center space-y-4">
+                <motion.p 
+                  className="text-2xl md:text-3xl font-black text-gray-800 leading-tight"
+                  whileInView={{ scale: [0.95, 1] }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  רוב העסקים מקבלים לידים – וסוגרים אולי 10% מהם.
+                </motion.p>
+                
+                <motion.p 
+                  className="text-2xl md:text-3xl font-black text-gray-800 leading-tight"
+                  whileInView={{ scale: [0.95, 1] }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  אבל מה עם כל ה־90% שלא סגרו?
+                </motion.p>
+              </div>
+
+              {/* Main Message - Condensed */}
               <motion.div
-                className="relative"
+                className="relative mt-8"
                 whileInView={{ y: [20, 0], opacity: [0.8, 1] }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-2xl blur-xl"></div>
-                <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-gradient-to-r from-primary/30 to-secondary/30">
-                  
-                  {/* Arrow pointing to the data */}
-                  <motion.div 
-                    className="absolute -top-12 left-1/2 transform -translate-x-1/2"
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    <div className="bg-accent text-white px-4 py-2 rounded-full font-bold text-lg whitespace-nowrap">
-                      ← זה הזהב שלך! →
-                    </div>
-                  </motion.div>
-
-                  <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight mb-6 text-center">
+                <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-gradient-to-r from-primary/30 to-secondary/30">
+                  <p className="text-xl md:text-2xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight mb-4 text-center">
                     זו בדיוק הדרך שלך למקסם את הרווח מהדאטא שכבר שילמת עליה –
                   </p>
                   <motion.p 
-                    className="text-2xl md:text-3xl font-black bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent leading-tight text-center"
+                    className="text-xl md:text-2xl font-black bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent leading-tight text-center"
                     animate={{ 
                       backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                     }}
