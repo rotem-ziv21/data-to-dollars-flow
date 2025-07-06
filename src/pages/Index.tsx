@@ -151,11 +151,26 @@ export default function Index() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                <div className="inline-block border-2 border-secondary rounded-full px-8 py-4 bg-secondary/10 backdrop-blur-sm">
-                  <h2 className="text-2xl md:text-3xl font-black text-secondary">
+                <motion.div 
+                  className="inline-block border-2 border-white rounded-full px-8 py-4 bg-white/10 backdrop-blur-sm"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    boxShadow: [
+                      "0 0 20px rgba(255, 255, 255, 0.2)",
+                      "0 0 40px rgba(255, 255, 255, 0.4)",
+                      "0 0 20px rgba(255, 255, 255, 0.2)"
+                    ]
+                  }}
+                  transition={{ 
+                    duration: 2, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <h2 className="text-2xl md:text-3xl font-black text-white">
                     ויהפוך דאטה מתה לרווחים בפועל
                   </h2>
-                </div>
+                </motion.div>
               </motion.div>
 
               <motion.div
