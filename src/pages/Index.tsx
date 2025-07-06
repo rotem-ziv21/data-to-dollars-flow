@@ -978,13 +978,46 @@ export default function Index() {
                   </p>
                   
                   <motion.div 
-                    className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-6 text-center"
-                    whileHover={{ scale: 1.02 }}
+                    className="relative bg-gradient-to-r from-purple-600 via-purple-500 to-orange-500 rounded-3xl p-10 text-center shadow-2xl overflow-hidden"
+                    whileHover={{ scale: 1.02, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <p className="text-2xl md:text-3xl font-black text-white">
-                      הם משתמשים בדאטא שלך
-                    </p>
+                    {/* Decorative elements */}
+                    <div className="absolute top-0 left-0 w-full h-full opacity-20">
+                      <div className="absolute top-4 right-4 w-20 h-20 border-2 border-white/30 rounded-full"></div>
+                      <div className="absolute bottom-4 left-4 w-16 h-16 border-2 border-white/20 rounded-full"></div>
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/10 rounded-full"></div>
+                    </div>
+                    
+                    <div className="relative z-10">
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ type: "spring", delay: 0.2 }}
+                        className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6"
+                      >
+                        <Database className="w-8 h-8 text-white" />
+                      </motion.div>
+                      
+                      <motion.p 
+                        className="text-3xl md:text-4xl font-black text-white mb-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                      >
+                        הם משתמשים בדאטא שלך
+                      </motion.p>
+                      
+                      <motion.div 
+                        className="w-24 h-1 bg-white/60 mx-auto rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 96 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                      />
+                    </div>
+                    
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/80 to-orange-500/80 rounded-3xl blur-xl -z-10 scale-110"></div>
                   </motion.div>
                   
                   <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
