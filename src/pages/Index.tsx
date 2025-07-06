@@ -840,14 +840,14 @@ export default function Index() {
               className="relative"
             >
               <motion.div 
-                className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-xl border border-gray-200/50 box-shadow-soft w-full h-96"
+                className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-xl border border-gray-200/50 box-shadow-soft w-full h-72"
                 whileHover={{ scale: 1.02, rotateY: 2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img 
                   src={funnelImage}
                   alt="משפך המרת דאטה להודעות מותאמות אישית"
-                  className="w-full h-full object-contain p-4"
+                  className="w-full h-full object-contain p-6"
                 />
               </motion.div>
             </motion.div>
