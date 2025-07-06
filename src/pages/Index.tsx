@@ -231,6 +231,14 @@ const Index = () => {
             </div>
           </motion.div>
 
+          {/* Separator */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-16"
+          ></motion.div>
+
           {/* Supermarket Example */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -300,7 +308,7 @@ const Index = () => {
             >
               <Calendar className="w-6 h-6" />
               <span className="text-lg md:text-xl font-bold">
-                תיאום פגישה "כסף מדאטא"
+                תיאום שיחת "כסף מהדאטא"
               </span>
             </motion.div>
           </motion.div>
