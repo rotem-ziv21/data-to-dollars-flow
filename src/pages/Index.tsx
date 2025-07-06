@@ -310,7 +310,7 @@ const Index = () => {
               whileInView={{ y: [20, 0], opacity: [0, 1] }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              📊 אבל לא רק האסטרטגיה –<br />גם הטכנולוגיה משנה את המשחק:
+              אבל לא רק האסטרטגיה –<br />גם הטכנולוגיה משנה את המשחק:
             </motion.h2>
           </motion.div>
 
@@ -319,7 +319,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-5xl mx-auto mb-16"
+            className="max-w-5xl mx-auto"
           >
             <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-200/30 box-shadow-soft">
               
@@ -346,7 +346,6 @@ const Index = () => {
 
               {/* Results Section */}
               <motion.div
-                className="mb-12"
                 whileInView={{ y: [20, 0], opacity: [0.8, 1] }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
@@ -354,22 +353,21 @@ const Index = () => {
                   בזכות זה אנחנו רואים:
                 </h3>
                 
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="space-y-4 text-right">
                   {[
-                    { text: "אחוזי פתיחה גבוהים במיוחד", icon: "📈", color: "from-purple-500 to-purple-700" },
-                    { text: "אחוז תגובה שמכפיל את הסטנדרט", icon: "💬", color: "from-blue-500 to-blue-700" },
-                    { text: "יותר שיחות שבאמת מובילות לסגירה", icon: "🎯", color: "from-green-500 to-green-700" }
-                  ].map((item, i) => (
-                    <motion.div
+                    "– אחוזי פתיחה גבוהים במיוחד",
+                    "– אחוז תגובה שמכפיל את הסטנדרט", 
+                    "– יותר שיחות שבאמת מובילות לסגירה"
+                  ].map((text, i) => (
+                    <motion.p
                       key={i}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      className="text-lg md:text-xl font-bold text-gray-700"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: 0.8 + i * 0.1 }}
-                      className={`bg-gradient-to-r ${item.color} rounded-2xl p-6 text-white text-center`}
                     >
-                      <div className="text-3xl mb-3">{item.icon}</div>
-                      <p className="text-lg font-bold">{item.text}</p>
-                    </motion.div>
+                      {text}
+                    </motion.p>
                   ))}
                 </div>
               </motion.div>
