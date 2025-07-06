@@ -380,28 +380,6 @@ export default function Index() {
                       {/* Arrow pointing left */}
                       <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-green-500 rotate-45"></div>
                     </motion.div>
-
-                    {/* White separator lines */}
-                    <div className="absolute inset-0">
-                      <div 
-                        className="absolute w-1 h-full bg-white origin-bottom opacity-60"
-                        style={{ 
-                          left: '50%', 
-                          top: '0',
-                          transform: 'translateX(-50%) rotate(-90deg)',
-                          transformOrigin: 'center bottom'
-                        }}
-                      />
-                      <div 
-                        className="absolute w-1 h-full bg-white origin-bottom opacity-60"
-                        style={{ 
-                          left: '50%', 
-                          top: '0',
-                          transform: 'translateX(-50%) rotate(-54deg)',
-                          transformOrigin: 'center bottom'
-                        }}
-                      />
-                    </div>
                   </div>
                   
                   <motion.div 
