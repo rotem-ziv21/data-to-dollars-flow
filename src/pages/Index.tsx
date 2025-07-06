@@ -311,9 +311,9 @@ export default function Index() {
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 1, delay: 0.6 }}
                 >
-                  <div className="relative w-64 h-64 mx-auto mb-6">
+                  <div className="relative w-48 h-48 mx-auto mb-4">
                     {/* Main circle background - Green */}
-                    <div className="absolute inset-0 rounded-full bg-green-500 shadow-xl"></div>
+                    <div className="absolute inset-0 rounded-full bg-green-500 shadow-lg"></div>
                     
                     {/* 90% Red section - positioned at top */}
                     <motion.div
@@ -327,33 +327,33 @@ export default function Index() {
                     />
 
                     {/* Center white circle */}
-                    <div className="absolute inset-8 bg-white rounded-full shadow-inner flex items-center justify-center">
-                      <div className="text-center space-y-3">
+                    <div className="absolute inset-6 bg-white rounded-full shadow-inner flex items-center justify-center">
+                      <div className="text-center space-y-2">
                         <motion.div
                           initial={{ opacity: 0, scale: 0 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 2, duration: 0.8 }}
                         >
-                          <div className="text-4xl font-black text-red-500 mb-1">90%</div>
-                          <div className="text-sm font-bold text-gray-600">לא נסגרו</div>
+                          <div className="text-3xl font-black text-red-500 mb-1">90%</div>
+                          <div className="text-xs font-bold text-gray-600">לא נסגרו</div>
                         </motion.div>
                         
-                        <div className="w-12 h-0.5 bg-gray-300 mx-auto"></div>
+                        <div className="w-8 h-0.5 bg-gray-300 mx-auto"></div>
                         
                         <motion.div
                           initial={{ opacity: 0, scale: 0 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 2.5, duration: 0.8 }}
                         >
-                          <div className="text-xl font-black text-green-500 mb-1">10%</div>
-                          <div className="text-sm font-bold text-gray-600">נסגרו</div>
+                          <div className="text-lg font-black text-green-500 mb-1">10%</div>
+                          <div className="text-xs font-bold text-gray-600">נסגרו</div>
                         </motion.div>
                       </div>
                     </div>
                     
                     {/* Label for 90% - Red */}
                     <motion.div 
-                      className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg"
+                      className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-3 py-1 rounded-lg font-bold text-xs shadow-lg"
                       initial={{ scale: 0, opacity: 0, y: 20 }}
                       whileInView={{ scale: 1, opacity: 1, y: 0 }}
                       transition={{ delay: 3, type: "spring" }}
@@ -363,12 +363,12 @@ export default function Index() {
                         <span>90% לא נסגרו</span>
                       </div>
                       {/* Arrow pointing down */}
-                      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-red-500 rotate-45"></div>
+                      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-red-500 rotate-45"></div>
                     </motion.div>
 
                     {/* Label for 10% - Green */}
                     <motion.div 
-                      className="absolute -right-12 top-1/2 transform -translate-y-1/2 bg-green-500 text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg"
+                      className="absolute -right-8 top-1/2 transform -translate-y-1/2 bg-green-500 text-white px-3 py-1 rounded-lg font-bold text-xs shadow-lg"
                       initial={{ scale: 0, opacity: 0, x: -20 }}
                       whileInView={{ scale: 1, opacity: 1, x: 0 }}
                       transition={{ delay: 3.5, type: "spring" }}
@@ -378,7 +378,7 @@ export default function Index() {
                         <span>10% נסגרו</span>
                       </div>
                       {/* Arrow pointing left */}
-                      <div className="absolute -left-1 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-green-500 rotate-45"></div>
+                      <div className="absolute -left-1 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-green-500 rotate-45"></div>
                     </motion.div>
                   </div>
                   
@@ -544,7 +544,7 @@ export default function Index() {
                   רוצה לראות איך זה נראה אצלך?
                 </p>
                 <p className="text-xl md:text-2xl font-bold text-gray-700 mb-8">
-                  לתיאום שיחת "כסף מהדאטא" – ללא עלות וללא התחייבות
+                  לתיאום פגישת "כסף מהדאטא" – ללא עלות וללא התחייבות
                 </p>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -554,7 +554,7 @@ export default function Index() {
                     size="lg" 
                     className="gradient-secondary hover:opacity-90 hover:scale-105 transition-all duration-300 text-white px-12 py-6 text-xl font-black rounded-3xl box-shadow-intense"
                   >
-                    לחיצה כאן לתיאום שיחה
+                    לחיצה כאן לתיאום פגישה
                   </Button>
                 </motion.div>
               </div>
