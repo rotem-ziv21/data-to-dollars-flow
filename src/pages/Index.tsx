@@ -3,7 +3,7 @@ import { CheckCircle, X, Users, Target, TrendingUp, Database, Zap, ArrowLeft, St
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import ThreeBackground from "../components/ThreeBackground";
-import personalizedMessageImage from "../assets/personalized-message-happy-customer.jpg";
+import comparisonImage from "../assets/generic-vs-personalized-messages.jpg";
 
 const AnimatedCounter = ({ end, duration = 2 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0);
@@ -845,8 +845,8 @@ export default function Index() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img 
-                  src={personalizedMessageImage}
-                  alt="לקוח מרוצה קורא הודעה אישית מותאמת"
+                  src={comparisonImage}
+                  alt="השוואה בין הודעה גנרית להודעה אישית מותאמת"
                   className="w-full h-80 object-cover rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent rounded-2xl"></div>
