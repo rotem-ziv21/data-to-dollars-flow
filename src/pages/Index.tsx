@@ -602,8 +602,12 @@ export default function Index() {
               transition={{ duration: 0.8 }}
             >
               <GlowCard className="p-8 text-center h-full">
-                <div className="bg-gradient-to-br from-secondary to-accent rounded-full w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-                  <Users className="w-16 h-16 text-white" />
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gradient-to-br from-secondary to-accent">
+                  <img 
+                    src="/lovable-uploads/05706208-e8be-40d1-b0b5-ebce152b911c.png"
+                    alt="אביב שמש - מייסד Optione"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-black mb-2">
                   <span className="text-secondary">אביב שמש</span>
