@@ -5,17 +5,26 @@ import { CheckCircle, X, Video, Users, Target, TrendingUp, Database, Zap } from 
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-primary">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary via-secondary to-accent overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary via-primary/80 to-accent/20 overflow-hidden">
+        {/* Futuristic background elements */}
+        <div className="absolute inset-0 bg-primary/90"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse-glow"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-3/4 left-1/3 w-48 h-48 bg-accent/20 rounded-full blur-2xl animate-pulse-glow"></div>
+        </div>
+        
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Optione
-          </h1>
-          <p className="text-2xl md:text-3xl mb-8 font-light">
-            השירות שמייצר כסף מהדאטה שלך
-          </p>
+          <div className="animate-float">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-accent to-secondary bg-clip-text text-transparent">
+              Optione
+            </h1>
+            <p className="text-2xl md:text-3xl mb-8 font-light">
+              השירות שמייצר כסף מהדאטה שלך
+            </p>
+          </div>
           
           {/* Video Section Placeholder */}
           <div className="bg-black/30 backdrop-blur-sm rounded-xl p-8 mb-8 max-w-2xl mx-auto">
