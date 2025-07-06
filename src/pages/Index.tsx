@@ -131,24 +131,6 @@ export default function Index() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-right relative"
             >
-              {/* Reviews in top right corner */}
-              <motion.div
-                className="absolute -top-4 -right-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1 }}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-sm font-bold text-gray-800">140+ לקוחות מרוצים</p>
-                <div className="flex items-center gap-1 mt-1">
-                  <span className="text-xs text-gray-600">Meta</span>
-                  <span className="text-xs text-gray-600">Google</span>
-                </div>
-              </motion.div>
 
               <motion.h1 
                 className="text-4xl md:text-6xl font-black mb-6 leading-tight text-white"
