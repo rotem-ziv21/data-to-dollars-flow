@@ -799,7 +799,7 @@ export default function Index() {
                     size="lg" 
                     className="gradient-secondary hover:opacity-90 text-white px-12 py-6 text-xl font-black rounded-3xl box-shadow-intense"
                   >
-                     לתיאום פגישת היכרות ללא עלות
+                     תיאום פגישה "כסף מדאטא"
                   </Button>
                 </motion.div>
               </div>
