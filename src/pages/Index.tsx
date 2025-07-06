@@ -109,7 +109,7 @@ export default function Index() {
             className="mb-12"
           >
             <motion.h1 
-              className="text-6xl md:text-8xl font-black mb-8 leading-tight"
+              className="text-4xl md:text-6xl font-black mb-6 leading-tight"
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -132,7 +132,7 @@ export default function Index() {
             </motion.h1>
           </motion.div>
           
-          <GlowCard className="p-16 mb-16 max-w-5xl mx-auto">
+          <GlowCard className="p-12 mb-12 max-w-4xl mx-auto">
             <motion.div
               className="flex items-center justify-center mb-8"
               whileHover={{ rotate: 360 }}
@@ -159,8 +159,8 @@ export default function Index() {
             transition={{ delay: 1, duration: 0.8 }}
             className="mb-16"
           >
-            <GlowCard className="p-16">
-              <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
+            <GlowCard className="p-12">
+              <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
                 השירות שיחזיר לחיים את הלידים 
                 <motion.span 
                   className="text-secondary"
@@ -170,11 +170,11 @@ export default function Index() {
                   "הרדומים"
                 </motion.span> שלך
               </h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-primary mb-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-8">
                 ויהפוך דאטה מתה לרווחים בפועל
               </h3>
               
-              <div className="bg-gradient-to-r from-primary/10 via-secondary/5 to-accent/10 rounded-3xl p-12 border-2 border-primary/20">
+              <div className="bg-gradient-to-r from-primary/10 via-secondary/5 to-accent/10 rounded-3xl p-8 border-2 border-primary/20">
                 <motion.p 
                   className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
                   whileInView={{ opacity: [0.7, 1, 0.7] }}
@@ -189,20 +189,20 @@ export default function Index() {
             </GlowCard>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-12 mb-16">
             {[
               { icon: CheckCircle, color: "text-green-600", text: "מסע לקוח שיוצר לקוחות איכותיים", delay: 0 },
               { icon: Target, color: "text-blue-600", text: "בלי להוציא שקל על שיווק", delay: 0.2 },
               { icon: Zap, color: "text-purple-600", text: "כל התוכנות הדרושות – עלינו!", delay: 0.4 }
             ].map((item, i) => (
-              <GlowCard key={i} className="p-8" delay={item.delay}>
-                  <motion.div
-                    whileHover={{ y: -10, rotateY: 10 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <item.icon className={`w-16 h-16 ${item.color} mx-auto mb-6`} />
-                    <p className="text-xl font-bold text-gray-800">{item.text}</p>
-                  </motion.div>
+              <GlowCard key={i} className="p-6 md:p-8" delay={item.delay}>
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <item.icon className={`w-12 h-12 md:w-16 md:h-16 ${item.color} mx-auto mb-4 md:mb-6`} />
+                  <p className="text-lg md:text-xl font-bold text-gray-800 leading-tight">{item.text}</p>
+                </motion.div>
               </GlowCard>
             ))}
           </div>
