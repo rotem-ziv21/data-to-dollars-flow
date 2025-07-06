@@ -564,100 +564,186 @@ export default function Index() {
       </section>
 
       {/* About Aviv - What Makes Us Different */}
-      <section className="py-32 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 bg-white px-8 py-4 rounded-full box-shadow-soft mb-6">
-              <Award className="w-8 h-8 text-secondary" />
-              <span className="text-xl font-bold text-primary">למה לסמוך עלינו?</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-primary mb-6">
-              מה מייחד אותנו – ולמה זה באמת עובד?
+      <section className="py-32 relative overflow-hidden">
+        {/* Background Design */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-purple-50/30"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto px-8 relative z-10">
+          {/* Header */}
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div 
+              className="inline-flex items-center gap-4 bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-full mb-8 box-shadow-intense"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Award className="w-8 h-8" />
+              <span className="text-2xl font-black">למה לסמוך עלינו?</span>
+            </motion.div>
+            <h2 className="text-5xl md:text-7xl font-black text-primary mb-8 leading-tight">
+              מה מייחד אותנו –<br />
+              <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+                ולמה זה באמת עובד?
+              </span>
             </h2>
-            <p className="text-2xl font-medium text-gray-600">
-              בניגוד לחברות שעושות "אימייל מרקטינג", אנחנו מגיעים מהשטח.
-            </p>
-          </div>
+          </motion.div>
 
-          <GlowCard className="max-w-5xl mx-auto border-t-8 border-secondary relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-secondary to-accent"></div>
-            
-            <div className="p-12">
-              <div className="flex items-center justify-center mb-8">
-                <div className="bg-gradient-to-r from-secondary to-accent rounded-full p-6">
+          {/* Main Content */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {/* Left Column - Avatar & Stats */}
+            <motion.div
+              className="lg:col-span-1"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <GlowCard className="p-8 text-center h-full">
+                <div className="bg-gradient-to-br from-secondary to-accent rounded-full w-32 h-32 mx-auto mb-6 flex items-center justify-center">
                   <Users className="w-16 h-16 text-white" />
                 </div>
-              </div>
-              
-              <h3 className="text-3xl md:text-4xl font-black text-center mb-8">
-                <span className="text-secondary">אביב שמש</span> - מייסד Optione
-              </h3>
-              
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6 text-lg leading-relaxed text-right">
-                  <motion.div 
-                    className="bg-primary/5 p-6 rounded-2xl border-r-4 border-primary"
-                    whileInView={{ x: [50, 0], opacity: [0, 1] }}
-                    transition={{ duration: 0.8 }}
-                  >
-                    <p>
-                      Optione הוקמה על ידי <strong className="text-primary">אביב שמש</strong>, יועץ עסקי בכיר, מומחה לשיווק, מכירות ופיצוח אסטרטגי מבוסס דאטה, עם ניסיון של למעלה מעשור בליווי עסקים להגדלת מכירות.
-                    </p>
-                  </motion.div>
-                  
-                  <motion.div 
-                    className="bg-secondary/5 p-6 rounded-2xl border-r-4 border-secondary"
-                    whileInView={{ x: [50, 0], opacity: [0, 1] }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                  >
-                    <p>
-                      אביב עבד עם מותגים מהשורה הראשונה בישראל – <strong className="text-secondary">חלי ממן, כללית שירותי בריאות, מנדי גפנר, אספרסו קלאב</strong> ועוד.
-                    </p>
-                  </motion.div>
-                  
-                  <motion.div 
-                    className="bg-accent/5 p-6 rounded-2xl border-r-4 border-accent"
-                    whileInView={{ x: [50, 0], opacity: [0, 1] }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                  >
-                    <p>
-                      הוא פיתח את <strong className="text-accent">שיטת "שמש"</strong> – שיווק | מכירה | שיטה – מודל עבודה שמוביל עסקים לתוצאות אמיתיות.
-                    </p>
-                  </motion.div>
-                </div>
+                <h3 className="text-2xl md:text-3xl font-black mb-2">
+                  <span className="text-secondary">אביב שמש</span>
+                </h3>
+                <p className="text-lg font-bold text-gray-600 mb-8">מייסד Optione</p>
                 
-                <div className="text-center">
+                <div className="space-y-6">
                   <motion.div 
-                    className="bg-gradient-to-br from-secondary to-accent rounded-3xl p-12 text-white box-shadow-intense"
-                    whileInView={{ scale: [0.8, 1], opacity: [0, 1] }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                    whileHover={{ scale: 1.05, rotateY: 5 }}
+                    className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white"
+                    whileHover={{ scale: 1.05 }}
                   >
-                    <div className="text-6xl font-black mb-4">
+                    <div className="text-4xl font-black mb-2">
                       <AnimatedCounter end={2000} />+
                     </div>
-                    <div className="text-xl font-bold mb-2">בעלי עסקים</div>
-                    <div className="text-lg opacity-90">עברו תחתיו בליווי אישי</div>
-                    <div className="flex justify-center mt-6 gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-6 h-6 fill-current" />
-                      ))}
-                    </div>
+                    <div className="text-sm font-bold">בעלי עסקים בליווי</div>
                   </motion.div>
+                  
+                  <motion.div 
+                    className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div className="text-4xl font-black mb-2">10+</div>
+                    <div className="text-sm font-bold">שנות ניסיון</div>
+                  </motion.div>
+                  
+                  <div className="flex justify-center gap-1 mt-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </GlowCard>
+            </motion.div>
 
-              <motion.div
-                className="mt-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 text-center"
-                whileInView={{ y: [30, 0], opacity: [0, 1] }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                <p className="text-lg text-gray-700 mb-4">
-                  בעברו ניהל את מחלקת המכירות של חברת הייעוץ העסקי הגדולה בישראל והכשיר יועצים עסקיים תוך התמחות ביצירת תהליכים מניבים, אוטומטיים ומדויקים.
+            {/* Right Column - Content */}
+            <motion.div
+              className="lg:col-span-2 space-y-6"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              {/* Key Points */}
+              <div className="grid gap-6">
+                <motion.div 
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-r-8 border-primary box-shadow-soft"
+                  whileHover={{ scale: 1.02, x: 10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
+                      <Target className="w-8 h-8 text-primary" />
+                    </div>
+                    <div className="text-right">
+                      <h4 className="text-xl font-black text-primary mb-2">מומחה לשיווק ומכירות</h4>
+                      <p className="text-gray-700 leading-relaxed">
+                        יועץ עסקי בכיר עם התמחות בפיצוח אסטרטגי מבוסס דאטה ולמעלה מעשור של ניסיון בליווי עסקים להגדלת מכירות.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-r-8 border-secondary box-shadow-soft"
+                  whileHover={{ scale: 1.02, x: 10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="bg-secondary/10 rounded-full p-3 flex-shrink-0">
+                      <TrendingUp className="w-8 h-8 text-secondary" />
+                    </div>
+                    <div className="text-right">
+                      <h4 className="text-xl font-black text-secondary mb-2">עבד עם המותגים הגדולים</h4>
+                      <p className="text-gray-700 leading-relaxed">
+                        <strong>חלי ממן, כללית שירותי בריאות, מנדי גפנר, אספרסו קלאב</strong> ועוד מותגים מהשורה הראשונה בישראל.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-r-8 border-accent box-shadow-soft"
+                  whileHover={{ scale: 1.02, x: 10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="bg-accent/10 rounded-full p-3 flex-shrink-0">
+                      <Zap className="w-8 h-8 text-accent" />
+                    </div>
+                    <div className="text-right">
+                      <h4 className="text-xl font-black text-accent mb-2">שיטת "שמש" הייחודית</h4>
+                      <div className="text-gray-700 leading-relaxed">
+                        <p className="mb-2">
+                          <strong className="text-accent">שיווק | מכירה | שיטה</strong> – מודל עבודה שמוביל עסקים לתוצאות אמיתיות.
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          בעברו ניהל את מחלקת המכירות של חברת הייעוץ העסקי הגדולה בישראל והכשיר יועצים עסקיים.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <GlowCard className="max-w-4xl mx-auto p-12 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 border-2 border-gradient-to-r from-primary/20 to-accent/20">
+              <div className="text-center">
+                <motion.p 
+                  className="text-3xl md:text-4xl font-black text-primary mb-6"
+                  whileInView={{ scale: [0.9, 1] }}
+                  transition={{ duration: 0.6 }}
+                >
+                  מוכן לראות איך זה עובד אצלך?
+                </motion.p>
+                <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                  בניגוד לחברות שעושות "אימייל מרקטינג" כללי –<br />
+                  <strong>אנחנו מגיעים מהשטח עם תוצאות אמיתיות.</strong>
                 </p>
-              </motion.div>
-            </div>
-          </GlowCard>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button 
+                    size="lg" 
+                    className="gradient-secondary hover:opacity-90 text-white px-12 py-6 text-xl font-black rounded-3xl box-shadow-intense"
+                  >
+                     לתיאום פגישת היכרות ללא עלות
+                  </Button>
+                </motion.div>
+              </div>
+            </GlowCard>
+          </motion.div>
         </div>
       </section>
 
