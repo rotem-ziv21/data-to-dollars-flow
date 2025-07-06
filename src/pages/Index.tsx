@@ -1,458 +1,505 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle, X, Users, Target, TrendingUp, Database, Zap, ArrowLeft, Star, Award } from "lucide-react";
+import { CheckCircle, X, Users, Target, TrendingUp, Database, Zap, ArrowLeft, Star, Award, Play, Sparkles } from "lucide-react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import ThreeBackground from "../components/ThreeBackground";
 
-const Index = () => {
+const AnimatedCounter = ({ end, duration = 2 }: { end: number; duration?: number }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    if (isInView) {
+      let startTime: number;
+      const animate = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+        setCount(Math.floor(progress * end));
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      requestAnimationFrame(animate);
+    }
+  }, [isInView, end, duration]);
+
+  return <span ref={ref}>{count}</span>;
+};
+
+const GlowCard = ({ children, className = "", delay = 0 }: any) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50, scale: 0.9 }}
+    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{ duration: 0.6, delay }}
+    whileHover={{ scale: 1.05, rotateY: 5 }}
+    className={`bg-white/80 backdrop-blur-xl rounded-3xl box-shadow-intense border border-white/20 relative overflow-hidden ${className}`}
+  >
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+    <div className="relative z-10">{children}</div>
+  </motion.div>
+);
+
+const PulsingOrb = ({ color, size, top, left, delay }: any) => (
+  <motion.div
+    className={`absolute w-${size} h-${size} rounded-full blur-3xl opacity-20`}
+    style={{ 
+      background: `radial-gradient(circle, ${color}40 0%, transparent 70%)`,
+      top, 
+      left 
+    }}
+    animate={{
+      scale: [1, 1.2, 1],
+      opacity: [0.2, 0.4, 0.2],
+    }}
+    transition={{
+      duration: 4,
+      repeat: Infinity,
+      delay,
+    }}
+  />
+);
+
+export default function Index() {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white text-gray-900" dir="rtl">
-      {/* Header */}
-      <header className="gradient-primary text-white py-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-3xl font-extrabold text-shadow tracking-wide">Optione</h1>
+    <div className="min-h-screen text-gray-900 relative overflow-hidden" dir="rtl">
+      <ThreeBackground />
+      
+      {/* Floating orbs */}
+      <PulsingOrb color="#120c4c" size="96" top="10%" left="5%" delay={0} />
+      <PulsingOrb color="#ff7a45" size="64" top="20%" left="80%" delay={1} />
+      <PulsingOrb color="#ff02ff" size="80" top="60%" left="10%" delay={2} />
+      <PulsingOrb color="#120c4c" size="72" top="80%" left="85%" delay={3} />
+
+      {/* Floating Header */}
+      <motion.header 
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/10 border-b border-white/20"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <motion.h1 
+            className="text-3xl font-black text-primary text-center"
+            whileHover={{ scale: 1.05 }}
+          >
+            <span className="bg-gradient-to-l from-primary via-secondary to-accent bg-clip-text text-transparent">
+              Optione
+            </span>
+          </motion.h1>
         </div>
-      </header>
+      </motion.header>
 
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
-        {/* Background decorations */}
-        <div className="absolute top-10 left-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-accent/5 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-6xl mx-auto px-8 text-center relative z-10">
-          <div className="animate-fadeInUp">
-            <h1 className="text-5xl md:text-7xl font-black text-primary mb-8 leading-tight text-shadow">
-              השירות שמייצר כסף<br />
-              <span className="bg-gradient-to-l from-secondary to-accent bg-clip-text text-transparent">
-                מהדאטה שלך
-              </span>
-            </h1>
-          </div>
-          
-          <div className="glass-effect rounded-3xl p-12 mb-12 max-w-4xl mx-auto box-shadow-soft relative">
-            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-              <div className="bg-secondary w-12 h-12 rounded-full flex items-center justify-center animate-pulse-glow">
-                <span className="text-white text-xl">🎥</span>
-              </div>
-            </div>
-            <p className="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed mt-4">
-              "אם יש לך רשימות לידים, דאטה מהקמפיינים או קהל שלא הגיב – אל תזרוק אותם לפח. 
-              <span className="text-primary font-bold"> אנחנו יודעים להחזיר אותם לחיים.</span>"
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-3xl p-12 mb-12 border-2 border-primary/10">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-8 leading-tight">
-              השירות שיחזיר לחיים את הלידים 
-              <span className="text-secondary">"הרדומים"</span> שלך
-            </h2>
-            <h3 className="text-2xl md:text-3xl font-medium text-primary mb-8">
-              ויהפוך דאטה מתה לרווחים בפועל
-            </h3>
-            
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-white/50">
-              <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
-                לא מערכת. לא קורס. לא קמפיינר שרוצה כסף לפני שהראה לך תוצאות.
-              </p>
-              <p className="text-xl md:text-2xl font-bold text-primary">
-                אנחנו עושים את העבודה בשבילך – על בסיס הדאטא הקיימת שלך.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white rounded-2xl p-8 box-shadow-soft border border-green-100 hover:border-green-200 transition-all duration-300 hover:scale-105">
-              <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-4" />
-              <p className="text-lg font-bold text-gray-800">מסע לקוח שיוצר לקוחות איכותיים</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 box-shadow-soft border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:scale-105">
-              <Target className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-              <p className="text-lg font-bold text-gray-800">בלי להוציא שקל על שיווק</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 box-shadow-soft border border-purple-100 hover:border-purple-200 transition-all duration-300 hover:scale-105">
-              <Zap className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-              <p className="text-lg font-bold text-gray-800">כל התוכנות הדרושות – עלינו!</p>
-            </div>
-          </div>
-
-          <Button 
-            size="lg" 
-            className="gradient-secondary hover:opacity-90 text-white px-12 py-6 text-2xl font-bold rounded-2xl box-shadow-intense transition-all duration-300 hover:scale-105 animate-pulse-glow"
+      <section className="min-h-screen flex items-center justify-center pt-20 relative">
+        <motion.div 
+          className="max-w-7xl mx-auto px-8 text-center relative z-10"
+          style={{ y, opacity }}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="mb-12"
           >
-            🔵 לתיאום שיחת "כסף מהדאטא" ←
-          </Button>
-        </div>
+            <motion.h1 
+              className="text-6xl md:text-8xl font-black mb-8 leading-tight"
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <span className="text-primary">השירות שמייצר</span>
+              <br />
+              <motion.span 
+                className="bg-gradient-to-l from-secondary via-accent to-primary bg-clip-text text-transparent"
+                animate={{ 
+                  backgroundPosition: ['0%', '100%', '0%']
+                }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity, 
+                  ease: "linear" 
+                }}
+              >
+                כסף מהדאטה שלך
+              </motion.span>
+            </motion.h1>
+          </motion.div>
+          
+          <GlowCard className="p-16 mb-16 max-w-5xl mx-auto">
+            <motion.div
+              className="flex items-center justify-center mb-8"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="bg-gradient-to-r from-secondary to-accent w-24 h-24 rounded-full flex items-center justify-center animate-pulse-glow">
+                <Play className="w-12 h-12 text-white" fill="white" />
+              </div>
+            </motion.div>
+            <motion.p 
+              className="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            >
+              "אם יש לך רשימות לידים, דאטה מהקמפיינים או קהל שלא הגיב – אל תזרוק אותם לפח. 
+              <span className="text-primary"> אנחנו יודעים להחזיר אותם לחיים.</span>"
+            </motion.p>
+          </GlowCard>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="mb-16"
+          >
+            <GlowCard className="p-16">
+              <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
+                השירות שיחזיר לחיים את הלידים 
+                <motion.span 
+                  className="text-secondary"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  "הרדומים"
+                </motion.span> שלך
+              </h2>
+              <h3 className="text-3xl md:text-4xl font-bold text-primary mb-12">
+                ויהפוך דאטה מתה לרווחים בפועל
+              </h3>
+              
+              <div className="bg-gradient-to-r from-primary/10 via-secondary/5 to-accent/10 rounded-3xl p-12 border-2 border-primary/20">
+                <motion.p 
+                  className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
+                  whileInView={{ opacity: [0.7, 1, 0.7] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  לא מערכת. לא קורס. לא קמפיינר שרוצה כסף לפני שהראה לך תוצאות.
+                </motion.p>
+                <p className="text-2xl md:text-3xl font-black text-primary">
+                  אנחנו עושים את העבודה בשבילך – על בסיס הדאטא הקיימת שלך.
+                </p>
+              </div>
+            </GlowCard>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              { icon: CheckCircle, color: "green", text: "מסע לקוח שיוצר לקוחות איכותיים", delay: 0 },
+              { icon: Target, color: "blue", text: "בלי להוציא שקל על שיווק", delay: 0.2 },
+              { icon: Zap, color: "purple", text: "כל התוכנות הדרושות – עלינו!", delay: 0.4 }
+            ].map((item, i) => (
+              <GlowCard key={i} className="p-8" delay={item.delay}>
+                <motion.div
+                  whileHover={{ y: -10, rotateY: 10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <motion.div
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  >
+                    <item.icon className={`w-16 h-16 text-${item.color}-600 mx-auto mb-6`} />
+                  </motion.div>
+                  <p className="text-xl font-bold text-gray-800">{item.text}</p>
+                </motion.div>
+              </GlowCard>
+            ))}
+          </div>
+
+          <motion.div
+            whileHover={{ scale: 1.05, boxShadow: "0 25px 50px -12px rgba(255, 122, 69, 0.4)" }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button 
+              size="lg" 
+              className="gradient-secondary hover:opacity-90 text-white px-16 py-8 text-3xl font-black rounded-3xl box-shadow-intense transition-all duration-300 animate-pulse-glow relative overflow-hidden group"
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                animate={{ x: ['-100%', '100%'] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              />
+              <span className="relative z-10">🔵 לתיאום שיחת "כסף מהדאטא" ←</span>
+            </Button>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Problem Statement */}
-      <section className="py-24 bg-gradient-to-r from-gray-100 to-gray-50 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
-        <div className="max-w-5xl mx-auto px-8 text-center relative z-10">
-          <div className="mb-8">
-            <span className="bg-red-100 text-red-700 px-6 py-3 rounded-full text-lg font-semibold border border-red-200">
-              😤 הבעיה הכי נפוצה
-            </span>
-          </div>
+      <section className="py-32 relative">
+        <div className="max-w-6xl mx-auto px-8 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="mb-12"
+          >
+            <motion.div
+              className="inline-flex items-center gap-4 bg-red-100 px-8 py-4 rounded-full border-2 border-red-200 mb-8"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <span className="text-3xl">😤</span>
+              <span className="text-xl font-bold text-red-700">הבעיה הכי נפוצה</span>
+            </motion.div>
+          </motion.div>
           
-          <h2 className="text-4xl md:text-6xl font-black text-primary mb-12 leading-tight text-shadow">
+          <motion.h2 
+            className="text-5xl md:text-7xl font-black text-primary mb-16 leading-tight"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             "אבל כבר שילמתי<br />עשרות אלפים על שיווק…"
-          </h2>
+          </motion.h2>
           
           <div className="space-y-8 mb-16">
-            <div className="bg-white rounded-2xl p-8 box-shadow-soft border-r-8 border-primary">
-              <p className="text-2xl md:text-3xl font-bold text-primary">בדיוק.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 box-shadow-soft border-r-8 border-secondary">
-              <p className="text-2xl md:text-3xl font-bold text-secondary">הדאטה אצלך.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 box-shadow-soft border-r-8 border-green-500">
-              <p className="text-2xl md:text-3xl font-bold text-green-700">אתה יודע שיש לך שירות טוב.</p>
-            </div>
-            <div className="bg-gradient-to-r from-accent/10 to-accent/5 rounded-2xl p-10 box-shadow-soft border-2 border-accent/20">
-              <p className="text-2xl md:text-3xl font-bold text-accent">
-                אתה רק צריך מישהו שייקח את כל מה שצברת – ויהפוך את זה לתוצאה.
-              </p>
-            </div>
+            {[
+              { text: "בדיוק.", color: "primary", delay: 0 },
+              { text: "הדאטה אצלך.", color: "secondary", delay: 0.2 },
+              { text: "אתה יודע שיש לך שירות טוב.", color: "green-600", delay: 0.4 },
+              { text: "אתה רק צריך מישהו שייקח את כל מה שצברת – ויהפוך את זה לתוצאה.", color: "accent", delay: 0.6 }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: item.delay }}
+                whileHover={{ scale: 1.05, rotateX: 5 }}
+              >
+                <GlowCard className={`p-10 border-r-8 border-${item.color.replace('-600', '-500')}`}>
+                  <p className={`text-3xl md:text-4xl font-black text-${item.color}`}>
+                    {item.text}
+                  </p>
+                </GlowCard>
+              </motion.div>
+            ))}
           </div>
 
-          <div className="bg-white rounded-3xl p-12 box-shadow-intense border-t-8 border-primary">
-            <div className="flex items-center justify-center mb-6">
-              <div className="bg-primary/10 rounded-full p-4">
-                <TrendingUp className="w-12 h-12 text-primary" />
+          <GlowCard className="p-16 border-t-8 border-primary">
+            <motion.div
+              className="flex items-center justify-center mb-8"
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            >
+              <div className="bg-primary/20 rounded-full p-8">
+                <TrendingUp className="w-16 h-16 text-primary" />
               </div>
-            </div>
-            <p className="text-3xl md:text-4xl font-bold text-primary mb-6">
+            </motion.div>
+            <motion.p 
+              className="text-4xl md:text-5xl font-black text-primary mb-8"
+              whileInView={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
               רוב העסקים לא צריכים עוד לידים.
-            </p>
-            <p className="text-2xl md:text-3xl font-bold text-secondary">
+            </motion.p>
+            <p className="text-3xl md:text-4xl font-black text-secondary">
               הם צריכים לעבוד נכון עם מה שכבר יש.
             </p>
-          </div>
+          </GlowCard>
         </div>
       </section>
 
-      {/* What We Do/Don't Do */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-800 mb-6">איך אנחנו עובדים?</h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Don't Do */}
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-red-50 to-red-100 rounded-3xl opacity-50"></div>
-              <div className="relative bg-white rounded-2xl p-10 box-shadow-soft border-2 border-red-100">
-                <div className="flex items-center justify-center mb-8">
-                  <div className="bg-red-100 rounded-full p-4">
-                    <X className="w-12 h-12 text-red-600" />
-                  </div>
-                </div>
-                <h3 className="text-3xl font-black text-red-600 mb-8 text-center">❌ מה אנחנו לא עושים?</h3>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl">
-                    <X className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg font-semibold text-gray-800">לא מוכרים לך מערכת טכנולוגית חדשה</p>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl">
-                    <X className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg font-semibold text-gray-800">לא שולחים אותך לקורסים</p>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 bg-red-50 rounded-xl">
-                    <X className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg font-semibold text-gray-800">לא מציעים קמפיין עם תקציב פרסום</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Do */}
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-green-50 to-primary/10 rounded-3xl opacity-50"></div>
-              <div className="relative bg-white rounded-2xl p-10 box-shadow-soft border-2 border-green-100">
-                <div className="flex items-center justify-center mb-8">
-                  <div className="bg-green-100 rounded-full p-4">
-                    <CheckCircle className="w-12 h-12 text-green-600" />
-                  </div>
-                </div>
-                <h3 className="text-3xl font-black text-green-600 mb-8 text-center">✅ מה כן עושים?</h3>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4 p-4 bg-green-50 rounded-xl border-r-4 border-primary">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg font-semibold text-gray-800">מנתחים את הדאטא הקיימת שלך – קבצים, CRM, וואטסאפ</p>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 bg-green-50 rounded-xl border-r-4 border-secondary">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg font-semibold text-gray-800">מפצחים את הפילוחים בתוכה</p>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 bg-green-50 rounded-xl border-r-4 border-accent">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg font-semibold text-gray-800">בונים הודעות חכמות לפי פסיכולוגיה של קניה</p>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 bg-green-50 rounded-xl border-r-4 border-primary">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg font-semibold text-gray-800">מפעילים עבורך קמפיין מותאם</p>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-green-100 to-primary/10 rounded-xl border-r-4 border-secondary">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <p className="text-lg font-bold text-primary">ואתה מקבל לידים – ישירות לשיחה או לסגירה</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Aviv */}
-      <section className="py-24 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 bg-white px-8 py-4 rounded-full box-shadow-soft mb-6">
-              <Award className="w-8 h-8 text-secondary" />
-              <span className="text-xl font-bold text-primary">למה לסמוך עלינו?</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-primary mb-6 text-shadow">
-              מה מייחד אותנו – ולמה זה באמת עובד?
-            </h2>
-            <p className="text-2xl font-medium text-gray-600">
-              בניגוד לחברות שעושות "אימייל מרקטינג", אנחנו מגיעים מהשטח.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl p-12 box-shadow-intense border-t-8 border-secondary relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-secondary to-accent"></div>
-            
-            <div className="flex items-center justify-center mb-8">
-              <div className="bg-gradient-to-r from-secondary to-accent rounded-full p-6">
-                <Users className="w-16 h-16 text-white" />
-              </div>
-            </div>
-            
-            <h3 className="text-3xl md:text-4xl font-black text-center mb-8">
-              <span className="text-secondary">אביב שמש</span> - מייסד Optione
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6 text-lg leading-relaxed text-right">
-                <p className="bg-primary/5 p-6 rounded-2xl border-r-4 border-primary">
-                  <strong className="text-primary">יועץ עסקי בכיר</strong> עם ניסיון של למעלה מעשור בליווי עסקים להגדלת מכירות.
-                </p>
-                
-                <p className="bg-secondary/5 p-6 rounded-2xl border-r-4 border-secondary">
-                  עבד עם מותגים מהשורה הראשונה: <strong className="text-secondary">חלי ממן, כללית שירותי בריאות, מנדי גפנר, אספרסו קלאב</strong>
-                </p>
-                
-                <p className="bg-accent/5 p-6 rounded-2xl border-r-4 border-accent">
-                  פיתח את <strong className="text-accent">שיטת "שמש"</strong> – מודל עבודה שמוביל עסקים לתוצאות אמיתיות.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="bg-gradient-to-br from-secondary to-accent rounded-3xl p-12 text-white box-shadow-intense">
-                  <div className="text-6xl font-black mb-4">2,000+</div>
-                  <div className="text-xl font-bold mb-2">בעלי עסקים</div>
-                  <div className="text-lg opacity-90">עברו תחתיו בליווי אישי</div>
-                  <div className="flex justify-center mt-6 space-x-2">
-                    <Star className="w-6 h-6 fill-current" />
-                    <Star className="w-6 h-6 fill-current" />
-                    <Star className="w-6 h-6 fill-current" />
-                    <Star className="w-6 h-6 fill-current" />
-                    <Star className="w-6 h-6 fill-current" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Technology */}
-      <section className="py-24 bg-white">
+      {/* Technology Stats */}
+      <section className="py-32 relative">
         <div className="max-w-6xl mx-auto px-8 text-center">
-          <div className="mb-16">
-            <div className="inline-flex items-center gap-3 bg-primary/5 px-8 py-4 rounded-full mb-6">
-              <Database className="w-8 h-8 text-primary" />
-              <span className="text-xl font-bold text-primary">הטכנולוגיה שלנו</span>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
+            <div className="inline-flex items-center gap-4 bg-primary/10 px-8 py-4 rounded-full mb-8">
+              <Sparkles className="w-8 h-8 text-primary" />
+              <span className="text-2xl font-black text-primary">הטכנולוגיה שלנו</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-primary mb-6 text-shadow">
+            <h2 className="text-5xl md:text-6xl font-black text-primary mb-8">
               משנה את כללי המשחק
             </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-12 mb-16">
+            {[
+              { number: 95, suffix: "%", label: "אחוזי פתיחה", color: "green", delay: 0 },
+              { number: 78, suffix: "%", label: "אחוז תגובה", color: "blue", delay: 0.3 },
+              { number: 340, suffix: "%", label: "עלייה בסגירות", color: "purple", delay: 0.6 }
+            ].map((stat, i) => (
+              <GlowCard key={i} className={`p-12 border-t-8 border-${stat.color}-500`} delay={stat.delay}>
+                <motion.div
+                  whileHover={{ scale: 1.1, rotateY: 10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <motion.div 
+                    className={`text-7xl md:text-8xl font-black text-${stat.color}-600 mb-4`}
+                    whileInView={{ scale: [0, 1.2, 1] }}
+                    transition={{ duration: 1, delay: stat.delay }}
+                  >
+                    <AnimatedCounter end={stat.number} />{stat.suffix}
+                  </motion.div>
+                  <p className="text-xl font-bold text-gray-800 mb-2">{stat.label}</p>
+                  <div className={`w-full h-2 bg-${stat.color}-100 rounded-full overflow-hidden`}>
+                    <motion.div
+                      className={`h-full bg-${stat.color}-500`}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${Math.min(stat.number, 100)}%` }}
+                      transition={{ duration: 2, delay: stat.delay + 0.5 }}
+                    />
+                  </div>
+                </motion.div>
+              </GlowCard>
+            ))}
           </div>
 
-          <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-12 mb-16 border-2 border-primary/10 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-accent/10 rounded-full blur-3xl"></div>
-            <div className="relative">
-              <div className="flex items-center justify-center mb-8">
-                <div className="bg-gradient-to-r from-primary to-accent rounded-full p-6 animate-pulse-glow">
-                  <Database className="w-16 h-16 text-white" />
-                </div>
+          <GlowCard className="p-16">
+            <motion.div
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="flex items-center justify-center mb-8"
+            >
+              <div className="bg-gradient-to-r from-primary via-secondary to-accent rounded-full p-8 animate-pulse-glow">
+                <Database className="w-20 h-20 text-white" />
               </div>
-              <p className="text-2xl md:text-3xl font-bold mb-8 text-primary">
-                כל איש קשר בדאטה שלך מקבל הודעה מותאמת אישית
-              </p>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8">
-                לפי מה שהוא עשה, לא עשה, ראה או התעניין בו
-              </p>
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-white/50">
-                <p className="text-lg text-gray-700 mb-4">לא עוד דיוור גנרי עם שם פרטי.</p>
-                <p className="text-xl font-bold text-secondary">
-                  המערכת שלנו יוצרת הודעה שנראית כאילו נכתבה במיוחד עבורו – כי בפועל, היא באמת כזו.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 box-shadow-soft border-t-4 border-green-500 hover:scale-105 transition-all duration-300">
-              <div className="text-4xl font-black text-green-600 mb-2">95%</div>
-              <p className="text-lg font-bold text-gray-800 mb-2">אחוזי פתיחה</p>
-              <p className="text-green-600 font-semibold">גבוהים בהרבה מהממוצע</p>
-            </div>
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 box-shadow-soft border-t-4 border-blue-500 hover:scale-105 transition-all duration-300">
-              <div className="text-4xl font-black text-blue-600 mb-2">78%</div>
-              <p className="text-lg font-bold text-gray-800 mb-2">אחוז תגובה</p>
-              <p className="text-blue-600 font-semibold">מעל הממוצע בשוק</p>
-            </div>
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 box-shadow-soft border-t-4 border-purple-500 hover:scale-105 transition-all duration-300">
-              <div className="text-4xl font-black text-purple-600 mb-2">340%</div>
-              <p className="text-lg font-bold text-gray-800 mb-2">אחוזי סגירה</p>
-              <p className="text-purple-600 font-semibold">קופצים משמעותית</p>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-accent/10 to-primary/10 rounded-2xl p-8 border-2 border-accent/20">
-            <p className="text-2xl md:text-3xl font-bold text-accent">
-              זה ההבדל בין "עוד מייל" – לבין קמפיין שמרגיש כמו שיחה אישית חכמה.
+            </motion.div>
+            <motion.p 
+              className="text-3xl md:text-4xl font-black text-primary mb-8"
+              whileInView={{ opacity: [0.8, 1, 0.8] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              כל איש קשר מקבל הודעה מותאמת אישית
+            </motion.p>
+            <p className="text-xl md:text-2xl text-gray-600 mb-8">
+              המערכת שלנו יוצרת הודעה שנראית כאילו נכתבה במיוחד עבורו
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Offer */}
-      <section className="py-24 gradient-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute top-10 left-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-6xl mx-auto px-8 text-center relative z-10">
-          <div className="mb-16">
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full mb-6">
-              <span className="text-2xl">💎</span>
-              <span className="text-xl font-bold">ההצעה הבלעדית</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight text-shadow">
-              חודשיים של ליווי<br />תשלום לפי תוצאה בלבד
-            </h2>
-          </div>
-
-          <div className="glass-effect rounded-3xl p-12 mb-16 border border-white/20">
-            <p className="text-2xl md:text-3xl font-bold mb-12">
-              אנחנו מציעים ליווי מלא – שבו התשלום מתבצע רק לפי תוצאה:
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <div className="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                  <Users className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">תיאום פגישה</h3>
-                <p className="text-white/80">מתחילים בשיחה אסטרטגית</p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <div className="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                  <Target className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">קבלת ליד</h3>
-                <p className="text-white/80">לידים איכותיים מהדאטה</p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <div className="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                  <TrendingUp className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">סגירת מכירה בפועל</h3>
-                <p className="text-white/80">רווחים אמיתיים בחשבון</p>
-              </div>
-            </div>
-
-            <div className="bg-secondary/20 backdrop-blur-sm rounded-2xl p-8 border-2 border-secondary/30">
-              <p className="text-3xl md:text-4xl font-black mb-4">לא הבאנו תוצאה = לא שילמת</p>
-              <p className="text-xl text-white/90">
-                למה? כי אנחנו יודעים שזה עובד. זו הדרך שלנו לבנות אמון.
+            <motion.div
+              className="bg-gradient-to-r from-accent/20 to-primary/20 rounded-3xl p-8 border-2 border-accent/30"
+              whileHover={{ scale: 1.02, rotateX: 2 }}
+            >
+              <p className="text-2xl md:text-3xl font-black text-accent">
+                זה ההבדל בין "עוד מייל" – לבין קמפיין שמרגיש כמו שיחה אישית חכמה.
               </p>
-            </div>
-          </div>
-
-          <Button 
-            size="lg" 
-            className="bg-white text-primary hover:bg-white/90 px-12 py-6 text-2xl font-black rounded-2xl box-shadow-intense transition-all duration-300 hover:scale-105"
-          >
-            🔵 לתיאום פגישת "כסף מהדאטא"
-          </Button>
+            </motion.div>
+          </GlowCard>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-br from-secondary via-secondary to-accent text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="max-w-6xl mx-auto px-8 text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black mb-16 text-shadow">
+      <section className="py-32 relative overflow-hidden">
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent"
+          animate={{ 
+            background: [
+              'linear-gradient(45deg, #120c4c, #ff7a45, #ff02ff)',
+              'linear-gradient(135deg, #ff02ff, #120c4c, #ff7a45)',
+              'linear-gradient(225deg, #ff7a45, #ff02ff, #120c4c)',
+              'linear-gradient(315deg, #120c4c, #ff7a45, #ff02ff)'
+            ]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+        />
+        <div className="absolute inset-0 bg-black/30" />
+        
+        <div className="max-w-6xl mx-auto px-8 text-center relative z-10 text-white">
+          <motion.h2 
+            className="text-5xl md:text-7xl font-black mb-16"
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
             מוכן להתחיל להרוויח מהדאטה?
-          </h2>
+          </motion.h2>
           
-          <div className="glass-effect rounded-3xl p-12 mb-16 border border-white/20 max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <div className="text-center">
-                <div className="text-4xl mb-2">❌</div>
-                <p className="text-lg font-semibold">מערכת</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-2">❌</div>
-                <p className="text-lg font-semibold">פגישה</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-2">❌</div>
-                <p className="text-lg font-semibold">סיסמאות</p>
-              </div>
+          <GlowCard className="p-16 mb-16 bg-white/10 backdrop-blur-xl border-white/20">
+            <div className="grid md:grid-cols-3 gap-12 mb-12">
+              {["מערכת", "פגישה", "סיסמאות"].map((item, i) => (
+                <motion.div
+                  key={i}
+                  className="text-center"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.2 }}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                >
+                  <motion.div 
+                    className="text-6xl mb-4"
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+                  >
+                    ❌
+                  </motion.div>
+                  <p className="text-2xl font-bold">{item}</p>
+                </motion.div>
+              ))}
             </div>
-            <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
-              <p className="text-2xl md:text-3xl font-black">רק תוצאה = תשלום</p>
-            </div>
-          </div>
+            <motion.div
+              className="bg-secondary/30 backdrop-blur-sm rounded-3xl p-8 border-2 border-secondary/50"
+              whileHover={{ scale: 1.05 }}
+            >
+              <p className="text-4xl md:text-5xl font-black">רק תוצאה = תשלום</p>
+            </motion.div>
+          </GlowCard>
 
           <div className="space-y-8">
-            <Button 
-              size="lg" 
-              className="bg-white text-secondary hover:bg-white/90 px-16 py-8 text-2xl font-black rounded-2xl box-shadow-intense transition-all duration-300 hover:scale-105 w-full md:w-auto"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              🔵 לתיאום שיחה עכשיו
-            </Button>
+              <Button 
+                size="lg" 
+                className="bg-white text-primary hover:bg-white/90 px-20 py-10 text-3xl font-black rounded-3xl box-shadow-intense transition-all duration-300 relative overflow-hidden group"
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent"
+                  animate={{ x: ['-100%', '100%'] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <span className="relative z-10">🔵 לתיאום שיחה עכשיו</span>
+              </Button>
+            </motion.div>
             
-            <div className="text-center">
-              <p className="text-lg text-white/80 mb-4">או</p>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-white text-white hover:bg-white/20 px-12 py-6 text-xl font-bold rounded-2xl w-full md:w-auto"
+                className="border-2 border-white text-white hover:bg-white/20 px-16 py-8 text-xl font-bold rounded-2xl backdrop-blur-sm"
               >
                 🔵 קבל דוגמה מותאמת לדאטה שלך
               </Button>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="mt-20 pt-16 border-t border-white/20">
-            <h3 className="text-3xl md:text-4xl font-black mb-8 text-shadow">Optione</h3>
-            <p className="text-xl md:text-2xl font-medium text-white/90 leading-relaxed">
+          <motion.div 
+            className="mt-24 pt-16 border-t border-white/30"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <motion.h3 
+              className="text-4xl md:text-5xl font-black mb-8"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              Optione
+            </motion.h3>
+            <p className="text-2xl md:text-3xl font-medium leading-relaxed">
               לא צריך מערכת חדשה כדי לייצר תוצאה.<br />
-              <span className="font-bold">רק דאטה קיימת + חשיבה חכמה + ביצוע מדויק.</span>
+              <motion.span 
+                className="font-black"
+                whileInView={{ color: ['#ffffff', '#ff7a45', '#ff02ff', '#ffffff'] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                רק דאטה קיימת + חשיבה חכמה + ביצוע מדויק.
+              </motion.span>
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
   );
-};
-
-export default Index;
+}
