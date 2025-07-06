@@ -167,8 +167,16 @@ export default function Index() {
                     ease: "easeInOut"
                   }}
                 >
-                  <h2 className="text-2xl md:text-3xl font-black text-yellow-300">
-                    ويהפוך דאטה מתה לרווחים בפועל
+                  <h2 className="text-2xl md:text-3xl font-black text-white relative">
+                    <span className="relative inline-block">
+                      ויהפוך דאטה מתה לרווחים בפועל
+                      <motion.div
+                        className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-secondary to-accent"
+                        initial={{ width: 0 }}
+                        animate={{ width: "100%" }}
+                        transition={{ duration: 2, delay: 1, ease: "easeInOut" }}
+                      />
+                    </span>
                   </h2>
                 </motion.div>
               </motion.div>
