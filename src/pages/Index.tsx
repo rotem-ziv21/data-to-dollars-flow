@@ -879,18 +879,17 @@ export default function Index() {
                 זו הודעה שמרגישה כאילו נכתבה רק אליו –<br />
               </motion.p>
               
-              {/* תוצאות שאנחנו רואים */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 rounded-2xl p-8 border border-primary/20"
+                className="bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 rounded-2xl p-6 border border-primary/20 w-full"
               >
-                <h3 className="text-2xl md:text-3xl font-black text-primary mb-6">
+                <h3 className="text-2xl md:text-3xl font-black text-primary mb-6 text-center">
                   בזכות זה אנחנו רואים:
                 </h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
                   {[
                     { 
                       icon: TrendingUp,
@@ -914,12 +913,12 @@ export default function Index() {
                       whileInView={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                       whileHover={{ scale: 1.05, y: -5 }}
-                      className="bg-white/80 backdrop-blur-sm rounded-xl p-8 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 text-center min-h-[200px] flex flex-col justify-center"
+                      className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 text-center flex flex-col justify-center h-full"
                     >
-                      <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg`}>
-                        <item.icon className="w-8 h-8 text-white" />
+                      <div className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg`}>
+                        <item.icon className="w-6 h-6 text-white" />
                       </div>
-                      <p className="text-lg font-bold text-gray-800 leading-tight">
+                      <p className="text-sm md:text-base font-bold text-gray-800 leading-tight">
                         {item.text}
                       </p>
                     </motion.div>
