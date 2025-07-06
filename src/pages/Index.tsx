@@ -162,27 +162,40 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <h2 className="text-3xl md:text-4xl font-black mb-4 leading-tight text-white">
+                <h2 className="text-2xl md:text-3xl font-black mb-4 leading-tight text-white">
                   השירות שיחזיר לחיים את הלידים 
                   <motion.span 
                     className="text-secondary"
-                    animate={{ scale: [1, 1.1, 1] }}
+                    animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    "הרדומים"
-                  </motion.span> שלך
+                    {" "}"הרדומים"{" "}
+                  </motion.span> 
+                  <span className="text-secondary font-black">שלך</span>
                 </h2>
-                <h3 className="text-2xl md:text-3xl font-bold text-accent mb-6">
+                <h3 className="text-xl md:text-2xl font-bold text-accent mb-8">
                   ויהפוך דאטה מתה לרווחים בפועל
                 </h3>
                 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <p className="text-xl text-white/90 mb-4 leading-relaxed">
-                    לא מערכת. לא קורס. לא קמפיינר שרוצה כסף לפני שהראה לך תוצאות.
-                  </p>
-                  <p className="text-2xl font-black text-secondary">
-                    אנחנו עושים את העבודה בשבילך – על בסיס הדאטא הקיימת שלך.
-                  </p>
+                <div className="bg-white/15 backdrop-blur-sm rounded-3xl p-8 border-2 border-secondary/30 mb-6">
+                  <motion.div
+                    className="text-center mb-6"
+                    whileInView={{ scale: [1, 1.02, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <p className="text-2xl md:text-3xl font-black text-white leading-tight mb-4">
+                      לא מערכת. לא קורס. לא קמפיינר
+                    </p>
+                    <p className="text-lg text-white/90">
+                      שרוצה כסף לפני שהראה לך תוצאות.
+                    </p>
+                  </motion.div>
+                  
+                  <div className="bg-secondary/20 rounded-2xl p-6 border border-secondary/40">
+                    <p className="text-xl md:text-2xl font-black text-secondary text-center">
+                      אנחנו עושים את העבודה בשבילך – על בסיס הדאטא הקיימת שלך.
+                    </p>
+                  </div>
                 </div>
               </motion.div>
 
