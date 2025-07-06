@@ -539,7 +539,6 @@ export default function Index() {
               className="bg-gradient-to-br from-primary via-secondary to-accent p-[3px] rounded-3xl"
             >
               <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-12 text-center">
-                <div className="text-4xl mb-6">🟢</div>
                 <p className="text-3xl md:text-4xl font-black text-primary mb-6">
                   רוצה לראות איך זה נראה אצלך?
                 </p>
