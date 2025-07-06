@@ -3,7 +3,7 @@ import { CheckCircle, X, Users, Target, TrendingUp, Database, Zap, ArrowLeft, St
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import ThreeBackground from "../components/ThreeBackground";
-import comparisonImage from "../assets/generic-vs-personalized-messages.jpg";
+import infographicImage from "../assets/personalization-process-infographic.jpg";
 
 const AnimatedCounter = ({ end, duration = 2 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0);
@@ -845,8 +845,8 @@ export default function Index() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img 
-                  src={comparisonImage}
-                  alt="השוואה בין הודעה גנרית להודעה אישית מותאמת"
+                  src={infographicImage}
+                  alt="אינפוגרפיקה של תהליך יצירת הודעות מותאמות אישית"
                   className="w-full h-80 object-cover rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent rounded-2xl"></div>
