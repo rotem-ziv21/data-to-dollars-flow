@@ -297,25 +297,140 @@ export default function Index() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-5xl mx-auto mb-16"
+            className="max-w-6xl mx-auto mb-16"
           >
-            <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-16 md:p-20 border border-gray-200/30 box-shadow-soft text-center">
-              <motion.p 
-                className="text-3xl md:text-4xl font-black text-gray-800 leading-tight mb-8"
-                whileInView={{ scale: [0.95, 1] }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                רוב העסקים מקבלים לידים – וסוגרים אולי 10% מהם.
-              </motion.p>
+            <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-16 md:p-20 border border-gray-200/30 box-shadow-soft">
               
-              <motion.p 
-                className="text-3xl md:text-4xl font-black text-gray-800 leading-tight mb-12"
-                whileInView={{ scale: [0.95, 1] }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+              {/* Visual Data Representation */}
+              <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+                
+                {/* Left side - Pie Chart Visual */}
+                <motion.div 
+                  className="text-center"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 1, delay: 0.6 }}
+                >
+                  <div className="relative w-80 h-80 mx-auto mb-8">
+                    {/* 90% Arc - Red/Orange */}
+                    <motion.div
+                      className="absolute inset-0 rounded-full"
+                      style={{
+                        background: `conic-gradient(from 0deg, #ef4444 0deg, #f97316 324deg, transparent 324deg)`
+                      }}
+                      initial={{ rotate: -90 }}
+                      whileInView={{ rotate: 270 }}
+                      transition={{ duration: 2, delay: 0.8 }}
+                    >
+                      <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center">
+                        <div className="text-center">
+                          <motion.div 
+                            className="text-6xl font-black text-red-500 mb-2"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ delay: 2 }}
+                          >
+                            90%
+                          </motion.div>
+                          <div className="text-lg font-bold text-gray-600">לא נסגרו</div>
+                        </div>
+                      </div>
+                    </motion.div>
+                    
+                    {/* 10% Arc - Green */}
+                    <motion.div
+                      className="absolute inset-0 rounded-full"
+                      style={{
+                        background: `conic-gradient(from 324deg, #22c55e 324deg, #16a34a 360deg, transparent 0deg)`
+                      }}
+                      initial={{ rotate: -90 }}
+                      whileInView={{ rotate: 270 }}
+                      transition={{ duration: 2, delay: 1.2 }}
+                    />
+                    
+                    {/* 10% Label */}
+                    <motion.div 
+                      className="absolute top-6 right-6 bg-green-500 text-white px-4 py-2 rounded-full font-black text-lg"
+                      initial={{ scale: 0, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 2.5 }}
+                    >
+                      10% נסגרו
+                    </motion.div>
+                  </div>
+                  
+                  <p className="text-xl font-bold text-gray-600">
+                    המצב הנוכחי ברוב העסקים
+                  </p>
+                </motion.div>
+
+                {/* Right side - Text Content */}
+                <div className="text-center md:text-right">
+                  <motion.p 
+                    className="text-3xl md:text-4xl font-black text-gray-800 leading-tight mb-8"
+                    whileInView={{ scale: [0.95, 1] }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    רוב העסקים מקבלים לידים – וסוגרים אולי 10% מהם.
+                  </motion.p>
+                  
+                  <motion.p 
+                    className="text-3xl md:text-4xl font-black text-gray-800 leading-tight mb-12"
+                    whileInView={{ scale: [0.95, 1] }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
+                    אבל מה עם כל ה־90% שלא סגרו?
+                  </motion.p>
+                </div>
+              </div>
+
+              {/* Leads Visualization */}
+              <motion.div 
+                className="mb-16"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 1 }}
               >
-                אבל מה עם כל ה־90% שלא סגרו?
-              </motion.p>
-              
+                <div className="text-center mb-8">
+                  <p className="text-2xl font-bold text-gray-600 mb-6">הדמיה: 100 לידים שקיבלת</p>
+                  
+                  {/* Leads Grid */}
+                  <div className="grid grid-cols-10 gap-2 max-w-2xl mx-auto mb-8">
+                    {[...Array(100)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
+                          i < 10 
+                            ? 'bg-green-500 text-white' 
+                            : 'bg-red-100 border-2 border-red-300 text-red-600'
+                        }`}
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{ 
+                          delay: 1.5 + (i * 0.02),
+                          duration: 0.3 
+                        }}
+                        whileHover={{ scale: 1.2 }}
+                      >
+                        {i < 10 ? '✓' : '✗'}
+                      </motion.div>
+                    ))}
+                  </div>
+                  
+                  <div className="flex justify-center gap-8 text-lg font-bold">
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                      <span className="text-green-600">10 נסגרו</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 bg-red-300 border border-red-400 rounded-full"></div>
+                      <span className="text-red-600">90 לא נסגרו</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Main Message */}
               <motion.div
                 className="relative"
                 whileInView={{ y: [20, 0], opacity: [0.8, 1] }}
@@ -323,11 +438,23 @@ export default function Index() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-2xl blur-xl"></div>
                 <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-gradient-to-r from-primary/30 to-secondary/30">
-                  <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight mb-6">
+                  
+                  {/* Arrow pointing to the data */}
+                  <motion.div 
+                    className="absolute -top-12 left-1/2 transform -translate-x-1/2"
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <div className="bg-accent text-white px-4 py-2 rounded-full font-bold text-lg whitespace-nowrap">
+                      ← זה הזהב שלך! →
+                    </div>
+                  </motion.div>
+
+                  <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight mb-6 text-center">
                     זו בדיוק הדרך שלך למקסם את הרווח מהדאטא שכבר שילמת עליה –
                   </p>
                   <motion.p 
-                    className="text-2xl md:text-3xl font-black bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent leading-tight"
+                    className="text-2xl md:text-3xl font-black bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent leading-tight text-center"
                     animate={{ 
                       backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                     }}
