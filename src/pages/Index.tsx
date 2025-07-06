@@ -663,7 +663,7 @@ export default function Index() {
                     <div className="text-right">
                       <h4 className="text-xl font-black text-primary mb-2">מומחה לשיווק ומכירות</h4>
                       <p className="text-gray-700 leading-relaxed">
-                        יועץ עסקי בכיר עם התמחות בפיצוח אסטרטגי מבוסס דאטה ולמעלה מעשור של ניסיון בליווי עסקים להגדלת מכירות.
+                        יועץ עסקי בכיר עם התמחות בפיצוח אסטרטגי מבוסס דאטה ולמעלה מעשור של ניסיון בליווי עסקים להגדלת מכירות. בעברו ניהל את מחלקת המכירות של חברת הייעוץ העסקי הגדולה בישראל והכשיר יועצים עסקיים.
                       </p>
                     </div>
                   </div>
@@ -701,9 +701,6 @@ export default function Index() {
                       <div className="text-gray-700 leading-relaxed">
                         <p className="mb-2">
                           <strong className="text-accent">שיווק | מכירה | שיטה</strong> – מודל עבודה שמוביל עסקים לתוצאות אמיתיות.
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          בעברו ניהל את מחלקת המכירות של חברת הייעוץ העסקי הגדולה בישראל והכשיר יועצים עסקיים.
                         </p>
                       </div>
                     </div>
