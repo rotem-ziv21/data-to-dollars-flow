@@ -83,14 +83,16 @@ export default function Index() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="max-w-6xl mx-auto px-6 py-4">
-          <motion.h1 
-            className="text-3xl font-black text-primary text-center"
+          <motion.div 
+            className="flex items-center justify-center"
             whileHover={{ scale: 1.05 }}
           >
-            <span className="bg-gradient-to-l from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Optione
-            </span>
-          </motion.h1>
+            <img 
+              src="/lovable-uploads/a192ce18-e4fe-4b99-9f53-ead383b46f7f.png" 
+              alt="Optione - פשוט לשלוט בעסק" 
+              className="h-12 md:h-16"
+            />
+          </motion.div>
         </div>
       </motion.header>
 
@@ -483,23 +485,28 @@ export default function Index() {
           
           <GlowCard className="p-16 mb-16 bg-white/10 backdrop-blur-xl border-white/20">
             <div className="grid md:grid-cols-3 gap-12 mb-12">
-              {["מערכת", "פגישה", "סיסמאות"].map((item, i) => (
+              {[
+                { icon: "📞", title: "פגישות", subtitle: "ללא עלות" },
+                { icon: "🎯", title: "לידים", subtitle: "ללא עלות" },
+                { icon: "💰", title: "מכירות", subtitle: "ללא עלות" }
+              ].map((item, i) => (
                 <motion.div
                   key={i}
                   className="text-center"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.2 }}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileHover={{ scale: 1.1, rotate: 2 }}
                 >
                   <motion.div 
                     className="text-6xl mb-4"
-                    animate={{ rotate: [0, 10, -10, 0] }}
+                    animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
                   >
-                    ❌
+                    {item.icon}
                   </motion.div>
-                  <p className="text-2xl font-bold">{item}</p>
+                  <p className="text-3xl font-black mb-2">{item.title}</p>
+                  <p className="text-xl text-white/80">{item.subtitle}</p>
                 </motion.div>
               ))}
             </div>
@@ -549,13 +556,17 @@ export default function Index() {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <motion.h3 
+            <motion.div 
               className="text-4xl md:text-5xl font-black mb-8"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              Optione
-            </motion.h3>
+              <img 
+                src="/lovable-uploads/a192ce18-e4fe-4b99-9f53-ead383b46f7f.png" 
+                alt="Optione - פשוט לשלוט בעסק" 
+                className="h-16 md:h-20 mx-auto"
+              />
+            </motion.div>
             <p className="text-2xl md:text-3xl font-medium leading-relaxed">
               לא צריך מערכת חדשה כדי לייצר תוצאה.<br />
               <motion.span 
