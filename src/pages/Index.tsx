@@ -383,29 +383,29 @@ export default function Index() {
                   </div>
                   
                   <motion.div 
-                    className="space-y-2"
+                    className="space-y-3"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 4 }}
                   >
-                    <p className="text-lg font-bold text-gray-700">
+                    <p className="text-xl md:text-2xl font-bold text-gray-700">
                       המצב הנוכחי ברוב העסקים:
                     </p>
-                    <p className="text-xl font-black bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+                    <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
                       90% מהלידים הולכים לפח!
                     </p>
                   </motion.div>
 
                   {/* Call-to-action - Text only */}
                   <motion.div
-                    className="mt-6"
+                    className="mt-8"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 4.5 }}
                   >
                     <div className="text-center">
                       <motion.p 
-                        className="text-2xl font-black bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 bg-clip-text text-transparent"
+                        className="text-2xl md:text-3xl font-black bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 bg-clip-text text-transparent"
                         animate={{ 
                           backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                         }}
