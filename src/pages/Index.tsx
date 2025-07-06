@@ -890,7 +890,7 @@ export default function Index() {
                   בזכות זה אנחנו רואים:
                 </h3>
                 
-                <div className="flex flex-col lg:flex-row gap-8 justify-between">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
                   {[
                     { 
                       icon: TrendingUp,
@@ -910,11 +910,11 @@ export default function Index() {
                   ].map((item, index) => (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, x: -20, scale: 0.9 }}
-                      whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                      initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                      whileHover={{ scale: 1.02, y: -5 }}
-                      className="bg-white/80 backdrop-blur-sm rounded-xl p-8 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 flex-1 text-center"
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      className="bg-white/80 backdrop-blur-sm rounded-xl p-8 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 text-center min-h-[200px] flex flex-col justify-center"
                     >
                       <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg`}>
                         <item.icon className="w-8 h-8 text-white" />
