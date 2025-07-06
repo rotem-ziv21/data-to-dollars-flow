@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import ThreeBackground from "../components/ThreeBackground";
 import funnelImage from "../assets/data-funnel-infographic.jpg";
+import supermarketDataImage from "../assets/supermarket-data-analytics.jpg";
 
 const AnimatedCounter = ({ end, duration = 2 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0);
@@ -934,28 +935,86 @@ export default function Index() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-200/30 box-shadow-soft mt-16 max-w-5xl mx-auto"
+            className="mt-16 max-w-7xl mx-auto"
           >
-            <h4 className="text-3xl md:text-4xl font-black text-secondary mb-8 text-center">
-              תחשבו על סופרמרקטים:
-            </h4>
-            
-            <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed text-center">
-              <p className="text-xl md:text-2xl">
-                איך רשתות כמו שופרסל, רמי לוי או ויקטורי יודעים בדיוק מתי להחזיר אותך עם הצעה משתלמת?
-              </p>
-              <p className="text-2xl md:text-3xl font-bold text-primary">
-                הם משתמשים בדאטא שלך.
-              </p>
-              <p className="text-xl md:text-2xl">
-                זו השיטה הכי זולה והכי מדויקת ליצירת מכירות חוזרות.
-              </p>
-              <motion.p 
-                className="text-2xl md:text-3xl font-black text-accent bg-gradient-to-br from-accent/10 to-secondary/5 rounded-2xl p-6 border border-accent/20"
-                whileHover={{ scale: 1.02 }}
+            <div className="grid lg:grid-cols-2 gap-12 items-center bg-gradient-to-br from-white/95 via-blue-50/30 to-green-50/30 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-200/30 box-shadow-soft">
+              
+              {/* Left Column - Content */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+                className="text-right space-y-6"
               >
-                ואנחנו מביאים אותה לעסק שלך – בלי צורך להחזיק צוות, לשלם למדיה או להקים קמפיינים.
-              </motion.p>
+                <h4 className="text-3xl md:text-4xl font-black text-secondary mb-8">
+                  תחשבו על סופרמרקטים:
+                </h4>
+                
+                <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+                  <motion.p 
+                    className="text-xl md:text-2xl"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1.1 }}
+                  >
+                    איך רשתות כמו <span className="font-bold text-blue-600">שופרסל</span>, <span className="font-bold text-green-600">רמי לוי</span> או <span className="font-bold text-purple-600">ויקטורי</span> יודעים בדיוק מתי להחזיר אותך עם הצעה משתלמת?
+                  </motion.p>
+                  
+                  <motion.div 
+                    className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-6 border border-primary/20"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 1.2 }}
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <p className="text-2xl md:text-3xl font-black text-primary text-center">
+                      הם משתמשים בדאטא שלך.
+                    </p>
+                  </motion.div>
+                  
+                  <motion.p
+                    className="text-xl md:text-2xl"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1.3 }}
+                  >
+                    זו השיטה הכי זולה והכי מדויקת ליצירת מכירות חוזרות.
+                  </motion.p>
+                  
+                  <motion.div
+                    className="bg-gradient-to-br from-accent/15 via-secondary/10 to-primary/5 rounded-2xl p-8 border-2 border-accent/30"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1.4 }}
+                    whileHover={{ scale: 1.02, rotateX: 2 }}
+                  >
+                    <p className="text-2xl md:text-3xl font-black text-accent text-center leading-tight">
+                      ואנחנו מביאים אותה לעסק שלך – בלי צורך להחזיק צוות, לשלם למדיה או להקים קמפיינים.
+                    </p>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Right Column - Image */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 1.1 }}
+                className="relative"
+              >
+                <motion.div 
+                  className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-xl border border-gray-200/50 box-shadow-soft"
+                  whileHover={{ scale: 1.02, rotateY: -2 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <img 
+                    src={supermarketDataImage}
+                    alt="ניתוח דאטה של סופרמרקטים והתאמה אישית"
+                    className="w-full h-auto object-cover rounded-3xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/10 rounded-3xl" />
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
