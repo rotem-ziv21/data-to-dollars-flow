@@ -194,18 +194,13 @@ export default function Index() {
               { icon: Zap, color: "text-purple-600", text: "כל התוכנות הדרושות – עלינו!", delay: 0.4 }
             ].map((item, i) => (
               <GlowCard key={i} className="p-8" delay={item.delay}>
-                <motion.div
-                  whileHover={{ y: -10, rotateY: 10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
                   <motion.div
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                    whileHover={{ y: -10, rotateY: 10 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     <item.icon className={`w-16 h-16 ${item.color} mx-auto mb-6`} />
+                    <p className="text-xl font-bold text-gray-800">{item.text}</p>
                   </motion.div>
-                  <p className="text-xl font-bold text-gray-800">{item.text}</p>
-                </motion.div>
               </GlowCard>
             ))}
           </div>
@@ -216,7 +211,7 @@ export default function Index() {
           >
             <Button 
               size="lg" 
-              className="gradient-secondary hover:opacity-90 text-white px-16 py-8 text-3xl font-black rounded-3xl box-shadow-intense transition-all duration-300 animate-pulse-glow relative overflow-hidden group"
+              className="gradient-secondary hover:opacity-90 text-white px-16 py-8 text-3xl font-black rounded-3xl box-shadow-intense transition-all duration-300 relative overflow-hidden group"
             >
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
@@ -232,22 +227,6 @@ export default function Index() {
       {/* Problem Statement */}
       <section className="py-32 relative">
         <div className="max-w-6xl mx-auto px-8 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="mb-12"
-          >
-            <motion.div
-              className="inline-flex items-center gap-4 bg-red-100 px-8 py-4 rounded-full border-2 border-red-200 mb-8"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <span className="text-3xl">😤</span>
-              <span className="text-xl font-bold text-red-700">הבעיה הכי נפוצה</span>
-            </motion.div>
-          </motion.div>
-          
           <motion.h2 
             className="text-5xl md:text-7xl font-black text-primary mb-16 leading-tight"
             initial={{ opacity: 0, x: -100 }}
@@ -281,15 +260,11 @@ export default function Index() {
           </div>
 
           <GlowCard className="p-16 border-t-8 border-primary">
-            <motion.div
-              className="flex items-center justify-center mb-8"
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-            >
+            <div className="flex items-center justify-center mb-8">
               <div className="bg-primary/20 rounded-full p-8">
                 <TrendingUp className="w-16 h-16 text-primary" />
               </div>
-            </motion.div>
+            </div>
             <motion.p 
               className="text-4xl md:text-5xl font-black text-primary mb-8"
               whileInView={{ scale: [1, 1.05, 1] }}
@@ -300,6 +275,104 @@ export default function Index() {
             <p className="text-3xl md:text-4xl font-black text-secondary">
               הם צריכים לעבוד נכון עם מה שכבר יש.
             </p>
+          </GlowCard>
+        </div>
+      </section>
+
+      {/* About Aviv - What Makes Us Different */}
+      <section className="py-32 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 bg-white px-8 py-4 rounded-full box-shadow-soft mb-6">
+              <Award className="w-8 h-8 text-secondary" />
+              <span className="text-xl font-bold text-primary">למה לסמוך עלינו?</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-primary mb-6">
+              מה מייחד אותנו – ולמה זה באמת עובד?
+            </h2>
+            <p className="text-2xl font-medium text-gray-600">
+              בניגוד לחברות שעושות "אימייל מרקטינג", אנחנו מגיעים מהשטח.
+            </p>
+          </div>
+
+          <GlowCard className="max-w-5xl mx-auto border-t-8 border-secondary relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-secondary to-accent"></div>
+            
+            <div className="p-12">
+              <div className="flex items-center justify-center mb-8">
+                <div className="bg-gradient-to-r from-secondary to-accent rounded-full p-6">
+                  <Users className="w-16 h-16 text-white" />
+                </div>
+              </div>
+              
+              <h3 className="text-3xl md:text-4xl font-black text-center mb-8">
+                <span className="text-secondary">אביב שמש</span> - מייסד Optione
+              </h3>
+              
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6 text-lg leading-relaxed text-right">
+                  <motion.div 
+                    className="bg-primary/5 p-6 rounded-2xl border-r-4 border-primary"
+                    whileInView={{ x: [50, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    <p>
+                      Optione הוקמה על ידי <strong className="text-primary">אביב שמש</strong>, יועץ עסקי בכיר, מומחה לשיווק, מכירות ופיצוח אסטרטגי מבוסס דאטה, עם ניסיון של למעלה מעשור בליווי עסקים להגדלת מכירות.
+                    </p>
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="bg-secondary/5 p-6 rounded-2xl border-r-4 border-secondary"
+                    whileInView={{ x: [50, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  >
+                    <p>
+                      אביב עבד עם מותגים מהשורה הראשונה בישראל – <strong className="text-secondary">חלי ממן, כללית שירותי בריאות, מנדי גפנר, אספרסו קלאב</strong> ועוד.
+                    </p>
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="bg-accent/5 p-6 rounded-2xl border-r-4 border-accent"
+                    whileInView={{ x: [50, 0], opacity: [0, 1] }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                  >
+                    <p>
+                      הוא פיתח את <strong className="text-accent">שיטת "שמש"</strong> – שיווק | מכירה | שיטה – מודל עבודה שמוביל עסקים לתוצאות אמיתיות.
+                    </p>
+                  </motion.div>
+                </div>
+                
+                <div className="text-center">
+                  <motion.div 
+                    className="bg-gradient-to-br from-secondary to-accent rounded-3xl p-12 text-white box-shadow-intense"
+                    whileInView={{ scale: [0.8, 1], opacity: [0, 1] }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    whileHover={{ scale: 1.05, rotateY: 5 }}
+                  >
+                    <div className="text-6xl font-black mb-4">
+                      <AnimatedCounter end={2000} />+
+                    </div>
+                    <div className="text-xl font-bold mb-2">בעלי עסקים</div>
+                    <div className="text-lg opacity-90">עברו תחתיו בליווי אישי</div>
+                    <div className="flex justify-center mt-6 gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-6 h-6 fill-current" />
+                      ))}
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+
+              <motion.div
+                className="mt-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 text-center"
+                whileInView={{ y: [30, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <p className="text-lg text-gray-700 mb-4">
+                  בעברו ניהל את מחלקת המכירות של חברת הייעוץ העסקי הגדולה בישראל והכשיר יועצים עסקיים תוך התמחות ביצירת תהליכים מניבים, אוטומטיים ומדויקים.
+                </p>
+              </motion.div>
+            </div>
           </GlowCard>
         </div>
       </section>
@@ -355,15 +428,11 @@ export default function Index() {
           </div>
 
           <GlowCard className="p-16">
-            <motion.div
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="flex items-center justify-center mb-8"
-            >
-              <div className="bg-gradient-to-r from-primary via-secondary to-accent rounded-full p-8 animate-pulse-glow">
+            <div className="flex items-center justify-center mb-8">
+              <div className="bg-gradient-to-r from-primary via-secondary to-accent rounded-full p-8">
                 <Database className="w-20 h-20 text-white" />
               </div>
-            </motion.div>
+            </div>
             <motion.p 
               className="text-3xl md:text-4xl font-black text-primary mb-8"
               whileInView={{ opacity: [0.8, 1, 0.8] }}
