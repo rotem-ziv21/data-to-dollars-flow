@@ -837,19 +837,19 @@ export default function Index() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              className="relative flex items-center"
             >
               <motion.div 
-                className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-xl p-8 border border-gray-200/50 box-shadow-soft"
+                className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-xl p-8 border border-gray-200/50 box-shadow-soft w-full"
                 whileHover={{ scale: 1.02, rotateY: 2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img 
                   src={funnelImage}
                   alt="משפך המרת דאטה להודעות מותאמות אישית"
-                  className="w-full h-80 object-cover rounded-2xl"
+                  className="w-full h-64 object-contain rounded-2xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent rounded-2xl"></div>
                 
                 {/* Floating tech elements */}
                 <motion.div
