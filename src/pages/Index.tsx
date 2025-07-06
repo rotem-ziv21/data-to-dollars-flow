@@ -316,9 +316,9 @@ export default function Index() {
                 className={i >= 2 ? "md:col-span-1" : ""}
               >
                 <div className={`bg-gradient-to-br ${item.colorFrom} ${item.colorTo} p-[2px] rounded-3xl`}>
-                  <div className="bg-gray-800/95 backdrop-blur-sm rounded-3xl p-8 h-full">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 h-full">
                     <div className="text-4xl mb-4">{item.emoji}</div>
-                    <p className={`text-xl md:text-2xl font-black text-white leading-tight drop-shadow-lg`}>
+                    <p className={`text-xl md:text-2xl font-black bg-gradient-to-r ${item.colorFrom} ${item.colorTo} bg-clip-text text-transparent leading-tight`}>
                       {item.text}
                     </p>
                   </div>
