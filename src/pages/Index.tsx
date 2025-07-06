@@ -297,21 +297,51 @@ export default function Index() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-4xl mx-auto mb-16"
+            className="max-w-5xl mx-auto mb-16"
           >
-            <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-12 border border-gray-200/50 box-shadow-soft">
-              <p className="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed mb-6">
+            <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-16 md:p-20 border border-gray-200/30 box-shadow-soft text-center">
+              <motion.p 
+                className="text-3xl md:text-4xl font-black text-gray-800 leading-tight mb-8"
+                whileInView={{ scale: [0.95, 1] }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 רוב העסקים מקבלים לידים – וסוגרים אולי 10% מהם.
-              </p>
-              <p className="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed mb-6">
+              </motion.p>
+              
+              <motion.p 
+                className="text-3xl md:text-4xl font-black text-gray-800 leading-tight mb-12"
+                whileInView={{ scale: [0.95, 1] }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 אבל מה עם כל ה־90% שלא סגרו?
-              </p>
-              <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-relaxed mb-4">
-                זו בדיוק הדרך שלך למקסם את הרווח מהדאטא שכבר שילמת עליה –
-              </p>
-              <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent leading-relaxed">
-                במקום לרדוף אחרי עוד לידים חדשים.
-              </p>
+              </motion.p>
+              
+              <motion.div
+                className="relative"
+                whileInView={{ y: [20, 0], opacity: [0.8, 1] }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-2xl blur-xl"></div>
+                <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-gradient-to-r from-primary/30 to-secondary/30">
+                  <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight mb-6">
+                    זו בדיוק הדרך שלך למקסם את הרווח מהדאטא שכבר שילמת עליה –
+                  </p>
+                  <motion.p 
+                    className="text-2xl md:text-3xl font-black bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent leading-tight"
+                    animate={{ 
+                      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                    }}
+                    transition={{ 
+                      duration: 3, 
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    style={{ backgroundSize: '200% 200%' }}
+                  >
+                    במקום לרדוף אחרי עוד לידים חדשים.
+                  </motion.p>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
 
