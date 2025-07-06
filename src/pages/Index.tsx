@@ -189,9 +189,9 @@ export default function Index() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {[
-              { icon: CheckCircle, color: "green", text: "מסע לקוח שיוצר לקוחות איכותיים", delay: 0 },
-              { icon: Target, color: "blue", text: "בלי להוציא שקל על שיווק", delay: 0.2 },
-              { icon: Zap, color: "purple", text: "כל התוכנות הדרושות – עלינו!", delay: 0.4 }
+              { icon: CheckCircle, color: "text-green-600", text: "מסע לקוח שיוצר לקוחות איכותיים", delay: 0 },
+              { icon: Target, color: "text-blue-600", text: "בלי להוציא שקל על שיווק", delay: 0.2 },
+              { icon: Zap, color: "text-purple-600", text: "כל התוכנות הדרושות – עלינו!", delay: 0.4 }
             ].map((item, i) => (
               <GlowCard key={i} className="p-8" delay={item.delay}>
                 <motion.div
@@ -202,7 +202,7 @@ export default function Index() {
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                   >
-                    <item.icon className={`w-16 h-16 text-${item.color}-600 mx-auto mb-6`} />
+                    <item.icon className={`w-16 h-16 ${item.color} mx-auto mb-6`} />
                   </motion.div>
                   <p className="text-xl font-bold text-gray-800">{item.text}</p>
                 </motion.div>
@@ -259,10 +259,10 @@ export default function Index() {
           
           <div className="space-y-8 mb-16">
             {[
-              { text: "בדיוק.", color: "primary", delay: 0 },
-              { text: "הדאטה אצלך.", color: "secondary", delay: 0.2 },
-              { text: "אתה יודע שיש לך שירות טוב.", color: "green-600", delay: 0.4 },
-              { text: "אתה רק צריך מישהו שייקח את כל מה שצברת – ויהפוך את זה לתוצאה.", color: "accent", delay: 0.6 }
+              { text: "בדיוק.", colorText: "text-primary", colorBorder: "border-primary", delay: 0 },
+              { text: "הדאטה אצלך.", colorText: "text-secondary", colorBorder: "border-secondary", delay: 0.2 },
+              { text: "אתה יודע שיש לך שירות טוב.", colorText: "text-green-600", colorBorder: "border-green-500", delay: 0.4 },
+              { text: "אתה רק צריך מישהו שייקח את כל מה שצברת – ויהפוך את זה לתוצאה.", colorText: "text-accent", colorBorder: "border-accent", delay: 0.6 }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -271,8 +271,8 @@ export default function Index() {
                 transition={{ duration: 0.8, delay: item.delay }}
                 whileHover={{ scale: 1.05, rotateX: 5 }}
               >
-                <GlowCard className={`p-10 border-r-8 border-${item.color.replace('-600', '-500')}`}>
-                  <p className={`text-3xl md:text-4xl font-black text-${item.color}`}>
+                <GlowCard className={`p-10 border-r-8 ${item.colorBorder}`}>
+                  <p className={`text-3xl md:text-4xl font-black ${item.colorText}`}>
                     {item.text}
                   </p>
                 </GlowCard>
@@ -324,26 +324,26 @@ export default function Index() {
 
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             {[
-              { number: 95, suffix: "%", label: "אחוזי פתיחה", color: "green", delay: 0 },
-              { number: 78, suffix: "%", label: "אחוז תגובה", color: "blue", delay: 0.3 },
-              { number: 340, suffix: "%", label: "עלייה בסגירות", color: "purple", delay: 0.6 }
+              { number: 95, suffix: "%", label: "אחוזי פתיחה", colorText: "text-green-600", colorBorder: "border-green-500", colorBg: "bg-green-100", colorBar: "bg-green-500", delay: 0 },
+              { number: 78, suffix: "%", label: "אחוז תגובה", colorText: "text-blue-600", colorBorder: "border-blue-500", colorBg: "bg-blue-100", colorBar: "bg-blue-500", delay: 0.3 },
+              { number: 340, suffix: "%", label: "עלייה בסגירות", colorText: "text-purple-600", colorBorder: "border-purple-500", colorBg: "bg-purple-100", colorBar: "bg-purple-500", delay: 0.6 }
             ].map((stat, i) => (
-              <GlowCard key={i} className={`p-12 border-t-8 border-${stat.color}-500`} delay={stat.delay}>
+              <GlowCard key={i} className={`p-12 border-t-8 ${stat.colorBorder}`} delay={stat.delay}>
                 <motion.div
                   whileHover={{ scale: 1.1, rotateY: 10 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <motion.div 
-                    className={`text-7xl md:text-8xl font-black text-${stat.color}-600 mb-4`}
+                    className={`text-7xl md:text-8xl font-black ${stat.colorText} mb-4`}
                     whileInView={{ scale: [0, 1.2, 1] }}
                     transition={{ duration: 1, delay: stat.delay }}
                   >
                     <AnimatedCounter end={stat.number} />{stat.suffix}
                   </motion.div>
                   <p className="text-xl font-bold text-gray-800 mb-2">{stat.label}</p>
-                  <div className={`w-full h-2 bg-${stat.color}-100 rounded-full overflow-hidden`}>
+                  <div className={`w-full h-2 ${stat.colorBg} rounded-full overflow-hidden`}>
                     <motion.div
-                      className={`h-full bg-${stat.color}-500`}
+                      className={`h-full ${stat.colorBar}`}
                       initial={{ width: 0 }}
                       whileInView={{ width: `${Math.min(stat.number, 100)}%` }}
                       transition={{ duration: 2, delay: stat.delay + 0.5 }}
