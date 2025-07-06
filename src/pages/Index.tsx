@@ -681,7 +681,7 @@ export default function Index() {
                     <div className="text-right">
                       <h4 className="text-xl font-black text-secondary mb-2">עבד עם המותגים הגדולים</h4>
                       <p className="text-gray-700 leading-relaxed">
-                        <strong>חלי ממן, כללית שירותי בריאות, מנדי גפנר, אספרסו קלאב</strong> ועוד מותגים מהשורה הראשונה בישראל.
+                        <strong>חלי ממן, כללית שירותי בריאות, מנדי גפנר, אספרסו קלאב, בנקים מובלים, כלל חברה לביטוח, ספיר זיסמן, דנטלון</strong> ועוד מותגים מהשורה הראשונה בישראל.
                       </p>
                     </div>
                   </div>
