@@ -578,7 +578,7 @@ export default function Index() {
             transition={{ duration: 0.8 }}
           >
             <motion.div 
-              className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-2xl mb-8 box-shadow-soft hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center gap-3 bg-primary/90 backdrop-blur-md border border-primary/30 text-white px-8 py-4 rounded-2xl mb-8 box-shadow-soft hover:bg-primary transition-all duration-300"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
