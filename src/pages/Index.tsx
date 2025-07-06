@@ -315,11 +315,11 @@ export default function Index() {
                     {/* Background circle for contrast */}
                     <div className="absolute inset-0 rounded-full bg-gray-100 shadow-2xl border-8 border-white"></div>
                     
-                    {/* 90% Arc - Red with clear separation */}
+                    {/* 90% Arc - Red (לא נסגרו) - Takes most of the circle */}
                     <motion.div
                       className="absolute inset-2 rounded-full"
                       style={{
-                        background: `conic-gradient(from 18deg, #dc2626 18deg, #ef4444 180deg, #f87171 342deg, transparent 342deg)`,
+                        background: `conic-gradient(from 0deg, #dc2626 0deg, #ef4444 180deg, #f87171 324deg, transparent 324deg)`,
                         clipPath: 'circle(50% at 50% 50%)'
                       }}
                       initial={{ rotate: -90, scale: 0.8 }}
@@ -327,11 +327,11 @@ export default function Index() {
                       transition={{ duration: 2.5, delay: 0.8, ease: "easeOut" }}
                     />
                     
-                    {/* 10% Arc - Green with clear visibility */}
+                    {/* 10% Arc - Green (נסגרו) - Small slice at the top */}
                     <motion.div
                       className="absolute inset-2 rounded-full"
                       style={{
-                        background: `conic-gradient(from 342deg, #16a34a 342deg, #22c55e 18deg, transparent 18deg)`,
+                        background: `conic-gradient(from 324deg, #16a34a 324deg, #22c55e 360deg, transparent 0deg)`,
                         clipPath: 'circle(50% at 50% 50%)'
                       }}
                       initial={{ rotate: -90, scale: 0.8 }}
@@ -341,23 +341,23 @@ export default function Index() {
 
                     {/* White separators for clarity */}
                     <div className="absolute inset-2 rounded-full">
-                      {/* Separator line 1 */}
+                      {/* Separator line at 0deg */}
                       <div 
-                        className="absolute w-0.5 h-full bg-white origin-bottom"
+                        className="absolute w-1 h-full bg-white origin-bottom"
                         style={{ 
                           left: '50%', 
                           top: '0',
-                          transform: 'translateX(-50%) rotate(18deg)',
+                          transform: 'translateX(-50%) rotate(0deg)',
                           transformOrigin: 'center bottom'
                         }}
                       />
-                      {/* Separator line 2 */}
+                      {/* Separator line at 324deg */}
                       <div 
-                        className="absolute w-0.5 h-full bg-white origin-bottom"
+                        className="absolute w-1 h-full bg-white origin-bottom"
                         style={{ 
                           left: '50%', 
                           top: '0',
-                          transform: 'translateX(-50%) rotate(342deg)',
+                          transform: 'translateX(-50%) rotate(324deg)',
                           transformOrigin: 'center bottom'
                         }}
                       />
@@ -409,7 +409,7 @@ export default function Index() {
                     
                     {/* Labels with arrows pointing to sections */}
                     <motion.div 
-                      className="absolute -top-8 left-8 bg-red-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg border-4 border-white"
+                      className="absolute left-1/2 -top-12 transform -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg border-4 border-white"
                       initial={{ scale: 0, opacity: 0, y: 20 }}
                       whileInView={{ scale: 1, opacity: 1, y: 0 }}
                       transition={{ delay: 3.5, type: "spring", stiffness: 200 }}
@@ -417,14 +417,14 @@ export default function Index() {
                     >
                       <div className="flex items-center gap-2">
                         <span>✗</span>
-                        <span>90% הולכים לאיבוד</span>
+                        <span>90% לא נסגרו</span>
                       </div>
-                      {/* Arrow pointing to red section */}
+                      {/* Arrow pointing down to red section */}
                       <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rotate-45"></div>
                     </motion.div>
 
                     <motion.div 
-                      className="absolute top-6 -right-12 bg-green-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg border-4 border-white"
+                      className="absolute top-8 -right-16 bg-green-500 text-white px-6 py-3 rounded-2xl font-black text-lg shadow-lg border-4 border-white"
                       initial={{ scale: 0, opacity: 0, y: -20 }}
                       whileInView={{ scale: 1, opacity: 1, y: 0 }}
                       transition={{ delay: 4, type: "spring", stiffness: 200 }}
@@ -435,7 +435,7 @@ export default function Index() {
                         <span>10% נסגרו</span>
                       </div>
                       {/* Arrow pointing to green section */}
-                      <div className="absolute -bottom-2 left-1/3 w-4 h-4 bg-green-500 rotate-45"></div>
+                      <div className="absolute -bottom-2 left-1/4 w-4 h-4 bg-green-500 rotate-45"></div>
                     </motion.div>
                   </div>
                   
