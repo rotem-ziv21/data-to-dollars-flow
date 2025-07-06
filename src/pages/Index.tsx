@@ -66,8 +66,8 @@ const Index = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              כסף מהדאטא<br />
-              <span className="text-4xl md:text-6xl">שכבר שילמת עליה</span>
+              השירות שיחזיר לחיים<br />
+              <span className="text-4xl md:text-6xl">את הלידים ״הרדומים״ שלך</span>
             </motion.h1>
             
             <motion.p 
@@ -76,9 +76,9 @@ const Index = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              אנחنו הופכים את הדאטה הקיימת שלך לעוד מכירות –<br />
+              לא מערכת. לא קורס. לא קמפיינר שרוצה כסף לפני שהראה לך תוצאות.<br />
               <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent font-black">
-                בלי להוציא שקל נוסף על שיווק
+                אנחנו עושים את העבודה בשבילך – על בסיס הדאטה הקיימת שלך
               </span>
             </motion.p>
 
@@ -92,7 +92,7 @@ const Index = () => {
                 size="lg" 
                 className="gradient-primary text-white px-12 py-6 text-xl md:text-2xl font-black rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 box-shadow-intense"
               >
-                בואו נראה איך זה עובד
+                לתיאום שיחת "כסף מהדאטה" בזום
                 <ArrowRight className="mr-3 w-6 h-6" />
               </Button>
             </motion.div>
@@ -142,6 +142,151 @@ const Index = () => {
               </GlowCard>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="py-32 relative bg-gradient-to-br from-gray-50 via-white to-blue-50/20">
+        <div className="max-w-6xl mx-auto px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-6xl font-black text-gray-800 mb-8 leading-tight">
+              "אבל כבר שילמתי עשרות אלפים על שיווק..."
+            </h2>
+            <p className="text-2xl md:text-3xl font-bold text-gray-700 leading-relaxed max-w-5xl mx-auto mb-8">
+              רוב העסקים מקבלים לידים – וסוגרים אולי 10% מהם.<br />
+              אבל מה עם כל ה־90% שלא סגרו?
+            </p>
+            <p className="text-xl md:text-2xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              זו בדיוק הדרך שלך למקסם את הרווח מהדאטה שכבר שילמת עליה –<br />
+              במקום לרדוף אחרי עוד לידים חדשים.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* What We Don't Do */}
+      <section className="py-32 relative bg-gradient-to-br from-red-50/30 via-white to-pink-50/20">
+        <div className="max-w-6xl mx-auto px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-6xl font-black text-red-600 mb-8 leading-tight">
+              ❌ מה אנחנו לא עושים?
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-3 gap-8"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {[
+              "לא מוכרים לך מערכת טכנולוגית חדשה",
+              "לא שולחים אותך לקורסים", 
+              "לא מציעים קמפיין עם תקציב פרסום"
+            ].map((text, i) => (
+              <GlowCard key={i} className="p-6 text-center border-red-200/50 bg-red-50/20" delay={i * 0.1}>
+                <div className="flex items-center justify-center mb-4">
+                  <X className="w-8 h-8 text-red-500" />
+                </div>
+                <p className="text-lg md:text-xl font-bold text-gray-800 leading-tight">{text}</p>
+              </GlowCard>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* What We Do */}
+      <section className="py-32 relative bg-gradient-to-br from-green-50/30 via-white to-emerald-50/20">
+        <div className="max-w-6xl mx-auto px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-6xl font-black text-green-600 mb-8 leading-tight">
+              ✅ מה כן?
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {[
+              "מנתחים את הדאטה הקיימת שלך – קבצים, CRM, וואטסאפ",
+              "מפצחים את הפילוחים בתוכה",
+              "בונים הודעות ומיילים חכמים לפי פסיכולוגיה של קנייה",
+              "מפעילים עבורך קמפיין מותאם",
+              "ואתה מקבל לידים – ישירות לשיחה או לסגירה"
+            ].map((text, i) => (
+              <GlowCard key={i} className="p-6 border-green-200/50 bg-green-50/20" delay={i * 0.1}>
+                <div className="flex items-center gap-4">
+                  <CheckCircle className="w-8 h-8 text-green-500 flex-shrink-0" />
+                  <p className="text-lg md:text-xl font-bold text-gray-800 leading-tight text-right">{text}</p>
+                </div>
+              </GlowCard>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="py-32 relative bg-gradient-to-br from-blue-50/30 via-white to-purple-50/20">
+        <div className="max-w-6xl mx-auto px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-6xl font-black text-primary mb-8 leading-tight">
+              🎯 מה שונה אצלנו – ולמה זה באמת עובד?
+            </h2>
+          </motion.div>
+
+          <GlowCard className="p-8 md:p-12 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-xl md:text-2xl font-bold text-gray-800 leading-relaxed mb-8">
+                בניגוד לחברות שעושות "אימייל מרקטינג", אנחנו מגיעים מהשטח.<br />
+                <strong>Optione הוקמה על ידי אביב שמש</strong>, יועץ עסקי בכיר ומומחה לשיווק, מכירות ופיצוח אסטרטגי מבוסס דאטה.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div className="space-y-4">
+                  <h3 className="text-xl font-black text-primary">הניסיון שלנו:</h3>
+                  <ul className="text-lg text-gray-700 space-y-2">
+                    <li>עבד עם מותגים מובילים: חלי ממן, כללית, אספרסו קלאב, מנדי גפנר</li>
+                    <li>פיתח את שיטת שמש – שיווק | מכירה | שיטה</li>
+                    <li>למעלה מ־2,000 בעלי עסקים עברו תחתיו</li>
+                  </ul>
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-black text-secondary">ההישגים שלנו:</h3>
+                  <ul className="text-lg text-gray-700 space-y-2">
+                    <li>ניהל מחלקת מכירות בחברת הייעוץ הגדולה בישראל</li>
+                    <li>הכשיר עשרות יועצים עסקיים</li>
+                    <li>ליווי אישי, קורסים וסדנאות מוכחות</li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </GlowCard>
         </div>
       </section>
 
@@ -293,24 +438,173 @@ const Index = () => {
               </motion.div>
             </div>
           </motion.div>
+        </div>
+      </section>
 
-          {/* CTA Button */}
+      {/* Target Audience */}
+      <section className="py-32 relative bg-gradient-to-br from-green-50/30 via-white to-blue-50/20">
+        <div className="max-w-6xl mx-auto px-8">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="mt-16"
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <motion.div 
-              className="inline-flex items-center gap-3 bg-primary/90 backdrop-blur-md border border-primary/30 text-white px-8 py-4 rounded-2xl mb-8 box-shadow-soft hover:bg-primary transition-all duration-300"
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Calendar className="w-6 h-6" />
-              <span className="text-lg md:text-xl font-bold">
-                תיאום שיחת "כסף מהדאטא"
-              </span>
-            </motion.div>
+            <h2 className="text-4xl md:text-6xl font-black text-green-600 mb-8 leading-tight">
+              🧭 למי זה מתאים?
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 gap-8"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {[
+              "עסקים שמקבלים לפחות 100 לידים בחודש",
+              "כאלה עם רשימות מיילים / וואטסאפ / לקוחות עבר",
+              "מי שכבר שילם על שיווק – ורוצה סוף סוף לראות תוצאה",
+              "אנשים בלי זמן להתעסק בדאטא – ורוצים שמישהו יעשה את זה בשבילם"
+            ].map((text, i) => (
+              <GlowCard key={i} className="p-6 border-green-200/50 bg-green-50/20" delay={i * 0.1}>
+                <div className="flex items-center gap-4">
+                  <CheckCircle className="w-8 h-8 text-green-500 flex-shrink-0" />
+                  <p className="text-lg md:text-xl font-bold text-gray-800 leading-tight text-right">{text}</p>
+                </div>
+              </GlowCard>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Not Suitable */}
+      <section className="py-32 relative bg-gradient-to-br from-red-50/30 via-white to-pink-50/20">
+        <div className="max-w-6xl mx-auto px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-6xl font-black text-red-600 mb-8 leading-tight">
+              ❌ למי זה לא מתאים?
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 gap-8"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {[
+              "מי שאין לו דאטה בכלל",
+              "מי שמחפש לעשות הכל לבד",
+              "מי שלא מבין שהכסף נמצא בדאטא",
+              "מי שלא מוכן להשקיע כדי להרוויח"
+            ].map((text, i) => (
+              <GlowCard key={i} className="p-6 border-red-200/50 bg-red-50/20" delay={i * 0.1}>
+                <div className="flex items-center gap-4">
+                  <X className="w-8 h-8 text-red-500 flex-shrink-0" />
+                  <p className="text-lg md:text-xl font-bold text-gray-800 leading-tight text-right">{text}</p>
+                </div>
+              </GlowCard>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Offer Section */}
+      <section className="py-32 relative bg-gradient-to-br from-yellow-50/30 via-white to-orange-50/20">
+        <div className="max-w-6xl mx-auto px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-6xl font-black text-orange-600 mb-8 leading-tight">
+              🎁 ההצעה שלנו – בול בשביל עסקים כמוך:
+            </h2>
+            
+            <GlowCard className="p-8 md:p-12 border-orange-200/50 bg-orange-50/20 max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <p className="text-2xl md:text-3xl font-black text-gray-800 leading-relaxed mb-6">
+                  שני חודשי ליווי – על בסיס הצלחה בלבד.
+                </p>
+                
+                <p className="text-xl md:text-2xl font-bold text-gray-700 leading-relaxed mb-6">
+                  שלם רק על תוצאה: פגישות שנקבעו, מכירות שבוצעו או לידים איכותיים שנכנסו.<br />
+                  <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent font-black">
+                    לא הבאנו תוצאה – לא שילמת.
+                  </span>
+                </p>
+                
+                <p className="text-lg md:text-xl font-semibold text-gray-600">
+                  אנחנו מציעים את זה כי אנחנו יודעים שזה עובד –<br />
+                  וזה גם יוצר אמון מההתחלה. <strong>Win–Win.</strong>
+                </p>
+              </motion.div>
+            </GlowCard>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Call Details */}
+      <section className="py-32 relative bg-gradient-to-br from-blue-50/30 via-white to-purple-50/20">
+        <div className="max-w-6xl mx-auto px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-6xl font-black text-primary mb-8 leading-tight">
+              📞 מה קורה בפגישת "כסף מהדאטא"?
+            </h2>
+            
+            <GlowCard className="p-8 md:p-12 max-w-5xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <p className="text-xl md:text-2xl font-bold text-gray-800 leading-relaxed mb-8">
+                  פגישה של עד שעה בזום – ללא עלות וללא התחייבות.
+                </p>
+                
+                <h3 className="text-2xl md:text-3xl font-black text-secondary mb-6">
+                  במהלך הפגישה:
+                </h3>
+                
+                <div className="space-y-4 text-right">
+                  {[
+                    "– נבין מה יש לך היום בדאטא בייס",
+                    "– ננתח פילוחים",
+                    "– נבין את ההצעה העסקית שלך",
+                    "– נזהה את קהלי היעד",
+                    "– ונסיים עם תוכנית פעולה מדויקת"
+                  ].map((text, i) => (
+                    <motion.p
+                      key={i}
+                      className="text-lg md:text-xl font-semibold text-gray-700"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: i * 0.1 }}
+                    >
+                      {text}
+                    </motion.p>
+                  ))}
+                </div>
+                
+                <p className="text-xl md:text-2xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mt-8">
+                  שתראה לך איך אפשר להפוך את הלידים הרדומים לרווחים.
+                </p>
+              </motion.div>
+            </GlowCard>
           </motion.div>
         </div>
       </section>
@@ -323,22 +617,19 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-3xl md:text-4xl font-black mb-8 text-gray-800">
-              התוצאה?<br />
-              <motion.span 
-                className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent"
-                animate={{ 
-                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                style={{ backgroundSize: '200% 200%' }}
-              >
-                רק דאטה קיימת + חשיבה חכמה + ביצוע מדויק.
-              </motion.span>
+            <motion.div 
+              className="inline-flex items-center gap-3 bg-primary/90 backdrop-blur-md border border-primary/30 text-white px-12 py-6 rounded-3xl mb-8 box-shadow-soft hover:bg-primary transition-all duration-300 cursor-pointer"
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Calendar className="w-8 h-8" />
+              <span className="text-2xl md:text-3xl font-black">
+                🔵 לתיאום שיחת "כסף מהדאטא" – לחיצה כאן
+              </span>
+            </motion.div>
+            
+            <p className="text-xl md:text-2xl font-bold text-gray-700 mb-8">
+              📍 ההצעה זמינה כרגע ללא עלות – למתאמים ראשונים בלבד.
             </p>
           </motion.div>
         </div>
