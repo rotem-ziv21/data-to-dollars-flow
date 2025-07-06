@@ -930,16 +930,17 @@ export default function Index() {
             </div>
           </motion.div>
           
-          {/* דוגמה מסופרמרקטים - עיצוב נקי ומודרני */}
+          {/* דוגמה מסופרמרקטים - עיצוב מחודש */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-20 max-w-7xl mx-auto"
+            className="mt-20 max-w-6xl mx-auto"
           >
-            <div className="text-center space-y-16">
+            <div className="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-3xl p-12 border border-gray-200/30 shadow-xl">
+              
               <motion.h4 
-                className="text-4xl md:text-5xl font-black text-gray-900"
+                className="text-4xl md:text-5xl font-black text-gray-900 text-center mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -947,52 +948,62 @@ export default function Index() {
                 תחשבו על סופרמרקטים:
               </motion.h4>
               
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="max-w-4xl mx-auto"
-              >
-                <img 
-                  src={supermarketDataFlow}
-                  alt="תהליך ניתוח דאטה של סופרמרקטים"
-                  className="w-full h-auto rounded-3xl shadow-2xl"
-                />
-              </motion.div>
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                
+                {/* Left Column - Image */}
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="order-2 lg:order-1"
+                >
+                  <div className="bg-white rounded-2xl p-6 shadow-lg">
+                    <img 
+                      src={supermarketDataFlow}
+                      alt="תהליך ניתוח דאטה של סופרמרקטים"
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
+                  </div>
+                </motion.div>
+                
+                {/* Right Column - Content */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="order-1 lg:order-2 text-right space-y-8"
+                >
+                  <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+                    איך רשתות כמו <span className="font-bold text-blue-600">שופרסל</span>, <span className="font-bold text-green-600">רמי לוי</span> או <span className="font-bold text-purple-600">ויקטורי</span> יודעים בדיוק מתי להחזיר אותך עם הצעה משתלמת?
+                  </p>
+                  
+                  <motion.div 
+                    className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-6 text-center"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <p className="text-2xl md:text-3xl font-black text-white">
+                      הם משתמשים בדאטא שלך
+                    </p>
+                  </motion.div>
+                  
+                  <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+                    זו השיטה הכי זולה והכי מדויקת ליצירת מכירות חוזרות.
+                  </p>
+                </motion.div>
+              </div>
               
-              <motion.div
+              {/* Bottom CTA */}
+              <motion.div 
+                className="mt-12 bg-gradient-to-br from-accent/10 to-secondary/5 rounded-2xl p-8 border border-accent/20 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="max-w-5xl mx-auto space-y-8"
+                transition={{ duration: 0.6, delay: 0.6 }}
+                whileHover={{ scale: 1.01 }}
               >
-                <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed">
-                  איך רשתות כמו <span className="font-bold text-blue-600">שופרסל</span>, <span className="font-bold text-green-600">רמי לוי</span> או <span className="font-bold text-purple-600">ויקטורי</span> יודעים בדיוק מתי להחזיר אותך עם הצעה משתלמת?
+                <p className="text-2xl md:text-3xl font-black text-accent leading-tight">
+                  ואנחנו מביאים אותה לעסק שלך – בלי צורך להחזיק צוות, לשלם למדיה או להקים קמפיינים.
                 </p>
-                
-                <motion.div 
-                  className="bg-gradient-to-r from-primary to-secondary rounded-3xl p-8 text-center"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <p className="text-3xl md:text-4xl font-black text-white">
-                    הם משתמשים בדאטא שלך
-                  </p>
-                </motion.div>
-                
-                <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed">
-                  זו השיטה הכי זולה והכי מדויקת ליצירת מכירות חוזרות.
-                </p>
-                
-                <motion.div 
-                  className="bg-gradient-to-br from-accent/10 to-secondary/5 rounded-3xl p-10 border border-accent/20"
-                  whileHover={{ scale: 1.01 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <p className="text-3xl md:text-4xl font-black text-accent leading-tight">
-                    ואנחנו מביאים אותה לעסק שלך – בלי צורך להחזיק צוות, לשלם למדיה או להקים קמפיינים.
-                  </p>
-                </motion.div>
               </motion.div>
             </div>
           </motion.div>
