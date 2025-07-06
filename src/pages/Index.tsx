@@ -195,14 +195,11 @@ export default function Index() {
                     transition={{ duration: 0.6 }}
                     className="text-center"
                   >
-                    <div className="text-3xl md:text-4xl font-black text-white mb-6 leading-tight space-y-2">
+                    <div className="text-3xl md:text-4xl font-black text-white mb-8 leading-tight space-y-2">
                       <p>לא מערכת</p>
                       <p>לא קורס</p>
                       <p>לא קמפיינר</p>
                     </div>
-                    <p className="text-xl md:text-2xl text-white/90 mb-6 leading-relaxed">
-                      שרוצה כסף לפני שהראה לך תוצאות.
-                    </p>
                     
                     <motion.div 
                       className="bg-gradient-to-r from-secondary/20 to-accent/20 rounded-2xl p-6 border-2 border-secondary/30"
