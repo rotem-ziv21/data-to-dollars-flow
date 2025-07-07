@@ -1107,22 +1107,75 @@ export default function Index() {
                 
                 {/* תוכן מפושט */}
                 <motion.div 
-                  className="max-w-4xl mx-auto space-y-6"
+                  className="max-w-4xl mx-auto space-y-8"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  <div className="bg-white/90 rounded-2xl p-8 shadow-lg border border-gray-200/30">
-                    <p className="text-lg md:text-xl text-gray-800 font-medium leading-relaxed text-center">
-                      שלם רק על תוצאה: פגישות שנקבעו, מכירות שבוצעו או לידים איכותיים שנכנסו
-                    </p>
-                  </div>
+                  {/* תיבה ראשונה - שלם רק על תוצאה */}
+                  <motion.div 
+                    className="relative group"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    whileHover={{ scale: 1.02, y: -5 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+                    <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl p-8 md:p-10 shadow-2xl border-2 border-green-200/40 group-hover:border-green-300/60 transition-all duration-300">
+                      <div className="flex items-center justify-center mb-4">
+                        <motion.div
+                          className="bg-gradient-to-r from-green-500 to-emerald-600 w-12 h-12 rounded-full flex items-center justify-center"
+                          animate={{ rotate: [0, 360] }}
+                          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                        >
+                          <CheckCircle className="w-6 h-6 text-white" />
+                        </motion.div>
+                      </div>
+                      <p className="text-xl md:text-2xl text-gray-800 font-bold leading-relaxed text-center">
+                        <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                          שלם רק על תוצאה:
+                        </span>
+                        <br />
+                        <span className="text-gray-700 font-medium">
+                          פגישות שנקבעו, מכירות שבוצעו או לידים איכותיים שנכנסו
+                        </span>
+                      </p>
+                    </div>
+                  </motion.div>
                   
-                  <div className="bg-gradient-to-r from-accent/5 to-primary/5 rounded-2xl p-8 border-2 border-accent/20">
-                    <p className="text-lg md:text-xl font-bold text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                      לא הבאנו תוצאה – לא שילמת
-                    </p>
-                  </div>
+                  {/* תיבה שנייה - לא הבאנו תוצאה */}
+                  <motion.div 
+                    className="relative group"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    whileHover={{ scale: 1.02, y: -5 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-accent rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+                    <div className="relative bg-gradient-to-br from-purple-50/80 via-pink-50/80 to-white/80 backdrop-blur-xl rounded-3xl p-8 md:p-10 shadow-2xl border-2 border-purple-200/40 group-hover:border-purple-300/60 transition-all duration-300">
+                      <div className="flex items-center justify-center mb-4">
+                        <motion.div
+                          className="bg-gradient-to-r from-purple-500 via-pink-500 to-accent w-12 h-12 rounded-full flex items-center justify-center"
+                          animate={{ 
+                            scale: [1, 1.1, 1],
+                            boxShadow: [
+                              "0 0 0 0 rgba(168, 85, 247, 0.4)",
+                              "0 0 0 10px rgba(168, 85, 247, 0)",
+                              "0 0 0 0 rgba(168, 85, 247, 0)"
+                            ]
+                          }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        >
+                          <Sparkles className="w-6 h-6 text-white" />
+                        </motion.div>
+                      </div>
+                      <p className="text-xl md:text-2xl font-black text-center">
+                        <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-accent bg-clip-text text-transparent text-3xl md:text-4xl">
+                          לא הבאנו תוצאה – לא שילמת
+                        </span>
+                      </p>
+                    </div>
+                  </motion.div>
                 </motion.div>
                 
                 {/* הודעת Win-Win מעוצבת */}
