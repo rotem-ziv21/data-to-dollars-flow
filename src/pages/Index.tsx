@@ -1371,127 +1371,57 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-32 relative overflow-hidden">
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent"
-          animate={{ 
-            background: [
-              'linear-gradient(45deg, #120c4c, #ff7a45, #ff02ff)',
-              'linear-gradient(135deg, #ff02ff, #120c4c, #ff7a45)',
-              'linear-gradient(225deg, #ff7a45, #ff02ff, #120c4c)',
-              'linear-gradient(315deg, #120c4c, #ff7a45, #ff02ff)'
-            ]
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-        />
+      {/* Final CTA - Simplified */}
+      <section className="py-32 relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="absolute inset-0 bg-black/30" />
         
         <div className="max-w-6xl mx-auto px-8 text-center relative z-10 text-white">
-          <motion.h2 
-            className="text-5xl md:text-7xl font-black mb-16"
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-          >
+          <h2 className="text-5xl md:text-7xl font-black mb-16">
             מוכן להתחיל להרוויח מהדאטה?
-          </motion.h2>
+          </h2>
           
-          <GlowCard className="p-16 mb-16 bg-white/10 backdrop-blur-xl border-white/20">
-            <div className="grid md:grid-cols-3 gap-12 mb-12">
-              {[
-                { icon: "📞", title: "פגישות", subtitle: "ללא עלות" },
-                { icon: "🎯", title: "לידים", subtitle: "ללא עלות" },
-                { icon: "💰", title: "מכירות", subtitle: "ללא עלות" }
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  className="text-center"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.2 }}
-                  whileHover={{ scale: 1.1, rotate: 2 }}
-                >
-                  <motion.div 
-                    className="text-6xl mb-4"
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
-                  >
-                    {item.icon}
-                  </motion.div>
-                  <p className="text-3xl font-black mb-2">{item.title}</p>
-                  <p className="text-xl text-white/80">{item.subtitle}</p>
-                </motion.div>
-              ))}
+          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-16 mb-16">
+            <p className="text-4xl md:text-5xl font-black mb-8">רק תוצאה = תשלום</p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="text-6xl mb-4">📞</div>
+                <p className="text-2xl font-bold">פגישות ללא עלות</p>
+              </div>
+              <div className="text-center">
+                <div className="text-6xl mb-4">🎯</div>
+                <p className="text-2xl font-bold">לידים ללא עלות</p>
+              </div>
+              <div className="text-center">
+                <div className="text-6xl mb-4">💰</div>
+                <p className="text-2xl font-bold">מכירות ללא עלות</p>
+              </div>
             </div>
-            <motion.div
-              className="bg-secondary/30 backdrop-blur-sm rounded-3xl p-8 border-2 border-secondary/50"
-              whileHover={{ scale: 1.05 }}
-            >
-              <p className="text-4xl md:text-5xl font-black">רק תוצאה = תשלום</p>
-            </motion.div>
-          </GlowCard>
-
-          <div className="space-y-8">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button 
-                size="lg" 
-                className="bg-white text-primary hover:bg-white/90 px-20 py-10 text-3xl font-black rounded-3xl box-shadow-intense transition-all duration-300 relative overflow-hidden group"
-              >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent"
-                  animate={{ x: ['-100%', '100%'] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-                <span className="relative z-10">🔵 לתיאום שיחה עכשיו</span>
-              </Button>
-            </motion.div>
-            
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 border-white text-white hover:bg-white/20 px-16 py-8 text-xl font-bold rounded-2xl backdrop-blur-sm"
-              >
-                🔵 קבל דוגמה מותאמת לדאטה שלך
-              </Button>
-            </motion.div>
           </div>
 
-          <motion.div 
-            className="mt-24 pt-16 border-t border-white/30"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <motion.div 
-              className="text-4xl md:text-5xl font-black mb-8"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 3, repeat: Infinity }}
+          <div className="mb-16">
+            <Button 
+              size="lg" 
+              className="bg-white text-primary hover:bg-white/90 px-20 py-10 text-3xl font-black rounded-3xl"
             >
+              🔵 לתיאום שיחה עכשיו
+            </Button>
+          </div>
+
+          <div className="mt-24 pt-16 border-t border-white/30">
+            <div className="mb-8">
               <img 
                 src="/lovable-uploads/a192ce18-e4fe-4b99-9f53-ead383b46f7f.png" 
                 alt="Optione - פשוט לשלוט בעסק" 
                 className="h-16 md:h-20 mx-auto"
               />
-            </motion.div>
+            </div>
             <p className="text-2xl md:text-3xl font-medium leading-relaxed">
               לא צריך מערכת חדשה כדי לייצר תוצאה.<br />
-              <motion.span 
-                className="font-black"
-                whileInView={{ color: ['#ffffff', '#ff7a45', '#ff02ff', '#ffffff'] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
+              <span className="font-black text-secondary">
                 רק דאטה קיימת + חשיבה חכמה + ביצוע מדויק.
-              </motion.span>
+              </span>
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
