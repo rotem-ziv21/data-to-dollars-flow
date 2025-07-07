@@ -1213,26 +1213,6 @@ export default function Index() {
               <div className="relative z-10">
                 {/* כותרת מעוצבת */}
                 <div className="text-center mb-16">
-                  <motion.div 
-                    className="relative inline-block mb-8"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <div className="w-28 h-28 bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500 rounded-3xl shadow-2xl flex items-center justify-center relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-3xl" />
-                      <motion.div
-                        className="absolute -inset-3 bg-gradient-to-r from-blue-500/40 to-cyan-500/40 rounded-[2.5rem] blur-xl -z-10"
-                        animate={{ 
-                          scale: [1, 1.3, 1],
-                          opacity: [0.4, 0.7, 0.4]
-                        }}
-                        transition={{ 
-                          duration: 2.5, 
-                          repeat: Infinity
-                        }}
-                      />
-                    </div>
-                  </motion.div>
                   
                   <h3 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
                     מה קורה בפגישת<br />
