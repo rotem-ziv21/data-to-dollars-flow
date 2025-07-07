@@ -79,7 +79,7 @@ export default function Index() {
 
       {/* Header */}
       <motion.header 
-        className="relative backdrop-blur-xl bg-white/10 border-b border-white/20"
+        className="relative backdrop-blur-xl bg-primary/10 border-b border-primary/20"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
