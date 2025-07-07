@@ -1031,12 +1031,11 @@ export default function Index() {
       </section>
 
       {/* ההצעה שלנו - עיצוב מקצועי ומשכנע */}
-      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/5">
+      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         {/* אפקטי רקע */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-20 w-96 h-96 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl opacity-60"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-secondary/20 to-primary/20 rounded-full blur-3xl opacity-50"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-white/40 to-transparent rounded-full"></div>
+          <div className="absolute top-10 left-20 w-96 h-96 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl opacity-40"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-secondary/10 to-primary/10 rounded-full blur-3xl opacity-30"></div>
         </div>
         
         <div className="max-w-6xl mx-auto px-8 relative z-10">
@@ -1071,98 +1070,74 @@ export default function Index() {
             </motion.div>
           </motion.div>
 
-          {/* ההצעה המרכזית - עיצוב מרשים */}
-          <motion.div 
-            className="relative mb-24"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="bg-white/95 backdrop-blur-xl rounded-[3rem] p-12 md:p-16 shadow-2xl border-2 border-white/50 relative overflow-hidden">
-              {/* אפקט זוהר */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none" />
-              <div className="absolute top-0 left-1/4 w-1/2 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
-              
-              <div className="relative z-10 text-center space-y-12">
-                
-                {/* כותרת מרכזית מעוצבת */}
-                <motion.h3 
-                  className="text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-12"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                  שני חודשי ליווי –<br />
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative">
-                    על בסיס הצלחה בלבד
-                    <motion.div 
-                      className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      transition={{ duration: 1, delay: 0.5 }}
-                      style={{ originX: 0 }}
-                    />
-                  </span>
-                </motion.h3>
-                
-                {/* תוכן מפושט */}
+          {/* תוכן מרכזי בסגנון הדף לדוגמה */}
+          <div className="text-center text-white space-y-12">
+            
+            {/* כותרת ראשית */}
+            <motion.h3 
+              className="text-4xl md:text-6xl font-black text-white leading-tight"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              כל זה עולה לך
+            </motion.h3>
+            
+            {/* תיבה מוארת עם המסר המרכזי */}
+            <motion.div 
+              className="relative inline-block"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <div className="bg-gradient-to-r from-secondary to-accent text-white px-12 py-6 rounded-2xl text-3xl md:text-5xl font-black shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
+                <div className="relative z-10">
+                  רק על בסיס הצלחה בלבד
+                </div>
                 <motion.div 
-                  className="max-w-4xl mx-auto space-y-6"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                >
-                  <div className="bg-white/90 rounded-2xl p-8 shadow-lg border border-gray-200/30">
-                    <p className="text-lg md:text-xl text-gray-800 font-medium leading-relaxed text-center">
-                      שלם רק על תוצאה: פגישות שנקבעו, מכירות שבוצעו או לידים איכותיים שנכנסו
-                    </p>
-                  </div>
-                  
-                  <div className="bg-gradient-to-r from-accent/5 to-primary/5 rounded-2xl p-8 border-2 border-accent/20">
-                    <p className="text-lg md:text-xl font-bold text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                      לא הבאנו תוצאה – לא שילמת
-                    </p>
-                  </div>
-                </motion.div>
-                
-                {/* הודעת Win-Win מעוצבת */}
-                <motion.div 
-                  className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 rounded-[2rem] p-8 md:p-10 max-w-3xl mx-auto text-white shadow-2xl relative overflow-hidden"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-50" />
-                  <div className="relative z-10">
-                    <p className="text-xl md:text-2xl font-bold leading-relaxed text-center">
-                      אנחנו מציעים את זה כי אנחנו יודעים שזה עובד –
-                    </p>
-                    <motion.p 
-                      className="text-2xl md:text-4xl font-black mt-4 text-center"
-                      animate={{ 
-                        scale: [1, 1.05, 1]
-                      }}
-                      transition={{ 
-                        duration: 2, 
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
-                      Win–Win מההתחלה
-                      <motion.span
-                        className="inline-block ml-3 text-3xl"
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      >
-                        🚀
-                      </motion.span>
-                    </motion.p>
-                  </div>
-                </motion.div>
+                  className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0"
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
               </div>
-            </div>
-          </motion.div>
+              <motion.div 
+                className="absolute -inset-4 bg-gradient-to-r from-secondary/30 to-accent/30 rounded-3xl blur-xl -z-10"
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                  opacity: [0.5, 0.8, 0.5]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.div>
+            
+            {/* תוכן הסבר */}
+            <motion.div 
+              className="max-w-4xl mx-auto space-y-8 text-lg md:text-xl text-gray-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <p className="leading-relaxed">
+                אנחנו מדברים פה על הוכחת ליווי דיגיטלי למשך 30 יום,<br />
+                שתעלה לך רק בסך הכל <span className="text-secondary font-bold">247 שח</span><br />
+                <span className="text-accent font-bold">(כזה 8.23 שח ליום וזה כולל את המעצמים!)</span>
+              </p>
+              
+              <div className="text-right space-y-3">
+                <p>וכדי להסיר כל דאגה מליבך...</p>
+                <p>אין התחייבות לשום דבר,</p>
+                <p>ואין אותיות קטנות.</p>
+                <p className="text-accent font-bold">באים נטו להביא תוצאות.</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
           {/* מה קורה בפגישה - עיצוב מרשים */}
           <motion.div 
