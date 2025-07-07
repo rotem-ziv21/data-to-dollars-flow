@@ -1053,7 +1053,7 @@ export default function Index() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <h2 className="text-5xl md:text-8xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-8 leading-tight relative">
+              <h2 className="text-5xl md:text-8xl font-black bg-gradient-to-r from-[hsl(var(--accent-bright))] via-[hsl(var(--secondary-bright))] to-[hsl(var(--primary-bright))] bg-clip-text text-transparent mb-8 leading-tight relative">
                 ההצעה שלנו
                 <motion.div
                   className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-3xl blur-xl -z-10"
