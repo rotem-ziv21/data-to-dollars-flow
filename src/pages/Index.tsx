@@ -1071,13 +1071,13 @@ export default function Index() {
                         </h5>
                         
                          <motion.div 
-                           className="bg-gradient-to-r from-primary to-primary/80 rounded-3xl p-6 text-center mb-8 shadow-lg border-2 border-primary/20"
+                           className="bg-gradient-to-r from-green-500 to-green-600 rounded-3xl p-6 text-center mb-8 shadow-lg border-2 border-green-200"
                            whileHover={{ scale: 1.05 }}
                            transition={{ type: "spring", stiffness: 300 }}
                          >
                            <p className="text-2xl font-black text-white leading-tight">
                              אנחנו לוקחים את רשימת הלידים שלך –<br />
-                             <span className="text-secondary font-black">ובונים ממנה מכונה שיווקית חכמה</span>
+                             <span className="text-green-100 font-black">ובונים ממנה מכונה שיווקית חכמה</span>
                            </p>
                          </motion.div>
                       </div>
