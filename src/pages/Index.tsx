@@ -77,9 +77,9 @@ export default function Index() {
       <PulsingOrb color="#ff02ff" size="80" top="60%" left="10%" delay={2} />
       <PulsingOrb color="#120c4c" size="72" top="80%" left="85%" delay={3} />
 
-      {/* Floating Header */}
+      {/* Header */}
       <motion.header 
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/10 border-b border-white/20"
+        className="relative backdrop-blur-xl bg-white/10 border-b border-white/20"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
