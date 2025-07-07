@@ -1199,7 +1199,6 @@ export default function Index() {
                   >
                     <div className="w-28 h-28 bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500 rounded-3xl shadow-2xl flex items-center justify-center relative">
                       <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-3xl" />
-                      <span className="text-5xl relative z-10">📞</span>
                       <motion.div
                         className="absolute -inset-3 bg-gradient-to-r from-blue-500/40 to-cyan-500/40 rounded-[2.5rem] blur-xl -z-10"
                         animate={{ 
