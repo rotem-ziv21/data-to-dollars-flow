@@ -1031,7 +1031,7 @@ export default function Index() {
       </section>
 
       {/* ההצעה שלנו - עיצוב מקצועי ומשכנע */}
-      <section className="py-32 relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/5">
+      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/5">
         {/* אפקטי רקע */}
         <div className="absolute inset-0">
           <div className="absolute top-10 left-20 w-96 h-96 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl opacity-60"></div>
@@ -1043,7 +1043,7 @@ export default function Index() {
           
           {/* כותרת עם אנימציה מרשימה */}
           <motion.div 
-            className="text-center mb-32"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -1070,16 +1070,7 @@ export default function Index() {
               </h2>
             </motion.div>
             
-            <motion.p 
-              className="text-2xl md:text-3xl font-bold text-gray-700 mb-12"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              בול בשביל עסקים כמוך
-            </motion.p>
-            
-            <motion.div 
+            <motion.div
               className="w-32 h-2 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"
               initial={{ width: 0 }}
               whileInView={{ width: 128 }}
