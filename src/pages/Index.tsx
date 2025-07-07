@@ -1087,33 +1087,60 @@ export default function Index() {
                 
                 {/* כותרת מרכזית מעוצבת */}
                 <motion.h3 
-                  className="text-4xl md:text-6xl font-black text-gray-900 leading-tight"
+                  className="text-4xl md:text-6xl font-black text-gray-900 leading-tight relative"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  שני חודשי ליווי –<br />
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative inline-block">
+                  <span className="relative inline-block">
+                    שני חודשי ליווי –
+                    <motion.div 
+                      className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-2xl blur-xl -z-10"
+                      animate={{ 
+                        scale: [1, 1.05, 1],
+                        opacity: [0.3, 0.6, 0.3]
+                      }}
+                      transition={{ 
+                        duration: 3, 
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                  </span>
+                  <br />
+                  <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent relative inline-block text-shadow">
                     על בסיס הצלחה בלבד
                     <motion.div 
-                      className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-accent to-secondary rounded-full shadow-lg"
                       initial={{ scaleX: 0, opacity: 0 }}
                       whileInView={{ scaleX: 1, opacity: 1 }}
                       transition={{ 
                         duration: 1.2, 
-                        delay: 0.5,
+                        delay: 0.8,
                         ease: "easeOut"
                       }}
                       style={{ originX: 0 }}
                     />
                     <motion.div 
-                      className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/50 via-accent/50 to-secondary/50 rounded-full blur-sm"
+                      className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary/40 via-accent/40 to-secondary/40 rounded-full blur-md"
                       animate={{ 
                         scaleX: [1, 1.1, 1],
-                        opacity: [0.5, 0.8, 0.5]
+                        opacity: [0.4, 0.8, 0.4]
                       }}
                       transition={{ 
-                        duration: 2, 
+                        duration: 2.5, 
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                    <motion.div 
+                      className="absolute -inset-3 bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 rounded-3xl blur-2xl -z-10"
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                        rotate: [0, 1, -1, 0]
+                      }}
+                      transition={{ 
+                        duration: 4, 
                         repeat: Infinity,
                         ease: "easeInOut"
                       }}
