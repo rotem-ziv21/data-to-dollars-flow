@@ -1171,71 +1171,87 @@ export default function Index() {
                   </div>
                 </motion.div>
 
-                {/* התוצאות - עיצוב מהמם */}
+                {/* התוצאות - עיצוב מקצועי ומשופר */}
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1.5 }}
                   className="mt-24"
                 >
-                  <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 rounded-[3rem] p-12 shadow-2xl border-2 border-yellow-100/50 relative overflow-hidden">
+                  <div className="bg-gradient-to-br from-slate-50 via-white to-gray-50 rounded-[3rem] p-16 shadow-2xl border border-gray-100 relative overflow-hidden">
                     
-                    {/* אפקטי רקע מתקדמים */}
+                    {/* אפקטי רקע עדינים */}
                     <div className="absolute inset-0">
-                      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-yellow-300/20 to-transparent rounded-full blur-2xl" />
-                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-orange-300/20 to-transparent rounded-full blur-2xl" />
+                      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary/5 to-transparent rounded-full blur-3xl" />
+                      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-secondary/5 to-transparent rounded-full blur-3xl" />
                     </div>
                     
                     <div className="relative z-10">
-                      <div className="text-center mb-12">
+                      <div className="text-center mb-16">
                         <motion.h5 
                           className="text-4xl md:text-6xl font-black mb-6"
-                          whileHover={{ scale: 1.05 }}
+                          whileHover={{ scale: 1.02 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <span className="bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
+                          <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
                             מה יוצא לך מזה?
                           </span>
                         </motion.h5>
                         <motion.div 
-                          className="w-32 h-1 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full mx-auto"
+                          className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto"
                           initial={{ scaleX: 0 }}
                           whileInView={{ scaleX: 1 }}
                           transition={{ duration: 1, delay: 1.7 }}
                         />
                       </div>
 
-                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         {[
-                          { icon: Users, text: "פגישות עם לקוחות רלוונטיים שכבר הכרת – ולא סגרת", color: "from-blue-500 to-blue-600" },
-                          { icon: TrendingUp, text: "יותר סגירות – עם עלות שיווקית אפסית", color: "from-green-500 to-green-600" },
-                          { icon: DollarSign, text: "בלי להוציא שקל נוסף על פרסום", color: "from-yellow-500 to-yellow-600" },
-                          { icon: UserPlus, text: "בלי להחזיק עובדים", color: "from-purple-500 to-purple-600" },
-                          { icon: Award, text: "בלי התחייבות: אם לא הבאנו תוצאה – לא שילמת", color: "from-red-500 to-red-600" }
+                          { icon: Users, text: "פגישות עם לקוחות רלוונטיים שכבר הכרת – ולא סגרת", color: "from-blue-500 to-blue-600", bgColor: "from-blue-50 to-blue-100" },
+                          { icon: TrendingUp, text: "יותר סגירות – עם עלות שיווקית אפסית", color: "from-green-500 to-green-600", bgColor: "from-green-50 to-green-100" },
+                          { icon: DollarSign, text: "בלי להוציא שקל נוסף על פרסום", color: "from-amber-500 to-orange-500", bgColor: "from-amber-50 to-orange-100" },
+                          { icon: UserPlus, text: "בלי להחזיק עובדים", color: "from-purple-500 to-purple-600", bgColor: "from-purple-50 to-purple-100" },
+                          { icon: Award, text: "בלי התחייבות: אם לא הבאנו תוצאה – לא שילמת", color: "from-red-500 to-red-600", bgColor: "from-red-50 to-red-100" }
                         ].map((item, index) => (
                           <motion.div
                             key={index}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5, delay: 1.8 + index * 0.1 }}
-                            whileHover={{ scale: 1.05, y: -5 }}
-                            className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 group cursor-pointer"
+                            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{ duration: 0.6, delay: 1.8 + index * 0.15 }}
+                            whileHover={{ scale: 1.03, y: -8 }}
+                            className={`bg-gradient-to-br ${item.bgColor} rounded-3xl p-8 shadow-xl border-2 border-white/50 group cursor-pointer relative overflow-hidden`}
                           >
-                            <div className="flex items-start gap-4">
+                            <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            
+                            <div className="relative z-10 text-center">
                               <motion.div
-                                className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center shadow-md flex-shrink-0`}
-                                whileHover={{ rotate: 360 }}
-                                transition={{ duration: 0.6 }}
+                                className={`w-20 h-20 bg-gradient-to-br ${item.color} rounded-3xl flex items-center justify-center shadow-lg mx-auto mb-6`}
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.4 }}
                               >
-                                <item.icon className="w-6 h-6 text-white" strokeWidth={2.5} />
+                                <item.icon className="w-10 h-10 text-white" strokeWidth={2.5} />
                               </motion.div>
-                              <p className="text-lg font-bold text-gray-700 leading-tight group-hover:text-gray-900 transition-colors">
+                              <p className="text-xl font-bold text-gray-800 leading-tight group-hover:text-gray-900 transition-colors">
                                 {item.text}
                               </p>
                             </div>
                           </motion.div>
                         ))}
                       </div>
+                      
+                      {/* הודעת סיכום מרכזית */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 2.5 }}
+                        className="mt-12 text-center"
+                      >
+                        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-6 border border-primary/20">
+                          <p className="text-xl font-bold text-gray-700">
+                            ✨ הכל מבוסס על הדאטה שכבר יש לך - בלי השקעות נוספות
+                          </p>
+                        </div>
+                      </motion.div>
                     </div>
                   </div>
                 </motion.div>
