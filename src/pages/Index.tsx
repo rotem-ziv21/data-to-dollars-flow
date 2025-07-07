@@ -1115,25 +1115,53 @@ export default function Index() {
               />
             </motion.div>
             
-            {/* תוכן הסבר */}
+            {/* תוכן הסבר משופר */}
             <motion.div 
-              className="max-w-4xl mx-auto space-y-8 text-lg md:text-xl text-gray-300"
+              className="max-w-4xl mx-auto space-y-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <p className="leading-relaxed">
-                אנחנו מדברים פה על הוכחת ליווי דיגיטלי למשך 30 יום,<br />
-                שתעלה לך רק בסך הכל <span className="text-secondary font-bold">247 שח</span><br />
-                <span className="text-accent font-bold">(כזה 8.23 שח ליום וזה כולל את המעצמים!)</span>
-              </p>
+              {/* תיבה ראשונה - לבנה */}
+              <motion.div 
+                className="bg-white/95 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-gray-200/50"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                whileHover={{ scale: 1.02, shadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+              >
+                <p className="text-lg md:text-xl text-gray-800 font-semibold leading-relaxed text-center">
+                  שלם רק על תוצאה: פגישות שנקבעו, מכירות שבוצעו או לידים איכותיים שנכנסו
+                </p>
+              </motion.div>
               
-              <div className="text-right space-y-3">
-                <p>וכדי להסיר כל דאגה מליבך...</p>
-                <p>אין התחייבות לשום דבר,</p>
-                <p>ואין אותיות קטנות.</p>
-                <p className="text-accent font-bold">באים נטו להביא תוצאות.</p>
-              </div>
+              {/* תיבה שנייה - סגולה */}
+              <motion.div 
+                className="bg-gradient-to-r from-primary/10 to-accent/15 backdrop-blur-xl rounded-2xl p-8 border-2 border-accent/30 shadow-2xl relative overflow-hidden"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-primary/5 rounded-2xl" />
+                <div className="relative z-10">
+                  <p className="text-lg md:text-xl font-black text-center leading-relaxed bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    לא הבאנו תוצאה – לא שילמת
+                  </p>
+                </div>
+                <motion.div 
+                  className="absolute -inset-1 bg-gradient-to-r from-accent/20 to-primary/20 rounded-2xl blur-sm -z-10"
+                  animate={{ 
+                    opacity: [0.3, 0.6, 0.3],
+                    scale: [1, 1.02, 1]
+                  }}
+                  transition={{ 
+                    duration: 2, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -1371,9 +1399,9 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Final CTA - Simplified */}
+      {/* Final Section */}
       <section className="py-32 relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/30"></div>
         
         <div className="max-w-6xl mx-auto px-8 text-center relative z-10 text-white">
           <h2 className="text-5xl md:text-7xl font-black mb-16">
@@ -1399,12 +1427,9 @@ export default function Index() {
           </div>
 
           <div className="mb-16">
-            <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-white/90 px-20 py-10 text-3xl font-black rounded-3xl"
-            >
+            <button className="bg-white text-primary hover:bg-white/90 px-20 py-10 text-3xl font-black rounded-3xl transition-all duration-300">
               🔵 לתיאום שיחה עכשיו
-            </Button>
+            </button>
           </div>
 
           <div className="mt-24 pt-16 border-t border-white/30">
