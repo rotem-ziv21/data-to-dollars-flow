@@ -1778,38 +1778,6 @@ export default function Index() {
             </div>
           </GlowCard>
 
-          <div className="space-y-8">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button 
-                size="lg" 
-                className="bg-white text-primary hover:bg-white/90 px-20 py-10 text-3xl font-black rounded-3xl box-shadow-intense transition-all duration-300 relative overflow-hidden group"
-              >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent"
-                  animate={{ x: ['-100%', '100%'] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-                <span className="relative z-10">🔵 לתיאום שיחה עכשיו</span>
-              </Button>
-            </motion.div>
-            
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 border-white text-white hover:bg-white/20 px-16 py-8 text-xl font-bold rounded-2xl backdrop-blur-sm"
-              >
-                🔵 קבל דוגמה מותאמת לדאטה שלך
-              </Button>
-            </motion.div>
-          </div>
-
           <motion.div 
             className="mt-24 pt-16 border-t border-white/30"
             initial={{ opacity: 0 }}
