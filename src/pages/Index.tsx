@@ -1093,8 +1093,9 @@ export default function Index() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   שני חודשי ליווי –<br />
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative">
                     על בסיס הצלחה בלבד
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
                   </span>
                 </motion.h3>
                 
