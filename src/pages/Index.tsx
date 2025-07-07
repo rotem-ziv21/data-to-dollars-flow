@@ -1144,6 +1144,27 @@ export default function Index() {
                       </p>
                     </div>
                   </div>
+                  
+                  {/* תיבה שלישית - בלי לשלם על תוכנות */}
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-amber-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+                    <div className="relative bg-gradient-to-br from-orange-50/80 via-amber-50/80 to-white/80 backdrop-blur-xl rounded-3xl p-8 md:p-10 shadow-2xl border-2 border-orange-200/40 group-hover:border-orange-300/60 transition-all duration-300">
+                      <div className="flex items-center justify-center mb-4">
+                        <div className="bg-gradient-to-r from-orange-500 to-amber-600 w-12 h-12 rounded-full flex items-center justify-center">
+                          <Settings className="w-6 h-6 text-white" />
+                        </div>
+                      </div>
+                      <p className="text-xl md:text-2xl text-gray-800 font-bold leading-relaxed text-center">
+                        <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                          🟠 בלי לשלם על תוכנות:
+                        </span>
+                        <br />
+                        <span className="text-gray-700 font-medium">
+                          אנחנו מספקים את כל מה שצריך – מערכת, אוטומציות, דשבורד ודיוורים – הכל כלול.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 
                 {/* הודעת Win-Win מעוצבת */}
