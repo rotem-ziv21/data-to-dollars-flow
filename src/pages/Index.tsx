@@ -964,17 +964,17 @@ export default function Index() {
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-pulse">
+                    <span className="bg-gradient-to-r from-primary via-secondary via-accent to-accent bg-clip-text text-transparent">
                       אז מה בעצם השירות שלנו?
                     </span>
                     <motion.div
-                      className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-3xl blur-2xl -z-10"
+                      className="absolute -inset-8 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-3xl blur-xl -z-10"
                       animate={{ 
-                        scale: [1, 1.1, 1],
-                        opacity: [0.3, 0.6, 0.3]
+                        scale: [1, 1.05, 1],
+                        opacity: [0.2, 0.4, 0.2]
                       }}
                       transition={{ 
-                        duration: 4, 
+                        duration: 6, 
                         repeat: Infinity,
                         ease: "easeInOut"
                       }}
