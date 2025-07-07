@@ -1228,79 +1228,73 @@ export default function Index() {
                 
                 {/* תוכן הפגישה */}
                 <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 rounded-[2rem] p-10 md:p-12 border-2 border-blue-200/50 shadow-xl">
-                  <p className="text-2xl md:text-3xl font-black text-gray-900 mb-12 text-center">
-                    במהלך הפגישה:
-                  </p>
+                  <div className="text-center mb-12">
+                    <h4 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+                      במהלך הפגישה:
+                    </h4>
+                    <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div>
+                  </div>
                   
-                  <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
-                    {[
-                      { text: "נבין מה יש לך היום בדאטא בייס", icon: "📊" },
-                      { text: "ננתח פילוחים", icon: "🔍" }, 
-                      { text: "נבין את ההצעה העסקית שלך", icon: "💼" },
-                      { text: "נזהה את קהלי היעד", icon: "🎯" },
-                      { text: "ונסיים עם תוכנית פעולה מדויקת", icon: "📋" }
-                    ].map((item, index) => (
-                      <motion.div 
-                        key={index} 
-                        className="flex items-start gap-6 text-right bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100 group"
-                        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        whileHover={{ 
-                          scale: 1.03, 
-                          x: 10,
-                          boxShadow: "0 20px 40px -10px rgba(59, 130, 246, 0.3)"
-                        }}
-                      >
-                        <motion.div 
-                          className="text-3xl"
-                          whileHover={{ scale: 1.2, rotate: 10 }}
-                          transition={{ type: "spring", stiffness: 400 }}
-                        >
-                          {item.icon}
-                        </motion.div>
-                        <p className="text-lg md:text-xl text-gray-800 font-semibold group-hover:text-blue-700 transition-colors duration-300">
-                          {item.text}
+                  <div className="grid gap-6 max-w-4xl mx-auto mb-12">
+                    {/* נבין מה יש לך היום בדאטא בייס */}
+                    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300 hover:border-blue-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                          <Database className="w-6 h-6 text-white" />
+                        </div>
+                        <p className="text-lg md:text-xl text-gray-800 font-semibold">
+                          נבין מה יש לך היום בדאטא בייס
                         </p>
-                      </motion.div>
-                    ))}
+                      </div>
+                    </div>
+
+                    {/* ננתח פילוחים */}
+                    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300 hover:border-blue-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg">
+                          <Target className="w-6 h-6 text-white" />
+                        </div>
+                        <p className="text-lg md:text-xl text-gray-800 font-semibold">
+                          נזהה את קהלי היעד
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* נבין את ההצעה העסקית שלך */}
+                    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300 hover:border-blue-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
+                          <TrendingUp className="w-6 h-6 text-white" />
+                        </div>
+                        <p className="text-lg md:text-xl text-gray-800 font-semibold">
+                          נבין את ההצעה העסקית שלך
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* ונסיים עם תוכנית פעולה מדויקת */}
+                    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300 hover:border-blue-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                          <CheckCircle className="w-6 h-6 text-white" />
+                        </div>
+                        <p className="text-lg md:text-xl text-gray-800 font-semibold">
+                          ונסיים עם תוכנית פעולה מדויקת
+                        </p>
+                      </div>
+                    </div>
                   </div>
                   
                   {/* התוצאה הסופית */}
-                  <motion.div 
-                    className="bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600 rounded-[2rem] p-8 md:p-10 max-w-4xl mx-auto text-white text-center shadow-2xl relative overflow-hidden"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                    whileHover={{ scale: 1.02 }}
-                  >
+                  <div className="bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600 rounded-[2rem] p-8 md:p-10 max-w-4xl mx-auto text-white text-center shadow-2xl relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
-                    <motion.p 
-                      className="text-2xl md:text-3xl font-black leading-tight relative z-10"
-                      animate={{ 
-                        textShadow: ["0 0 20px rgba(255,255,255,0.5)", "0 0 30px rgba(255,255,255,0.8)", "0 0 20px rgba(255,255,255,0.5)"]
-                      }}
-                      transition={{ 
-                        duration: 2, 
-                        repeat: Infinity
-                      }}
-                    >
-                      שתראה לך איך אפשר להפוך את הלידים הרדומים לרווחים
-                      <motion.span
-                        className="inline-block ml-3 text-4xl"
-                        animate={{ 
-                          rotate: [0, 360],
-                          scale: [1, 1.2, 1]
-                        }}
-                        transition={{ 
-                          duration: 3, 
-                          repeat: Infinity
-                        }}
-                      >
-                        💰
-                      </motion.span>
-                    </motion.p>
-                  </motion.div>
+                    <div className="relative z-10 flex items-center justify-center gap-3">
+                      <Zap className="w-8 h-8 text-yellow-300" />
+                      <p className="text-xl md:text-2xl font-black leading-tight">
+                        שנראה לך איך אפשר להפוך את הלידים הרדומים לרווחים
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
