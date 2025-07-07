@@ -1070,16 +1070,16 @@ export default function Index() {
                           מה אנחנו <span className="text-green-600">כן</span> עושים
                         </h5>
                         
-                        <motion.div 
-                          className="bg-gradient-to-r from-secondary to-accent rounded-3xl p-6 text-center mb-8 shadow-lg"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ type: "spring", stiffness: 300 }}
-                        >
-                          <p className="text-2xl font-black text-white leading-tight">
-                            אנחנו לוקחים את רשימת הלידים שלך –<br />
-                            <span className="text-yellow-200">ובונים ממנה מכונה שיווקית חכמה</span>
-                          </p>
-                        </motion.div>
+                         <motion.div 
+                           className="bg-gradient-to-r from-primary to-primary/80 rounded-3xl p-6 text-center mb-8 shadow-lg border-2 border-primary/20"
+                           whileHover={{ scale: 1.05 }}
+                           transition={{ type: "spring", stiffness: 300 }}
+                         >
+                           <p className="text-2xl font-black text-white leading-tight">
+                             אנחנו לוקחים את רשימת הלידים שלך –<br />
+                             <span className="text-secondary font-black">ובונים ממנה מכונה שיווקית חכמה</span>
+                           </p>
+                         </motion.div>
                       </div>
                     </motion.div>
                   </motion.div>
