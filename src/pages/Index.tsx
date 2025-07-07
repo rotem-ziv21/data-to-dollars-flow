@@ -1575,26 +1575,15 @@ export default function Index() {
                           animate={{ x: ['-100%', '100%'] }}
                           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                         />
-                        <span className="relative z-10 flex items-center justify-center gap-4">
-                          <motion.span
-                            animate={{ 
-                              scale: [1, 1.2, 1]
-                            }}
-                            transition={{ 
-                              duration: 2, 
-                              repeat: Infinity
-                            }}
-                          >
-                            🔵
-                          </motion.span>
-                          לתיאום שיחת "כסף מהדאטא"
-                          <motion.div
-                            animate={{ x: [0, 10, 0] }}
-                            transition={{ duration: 1.5, repeat: Infinity }}
-                          >
-                            <ArrowLeft className="w-6 h-6" />
-                          </motion.div>
-                        </span>
+                         <span className="relative z-10 flex items-center justify-center gap-4">
+                           לתיאום שיחת "כסף מהדאטא"
+                           <motion.div
+                             animate={{ x: [0, 10, 0] }}
+                             transition={{ duration: 1.5, repeat: Infinity }}
+                           >
+                             <ArrowLeft className="w-6 h-6" />
+                           </motion.div>
+                         </span>
                       </Button>
                     </motion.div>
                   </motion.div>
