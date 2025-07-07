@@ -1778,34 +1778,25 @@ export default function Index() {
             </div>
           </GlowCard>
 
-          <motion.div 
+          <div 
             className="mt-24 pt-16 border-t border-white/30"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
           >
-            <motion.div 
+            <div 
               className="text-4xl md:text-5xl font-black mb-8"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 3, repeat: Infinity }}
             >
               <img 
-                src="/lovable-uploads/a192ce18-e4fe-4b99-9f53-ead383b46f7f.png" 
+                src="/lovable-uploads/770b5634-76b0-4acf-a31b-00fdf6c13161.png" 
                 alt="Optione - פשוט לשלוט בעסק" 
                 className="h-16 md:h-20 mx-auto"
               />
-            </motion.div>
+            </div>
             <p className="text-2xl md:text-3xl font-medium leading-relaxed">
               לא צריך מערכת חדשה כדי לייצר תוצאה.<br />
-              <motion.span 
-                className="font-black"
-                whileInView={{ color: ['#ffffff', '#ff7a45', '#ff02ff', '#ffffff'] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
+              <span className="font-black">
                 רק דאטה קיימת + חשיבה חכמה + ביצוע מדויק.
-              </motion.span>
+              </span>
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
