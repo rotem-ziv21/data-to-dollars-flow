@@ -930,7 +930,7 @@ export default function Index() {
             </div>
           </motion.div>
           
-          {/* דוגמה מסופרמרקטים - עיצוב מחודש */}
+          {/* מה בעצם השירות שלנו - עיצוב חדש */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -945,86 +945,132 @@ export default function Index() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6 }}
               >
-                תחשבו על סופרמרקטים:
+                אז מה בעצם השירות שלנו?
               </motion.h4>
               
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8 text-right">
                 
-                {/* Left Column - Image */}
+                {/* סעיף ראשון */}
                 <motion.div
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="order-2 lg:order-1"
+                  className="bg-white/80 rounded-2xl p-6 shadow-lg"
                 >
-                  <div className="bg-white rounded-2xl p-6 shadow-lg">
-                    <img 
-                      src={supermarketDataFlow}
-                      alt="תהליך ניתוח דאטה של סופרמרקטים"
-                      className="w-full h-auto object-contain rounded-lg"
-                    />
-                  </div>
+                  <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
+                    אנחנו לא מוכרים מערכת.<br />
+                    אנחנו גם לא שולחים אותך ללמוד קורס, ולא מבקשים תקציב לקמפיינים.
+                  </p>
+                  
+                  <motion.div 
+                    className="bg-gradient-to-r from-purple-600 to-orange-500 rounded-2xl px-8 py-6"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <p className="text-2xl md:text-3xl font-black text-white text-center">
+                      מה שאנחנו כן עושים:
+                    </p>
+                  </motion.div>
                 </motion.div>
-                
-                {/* Right Column - Content */}
+
+                {/* התהליך שלנו */}
                 <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="order-1 lg:order-2 text-right space-y-8"
+                  className="bg-white/90 rounded-2xl p-8 shadow-lg space-y-6"
                 >
                   <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-                    איך רשתות כמו <span className="font-bold text-red-600">שופרסל</span>, <span className="font-bold text-red-600">רמי לוי</span> או <span className="font-bold text-orange-600">ויקטורי</span> יודעים בדיוק מתי להחזיר אותך עם הצעה משתלמת?
+                    אנחנו לוקחים את רשימת הלידים שלך – גם אם היא ישנה, מבולגנת או נראית לך חסרת ערך –<br />
+                    ובונים ממנה מכונה שיווקית חכמה שמביאה תוצאות.
                   </p>
-                  
+
                   <motion.div 
-                    className="bg-gradient-to-r from-purple-600 to-orange-500 rounded-2xl px-8 py-6 text-center"
+                    className="bg-gradient-to-r from-secondary to-accent rounded-2xl px-8 py-6"
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <p className="text-2xl md:text-3xl font-black text-white">
-                      הם משתמשים בדאטא שלך
+                    <p className="text-2xl md:text-3xl font-black text-white text-center">
+                      איך?
                     </p>
                   </motion.div>
-                  
-                  <motion.div
-                    className="text-center"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
+
+                  {/* רשימת התהליכים */}
+                  <div className="space-y-6 mr-4">
+                    {[
+                      {
+                        title: "מנתחים את הדאטה הקיימת שלך:",
+                        content: "מבינים איזה קהלים יש, מה יודעים עליהם, ואיך אפשר להשתמש בזה."
+                      },
+                      {
+                        title: "כותבים ומעבירים הודעות מותאמות אישית לכל אחד:",
+                        content: "לא קופי כללי. כל איש קשר מקבל פנייה מדויקת שמתבססת על הנתונים שלו."
+                      },
+                      {
+                        title: "יוצרים קמפיינים אוטומטיים חכמים שמובילים לתוצאה:",
+                        content: "פגישות ביומן, שיחות טלפון עם לקוחות פוטנציאליים, או מכירה בפועל – תלוי במטרה."
+                      },
+                      {
+                        title: "והכול – נעשה בשבילך:",
+                        content: "אנחנו מנהלים את הקמפיין מא' ועד ת' בשבילך. אין מערכת להתעסק איתה, אין מה ללמוד."
+                      }
+                    ].map((item, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                        className="flex items-start gap-4"
+                      >
+                        <div className="w-3 h-3 bg-secondary rounded-full mt-3 flex-shrink-0"></div>
+                        <div>
+                          <p className="text-lg font-bold text-gray-800 mb-2">{item.title}</p>
+                          <p className="text-lg text-gray-600 leading-relaxed">{item.content}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* מה יוצא לך מזה */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 shadow-lg"
+                >
+                  <motion.div 
+                    className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl px-8 py-6 mb-6"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <motion.p 
-                      className="text-2xl md:text-3xl font-black text-gray-800 leading-relaxed"
-                      whileInView={{ 
-                        scale: [1, 1.05, 1],
-                        color: ["#1f2937", "#6366f1", "#1f2937"]
-                      }}
-                      transition={{ 
-                        duration: 2,
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        ease: "easeInOut"
-                      }}
-                    >
-                      זו השיטה הכי זולה והכי מדויקת ליצירת מכירות חוזרות.
-                    </motion.p>
+                    <p className="text-2xl md:text-3xl font-black text-white text-center">
+                      מה יוצא לך מזה?
+                    </p>
                   </motion.div>
+
+                  <div className="space-y-4 mr-4">
+                    {[
+                      "פגישות עם לקוחות רלוונטיים שכבר הכרת – ולא סגרת.",
+                      "יותר סגירות – עם עלות שיווקית אפסית.",
+                      "בלי להוציא שקל נוסף על פרסום.",
+                      "בלי להחזיק עובדים.",
+                      "בלי התחייבות: אם לא הבאנו תוצאה – לא שילמת."
+                    ].map((item, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
+                        className="flex items-start gap-4"
+                      >
+                        <div className="w-3 h-3 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
+                        <p className="text-lg text-gray-700 leading-relaxed">{item}</p>
+                      </motion.div>
+                    ))}
+                  </div>
                 </motion.div>
               </div>
-              
-              {/* Bottom CTA - עיצוב חדש פשוט */}
-              <motion.div 
-                className="mt-12 text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                <div className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-3xl px-8 py-6 border border-pink-200/50 inline-block max-w-4xl mx-auto">
-                  <p className="text-xl md:text-2xl font-bold text-gray-800 leading-relaxed">
-                    ואנחנו מביאים אותה לעסק שלך – בלי צורך להחזיק צוות, לשלם למדיה או להקים קמפיינים.
-                  </p>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </div>
