@@ -930,144 +930,317 @@ export default function Index() {
             </div>
           </motion.div>
           
-          {/* מה בעצם השירות שלנו - עיצוב חדש */}
+          {/* מה בעצם השירות שלנו - עיצוב מקצועי פי 10 */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-20 max-w-6xl mx-auto"
+            transition={{ duration: 1, delay: 0.3 }}
+            className="mt-32 max-w-7xl mx-auto relative"
           >
-            <div className="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-3xl p-12 border border-gray-200/30 shadow-xl">
+            {/* אפקטי רקע מתקדמים */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-full blur-3xl animate-pulse" />
+              <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-br from-accent/30 to-primary/30 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}} />
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-white/20 to-transparent rounded-full" />
+            </div>
+
+            <div className="relative z-10 bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-2xl rounded-[4rem] shadow-2xl border-2 border-white/50 overflow-hidden">
               
-              <motion.h4 
-                className="text-4xl md:text-6xl font-black mb-12 bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent leading-tight text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6 }}
-              >
-                אז מה בעצם השירות שלנו?
-              </motion.h4>
+              {/* אפקט זוהר עליון מתקדם */}
+              <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-secondary via-accent to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
               
-              <div className="space-y-8 text-right">
+              <div className="relative z-10 p-16 md:p-20">
                 
-                {/* סעיף ראשון */}
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-white/80 rounded-2xl p-6 shadow-lg"
+                {/* כותרת מרכזית מהממת */}
+                <motion.div 
+                  className="text-center mb-20"
+                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
                 >
-                  <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
-                    אנחנו לא מוכרים מערכת.<br />
-                    אנחנו גם לא שולחים אותך ללמוד קורס, ולא מבקשים תקציב לקמפיינים.
-                  </p>
+                  <motion.h4 
+                    className="text-5xl md:text-8xl font-black mb-8 leading-tight relative inline-block"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-pulse">
+                      אז מה בעצם השירות שלנו?
+                    </span>
+                    <motion.div
+                      className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-3xl blur-2xl -z-10"
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                        opacity: [0.3, 0.6, 0.3]
+                      }}
+                      transition={{ 
+                        duration: 4, 
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                  </motion.h4>
                   
+                  {/* קו מפריד אלגנטי */}
                   <motion.div 
-                    className="bg-gradient-to-r from-purple-600 to-orange-500 rounded-2xl px-8 py-6"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <p className="text-2xl md:text-3xl font-black text-white text-center">
-                      מה שאנחנו כן עושים:
-                    </p>
-                  </motion.div>
+                    className="w-32 h-1 bg-gradient-to-r from-secondary to-accent rounded-full mx-auto"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    transition={{ duration: 1, delay: 1 }}
+                  />
                 </motion.div>
-
-                {/* התהליך שלנו */}
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="bg-white/90 rounded-2xl p-8 shadow-lg space-y-6"
-                >
-                  <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-                    אנחנו לוקחים את רשימת הלידים שלך – גם אם היא ישנה, מבולגנת או נראית לך חסרת ערך –<br />
-                    ובונים ממנה מכונה שיווקית חכמה שמביאה תוצאות.
-                  </p>
-
-                  <motion.div 
-                    className="bg-gradient-to-r from-secondary to-accent rounded-2xl px-8 py-6"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                  
+                  {/* עמודה שמאלית - מה אנחנו לא עושים */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.7 }}
+                    className="space-y-8"
                   >
-                    <p className="text-2xl md:text-3xl font-black text-white text-center">
-                      איך?
-                    </p>
+                    <motion.div
+                      className="bg-gradient-to-br from-red-50 via-white to-red-50 rounded-3xl p-8 shadow-xl border-2 border-red-100/50 relative overflow-hidden group"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-red-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      
+                      <div className="relative z-10">
+                        <div className="flex items-center justify-center mb-6">
+                          <motion.div
+                            className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg"
+                            whileHover={{ rotate: 360 }}
+                            transition={{ duration: 0.8 }}
+                          >
+                            <X className="w-10 h-10 text-white" strokeWidth={3} />
+                          </motion.div>
+                        </div>
+                        
+                        <h5 className="text-3xl font-black text-gray-800 mb-6 text-center leading-tight">
+                          מה אנחנו <span className="text-red-600">לא</span> עושים
+                        </h5>
+                        
+                        <div className="space-y-4">
+                          {[
+                            "אנחנו לא מוכרים מערכת",
+                            "אנחנו לא שולחים אותך ללמוד קורס", 
+                            "אנחנו לא מבקשים תקציב לקמפיינים"
+                          ].map((item, index) => (
+                            <motion.div
+                              key={index}
+                              initial={{ opacity: 0, x: 20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
+                              className="flex items-center gap-4 p-4 bg-white/70 rounded-2xl border border-red-100"
+                            >
+                              <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <X className="w-4 h-4 text-white" strokeWidth={3} />
+                              </div>
+                              <p className="text-lg font-bold text-gray-700">{item}</p>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
                   </motion.div>
 
-                  {/* רשימת התהליכים */}
-                  <div className="space-y-6 mr-4">
+                  {/* עמודה ימנית - מה אנחנו כן עושים */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.7 }}
+                    className="space-y-8"
+                  >
+                    <motion.div
+                      className="bg-gradient-to-br from-green-50 via-white to-green-50 rounded-3xl p-8 shadow-xl border-2 border-green-100/50 relative overflow-hidden group"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-green-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      
+                      <div className="relative z-10">
+                        <div className="flex items-center justify-center mb-6">
+                          <motion.div
+                            className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg"
+                            whileHover={{ rotate: 360 }}
+                            transition={{ duration: 0.8 }}
+                          >
+                            <CheckCircle className="w-10 h-10 text-white" strokeWidth={3} />
+                          </motion.div>
+                        </div>
+                        
+                        <h5 className="text-3xl font-black text-gray-800 mb-6 text-center leading-tight">
+                          מה אנחנו <span className="text-green-600">כן</span> עושים
+                        </h5>
+                        
+                        <motion.div 
+                          className="bg-gradient-to-r from-secondary to-accent rounded-3xl p-6 text-center mb-8 shadow-lg"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <p className="text-2xl font-black text-white leading-tight">
+                            אנחנו לוקחים את רשימת הלידים שלך –<br />
+                            <span className="text-yellow-200">ובונים ממנה מכונה שיווקית חכמה</span>
+                          </p>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                </div>
+
+                {/* התהליך המקצועי שלנו */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1 }}
+                  className="mt-20"
+                >
+                  <div className="text-center mb-16">
+                    <motion.h5 
+                      className="text-4xl md:text-6xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      איך אנחנו עושים את זה?
+                    </motion.h5>
+                    <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto" />
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-8">
                     {[
                       {
-                        title: "מנתחים את הדאטה הקיימת שלך:",
-                        content: "מבינים איזה קהלים יש, מה יודעים עליהם, ואיך אפשר להשתמש בזה."
+                        icon: Database,
+                        title: "מנתחים את הדאטה הקיימת שלך",
+                        content: "מבינים איזה קהלים יש, מה יודעים עליהם, ואיך אפשר להשתמש בזה.",
+                        gradient: "from-blue-500 to-purple-500",
+                        bgGradient: "from-blue-50 to-purple-50"
                       },
                       {
-                        title: "כותבים ומעבירים הודעות מותאמות אישית לכל אחד:",
-                        content: "לא קופי כללי. כל איש קשר מקבל פנייה מדויקת שמתבססת על הנתונים שלו."
+                        icon: Target,
+                        title: "כותבים הודעות מותאמות אישית לכל אחד",
+                        content: "לא קופי כללי. כל איש קשר מקבל פנייה מדויקת שמתבססת על הנתונים שלו.",
+                        gradient: "from-purple-500 to-pink-500",
+                        bgGradient: "from-purple-50 to-pink-50"
                       },
                       {
-                        title: "יוצרים קמפיינים אוטומטיים חכמים שמובילים לתוצאה:",
-                        content: "פגישות ביומן, שיחות טלפון עם לקוחות פוטנציאליים, או מכירה בפועל – תלוי במטרה."
+                        icon: Zap,
+                        title: "יוצרים קמפיינים אוטומטיים חכמים",
+                        content: "פגישות ביומן, שיחות טלפון עם לקוחות פוטנציאליים, או מכירה בפועל – תלוי במטרה.",
+                        gradient: "from-orange-500 to-red-500",
+                        bgGradient: "from-orange-50 to-red-50"
                       },
                       {
-                        title: "והכול – נעשה בשבילך:",
-                        content: "אנחנו מנהלים את הקמפיין מא' ועד ת' בשבילך. אין מערכת להתעסק איתה, אין מה ללמוד."
+                        icon: Settings,
+                        title: "והכול – נעשה בשבילך",
+                        content: "אנחנו מנהלים את הקמפיין מא' ועד ת' בשבילך. אין מערכת להתעסק איתה, אין מה ללמוד.",
+                        gradient: "from-green-500 to-teal-500",
+                        bgGradient: "from-green-50 to-teal-50"
                       }
                     ].map((item, index) => (
                       <motion.div
                         key={index}
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                        className="flex items-start gap-4"
+                        initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 1.2 + index * 0.15 }}
+                        whileHover={{ scale: 1.05, y: -10 }}
+                        className={`bg-gradient-to-br ${item.bgGradient} rounded-3xl p-8 shadow-xl border-2 border-white/50 relative overflow-hidden group cursor-pointer`}
                       >
-                        <div className="w-3 h-3 bg-secondary rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <p className="text-lg font-bold text-gray-800 mb-2">{item.title}</p>
-                          <p className="text-lg text-gray-600 leading-relaxed">{item.content}</p>
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        
+                        <div className="relative z-10">
+                          <div className="flex items-center gap-6 mb-6">
+                            <motion.div
+                              className={`w-16 h-16 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center shadow-lg`}
+                              whileHover={{ rotate: 360, scale: 1.1 }}
+                              transition={{ duration: 0.8 }}
+                            >
+                              <item.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                            </motion.div>
+                            <div className="text-3xl font-black text-gray-800 leading-tight">
+                              {index + 1}
+                            </div>
+                          </div>
+                          
+                          <h6 className="text-xl font-black text-gray-800 mb-4 leading-tight">
+                            {item.title}
+                          </h6>
+                          
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            {item.content}
+                          </p>
                         </div>
                       </motion.div>
                     ))}
                   </div>
                 </motion.div>
 
-                {/* מה יוצא לך מזה */}
+                {/* התוצאות - עיצוב מהמם */}
                 <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 shadow-lg"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.5 }}
+                  className="mt-24"
                 >
-                  <motion.div 
-                    className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl px-8 py-6 mb-6"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <p className="text-2xl md:text-3xl font-black text-white text-center">
-                      מה יוצא לך מזה?
-                    </p>
-                  </motion.div>
+                  <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 rounded-[3rem] p-12 shadow-2xl border-2 border-yellow-100/50 relative overflow-hidden">
+                    
+                    {/* אפקטי רקע מתקדמים */}
+                    <div className="absolute inset-0">
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-yellow-300/20 to-transparent rounded-full blur-2xl" />
+                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-orange-300/20 to-transparent rounded-full blur-2xl" />
+                    </div>
+                    
+                    <div className="relative z-10">
+                      <div className="text-center mb-12">
+                        <motion.h5 
+                          className="text-4xl md:text-6xl font-black mb-6"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <span className="bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
+                            מה יוצא לך מזה?
+                          </span>
+                        </motion.h5>
+                        <motion.div 
+                          className="w-32 h-1 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full mx-auto"
+                          initial={{ scaleX: 0 }}
+                          whileInView={{ scaleX: 1 }}
+                          transition={{ duration: 1, delay: 1.7 }}
+                        />
+                      </div>
 
-                  <div className="space-y-4 mr-4">
-                    {[
-                      "פגישות עם לקוחות רלוונטיים שכבר הכרת – ולא סגרת.",
-                      "יותר סגירות – עם עלות שיווקית אפסית.",
-                      "בלי להוציא שקל נוסף על פרסום.",
-                      "בלי להחזיק עובדים.",
-                      "בלי התחייבות: אם לא הבאנו תוצאה – לא שילמת."
-                    ].map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-                        className="flex items-start gap-4"
-                      >
-                        <div className="w-3 h-3 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-                        <p className="text-lg text-gray-700 leading-relaxed">{item}</p>
-                      </motion.div>
-                    ))}
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                          { icon: Users, text: "פגישות עם לקוחות רלוונטיים שכבר הכרת – ולא סגרת", color: "from-blue-500 to-blue-600" },
+                          { icon: TrendingUp, text: "יותר סגירות – עם עלות שיווקית אפסית", color: "from-green-500 to-green-600" },
+                          { icon: DollarSign, text: "בלי להוציא שקל נוסף על פרסום", color: "from-yellow-500 to-yellow-600" },
+                          { icon: UserPlus, text: "בלי להחזיק עובדים", color: "from-purple-500 to-purple-600" },
+                          { icon: Award, text: "בלי התחייבות: אם לא הבאנו תוצאה – לא שילמת", color: "from-red-500 to-red-600" }
+                        ].map((item, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5, delay: 1.8 + index * 0.1 }}
+                            whileHover={{ scale: 1.05, y: -5 }}
+                            className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 group cursor-pointer"
+                          >
+                            <div className="flex items-start gap-4">
+                              <motion.div
+                                className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center shadow-md flex-shrink-0`}
+                                whileHover={{ rotate: 360 }}
+                                transition={{ duration: 0.6 }}
+                              >
+                                <item.icon className="w-6 h-6 text-white" strokeWidth={2.5} />
+                              </motion.div>
+                              <p className="text-lg font-bold text-gray-700 leading-tight group-hover:text-gray-900 transition-colors">
+                                {item.text}
+                              </p>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               </div>
