@@ -1205,13 +1205,14 @@ export default function Index() {
                         />
                       </div>
 
-                      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         {[
                           { icon: Users, text: "פגישות עם לקוחות רלוונטיים שכבר הכרת – ולא סגרת", color: "from-blue-500 to-blue-600", bgColor: "from-blue-50 to-blue-100" },
                           { icon: TrendingUp, text: "יותר סגירות – עם עלות שיווקית אפסית", color: "from-green-500 to-green-600", bgColor: "from-green-50 to-green-100" },
                           { icon: DollarSign, text: "בלי להוציא שקל נוסף על פרסום", color: "from-amber-500 to-orange-500", bgColor: "from-amber-50 to-orange-100" },
                           { icon: UserPlus, text: "בלי להחזיק עובדים", color: "from-purple-500 to-purple-600", bgColor: "from-purple-50 to-purple-100" },
-                          { icon: Award, text: "בלי התחייבות: אם לא הבאנו תוצאה – לא שילמת", color: "from-red-500 to-red-600", bgColor: "from-red-50 to-red-100" }
+                          { icon: Award, text: "תשלום בסיס תוצאה - לא קיבלת לא שילמת", color: "from-red-500 to-red-600", bgColor: "from-red-50 to-red-100" },
+                          { icon: Settings, text: "כל המערכות הדרושות עלינו", color: "from-indigo-500 to-indigo-600", bgColor: "from-indigo-50 to-indigo-100" }
                         ].map((item, index) => (
                           <motion.div
                             key={index}
