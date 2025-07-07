@@ -217,22 +217,23 @@ export default function Index() {
           </div>
 
           {/* Bottom Cards */}
-          <div
-            className="grid md:grid-cols-3 gap-6 mt-20 mb-12 px-4"
-          >
+          <div className="grid md:grid-cols-3 gap-6 mt-20 mb-12 px-4">
             {[
               { icon: UserPlus, color: "text-green-600", bgColor: "bg-green-100", text: "מסע לקוח שיוצר לקוחות איכותיים" },
               { icon: DollarSign, color: "text-blue-600", bgColor: "bg-blue-100", text: "בלי להוציא שקל על שיווק" },
               { icon: Settings, color: "text-purple-600", bgColor: "bg-purple-100", text: "כל התוכנות הדרושות – עלינו!" }
             ].map((item, i) => (
-              <GlowCard key={i} className="p-6 text-center">
-                <div className="space-y-4">
-                  <div className={`w-16 h-16 ${item.bgColor} rounded-2xl flex items-center justify-center mx-auto`}>
-                    <item.icon className={`w-8 h-8 ${item.color}`} />
+              <div key={i} className="bg-white/80 backdrop-blur-xl rounded-3xl box-shadow-intense border border-white/20 relative overflow-hidden p-6 text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+                <div className="relative z-10">
+                  <div className="space-y-4">
+                    <div className={`w-16 h-16 ${item.bgColor} rounded-2xl flex items-center justify-center mx-auto`}>
+                      <item.icon className={`w-8 h-8 ${item.color}`} />
+                    </div>
+                    <p className="text-lg md:text-xl font-bold text-gray-800 leading-tight">{item.text}</p>
                   </div>
-                  <p className="text-lg md:text-xl font-bold text-gray-800 leading-tight">{item.text}</p>
                 </div>
-              </GlowCard>
+              </div>
             ))}
           </div>
         </div>
