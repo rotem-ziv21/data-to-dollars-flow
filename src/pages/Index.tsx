@@ -1322,64 +1322,62 @@ export default function Index() {
                       </p>
                     </div>
                   </div>
+                  
+                  {/* כפתור פעולה */}
+                  <motion.div 
+                    className="text-center mt-8"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Button 
+                        size="lg" 
+                        className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 text-white px-12 md:px-20 py-6 md:py-8 text-xl md:text-2xl font-black rounded-3xl transition-all duration-500 shadow-2xl hover:shadow-blue-500/25 w-full max-w-2xl mx-auto relative overflow-hidden group"
+                      >
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/30 to-white/20 opacity-0 group-hover:opacity-100"
+                          animate={{ x: ['-100%', '100%'] }}
+                          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        />
+                        <span className="relative z-10 flex items-center justify-center gap-4">
+                          <motion.span
+                            animate={{ 
+                              scale: [1, 1.2, 1]
+                            }}
+                            transition={{ 
+                              duration: 2, 
+                              repeat: Infinity
+                            }}
+                          >
+                            🔵
+                          </motion.span>
+                          לתיאום שיחת "כסף מהדאטא"
+                          <motion.div
+                            animate={{ x: [0, 10, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                          >
+                            <ArrowLeft className="w-6 h-6" />
+                          </motion.div>
+                        </span>
+                      </Button>
+                    </motion.div>
+                  </motion.div>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* כפתור פעולה מרשים */}
+          {/* הודעת דחיפות מעוצבת */}
           <motion.div 
-            className="text-center space-y-12"
+            className="text-center mt-16"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <motion.div 
-              className="bg-white/95 backdrop-blur-xl rounded-[2rem] p-8 md:p-12 shadow-2xl border-2 border-white/50 max-w-4xl mx-auto relative overflow-hidden"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5" />
-              
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative z-10"
-              >
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 text-white px-12 md:px-20 py-6 md:py-10 text-xl md:text-3xl font-black rounded-3xl transition-all duration-500 shadow-2xl hover:shadow-blue-500/25 w-full max-w-3xl mx-auto relative overflow-hidden group"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/30 to-white/20 opacity-0 group-hover:opacity-100"
-                    animate={{ x: ['-100%', '100%'] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  />
-                  <span className="relative z-10 flex items-center justify-center gap-4">
-                    <motion.span
-                      animate={{ 
-                        scale: [1, 1.2, 1]
-                      }}
-                      transition={{ 
-                        duration: 2, 
-                        repeat: Infinity
-                      }}
-                    >
-                      🔵
-                    </motion.span>
-                    לתיאום שיחת "כסף מהדאטא"
-                    <motion.div
-                      animate={{ x: [0, 10, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <ArrowLeft className="w-8 h-8" />
-                    </motion.div>
-                  </span>
-                </Button>
-              </motion.div>
-            </motion.div>
-            
-            {/* הודעת דחיפות מעוצבת */}
             <motion.div 
               className="bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 border-4 border-amber-300 rounded-[2rem] px-8 md:px-12 py-6 md:py-8 shadow-2xl inline-block relative overflow-hidden"
               animate={{ 
