@@ -34,32 +34,11 @@ const GlowCard = ({ children, className = "", delay = 0 }: any) => (
     initial={{ opacity: 0, y: 50, scale: 0.9 }}
     whileInView={{ opacity: 1, y: 0, scale: 1 }}
     transition={{ duration: 0.6, delay }}
-    whileHover={{ scale: 1.05, rotateY: 5 }}
     className={`bg-white/80 backdrop-blur-xl rounded-3xl box-shadow-intense border border-white/20 relative overflow-hidden ${className}`}
   >
     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
     <div className="relative z-10">{children}</div>
   </motion.div>
-);
-
-const PulsingOrb = ({ color, size, top, left, delay }: any) => (
-  <motion.div
-    className={`absolute w-${size} h-${size} rounded-full blur-3xl opacity-20`}
-    style={{ 
-      background: `radial-gradient(circle, ${color}40 0%, transparent 70%)`,
-      top, 
-      left 
-    }}
-    animate={{
-      scale: [1, 1.2, 1],
-      opacity: [0.2, 0.4, 0.2],
-    }}
-    transition={{
-      duration: 4,
-      repeat: Infinity,
-      delay,
-    }}
-  />
 );
 
 export default function Index() {
@@ -71,32 +50,28 @@ export default function Index() {
     <div className="min-h-screen text-gray-900 relative overflow-hidden" dir="rtl">
       <ThreeBackground />
       
-      {/* Floating orbs */}
-      <PulsingOrb color="#120c4c" size="96" top="10%" left="5%" delay={0} />
-      <PulsingOrb color="#ff7a45" size="64" top="20%" left="80%" delay={1} />
-      <PulsingOrb color="#ff02ff" size="80" top="60%" left="10%" delay={2} />
-      <PulsingOrb color="#120c4c" size="72" top="80%" left="85%" delay={3} />
+      {/* Static background elements */}
+      <div className="absolute top-10 left-5 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-20" />
+      <div className="absolute top-20 right-80 w-64 h-64 bg-secondary/10 rounded-full blur-3xl opacity-20" />
+      <div className="absolute top-60 left-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl opacity-20" />
+      <div className="absolute top-80 right-85 w-72 h-72 bg-primary/10 rounded-full blur-3xl opacity-20" />
 
       {/* Header */}
-      <motion.header 
+      <header 
         className="relative backdrop-blur-xl bg-primary border-b border-primary/60"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="max-w-6xl mx-auto px-6 py-4">
-          <motion.div 
+          <div 
             className="flex items-center justify-center"
-            whileHover={{ scale: 1.05 }}
           >
             <img 
               src="/lovable-uploads/770b5634-76b0-4acf-a31b-00fdf6c13161.png" 
               alt="Optione - פשוט לשלוט בעסק" 
               className="h-12 md:h-16"
             />
-          </motion.div>
+          </div>
         </div>
-      </motion.header>
+      </header>
 
       {/* Hero */}
       <section className="min-h-screen flex items-center pt-20 relative bg-gradient-to-br from-primary via-primary/90 to-secondary/20">
@@ -111,13 +86,11 @@ export default function Index() {
               className="relative"
             >
               <div className="relative rounded-3xl overflow-hidden bg-white/10 backdrop-blur-xl p-8 border border-white/20">
-                <motion.div
-                  className="bg-gradient-to-r from-secondary to-accent w-32 h-32 rounded-full flex items-center justify-center mx-auto animate-pulse-glow"
-                  whileHover={{ rotate: 360, scale: 1.1 }}
-                  transition={{ duration: 0.8 }}
+                <div
+                  className="bg-gradient-to-r from-secondary to-accent w-32 h-32 rounded-full flex items-center justify-center mx-auto"
                 >
                   <Play className="w-16 h-16 text-white" fill="white" />
-                </motion.div>
+                </div>
                 <div className="mt-8 text-center">
                   <p className="text-xl font-bold text-white leading-relaxed">
                     "אם יש לך רשימות לידים, דאטה מהקמפיינים או קהל שלא הגיב – אל תזרוק אותם לפח. 
@@ -937,10 +910,10 @@ export default function Index() {
             transition={{ duration: 1, delay: 0.3 }}
             className="mt-32 max-w-7xl mx-auto relative"
           >
-            {/* אפקטי רקע מתקדמים */}
+            {/* אפקטי רקע פשוטים */}
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-full blur-3xl animate-pulse" />
-              <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-br from-accent/30 to-primary/30 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}} />
+              <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-40" />
+              <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full blur-3xl opacity-40" />
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-white/20 to-transparent rounded-full" />
             </div>
 
@@ -1627,17 +1600,8 @@ export default function Index() {
 
       {/* Final CTA */}
       <section className="py-32 relative overflow-hidden">
-        <motion.div
+        <div
           className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent"
-          animate={{ 
-            background: [
-              'linear-gradient(45deg, #120c4c, #ff7a45, #ff02ff)',
-              'linear-gradient(135deg, #ff02ff, #120c4c, #ff7a45)',
-              'linear-gradient(225deg, #ff7a45, #ff02ff, #120c4c)',
-              'linear-gradient(315deg, #120c4c, #ff7a45, #ff02ff)'
-            ]
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
         />
         <div className="absolute inset-0 bg-black/30" />
         
