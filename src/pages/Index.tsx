@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle, X, Users, Target, TrendingUp, Database, Zap, ArrowLeft, Star, Award, Play, Sparkles, UserPlus, DollarSign, Settings } from "lucide-react";
+import { CheckCircle, X, Users, Target, TrendingUp, Database, Zap, ArrowLeft, Star, Award, Play, Sparkles, UserPlus, DollarSign, Settings, Search } from "lucide-react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import ThreeBackground from "../components/ThreeBackground";
@@ -1221,77 +1221,104 @@ export default function Index() {
                     </span>
                   </h3>
                   
-                  <p className="text-xl md:text-2xl text-gray-600 font-semibold">
-                    פגישה של עד שעה בזום – ללא עלות וללא התחייבות
+                  <p className="text-xl md:text-2xl text-gray-600 font-semibold mb-4">
+                    פגישה של עד שעה בזום – ללא עלות וללא התחייבות.
+                  </p>
+                  <p className="text-lg md:text-xl text-gray-700 font-medium">
+                    המטרה? לבדוק יחד איך הופכים את הדאטה שכבר יש לך –<br />
+                    לפגישות, שיחות וסגירות בפועל.
                   </p>
                 </div>
                 
                 {/* תוכן הפגישה */}
                 <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 rounded-[2rem] p-10 md:p-12 border-2 border-blue-200/50 shadow-xl">
-                  <div className="text-center mb-12">
-                    <h4 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
-                      במהלך הפגישה:
-                    </h4>
-                    <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div>
-                  </div>
-                  
-                  <div className="grid gap-6 max-w-4xl mx-auto mb-12">
-                    {/* נבין מה יש לך היום בדאטא בייס */}
+                  <div className="grid gap-8 max-w-4xl mx-auto">
+                    
+                    {/* שלב 1 */}
                     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300 hover:border-blue-200">
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                          <Database className="w-6 h-6 text-white" />
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
+                          <Search className="w-6 h-6 text-white" />
                         </div>
-                        <p className="text-lg md:text-xl text-gray-800 font-semibold">
-                          נבין מה יש לך היום בדאטא בייס
-                        </p>
+                        <div>
+                          <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
+                            🔍 שלב 1 – מיפוי הדאטה שברשותך
+                          </h4>
+                          <p className="text-lg text-gray-700 leading-relaxed">
+                            נבחן מה יש היום במערכת או בקבצים –<br />
+                            איזה קהלים קיימים, איזה מידע יש על כל אחד,<br />
+                            והאם בכלל ניתן לפנות אליהם בצורה חכמה ומותרת.
+                          </p>
+                        </div>
                       </div>
                     </div>
 
-                    {/* ננתח פילוחים */}
+                    {/* שלב 2 */}
                     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300 hover:border-blue-200">
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
                           <Target className="w-6 h-6 text-white" />
                         </div>
-                        <p className="text-lg md:text-xl text-gray-800 font-semibold">
-                          נזהה את קהלי היעד
-                        </p>
+                        <div>
+                          <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
+                            🎯 שלב 2 – פיצוח קהל היעד והפנייה הנכונה
+                          </h4>
+                          <p className="text-lg text-gray-700 leading-relaxed">
+                            נבין איך נכון לפנות ללידים הקיימים:<br />
+                            איך לחמם אותם, לחדש את הקשר, ולהניע לפעולה –<br />
+                            בלי להישמע ספאמי ובלי "להתחיל מאפס".
+                          </p>
+                        </div>
                       </div>
                     </div>
 
-                    {/* נבין את ההצעה העסקית שלך */}
+                    {/* שלב 3 */}
                     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300 hover:border-blue-200">
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
                           <TrendingUp className="w-6 h-6 text-white" />
                         </div>
-                        <p className="text-lg md:text-xl text-gray-800 font-semibold">
-                          נבין את ההצעה העסקית שלך
-                        </p>
+                        <div>
+                          <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
+                            💡 שלב 3 – חידוד ההצעה שלך ואוטומציה לפעולה
+                          </h4>
+                          <p className="text-lg text-gray-700 leading-relaxed">
+                            נבנה יחד מסר מדויק שמזיז את הלידים לכיוון פגישה/רכישה.<br />
+                            נראה אם נדרשת אוטומציה – ואיך בונים אותה נכון.
+                          </p>
+                        </div>
                       </div>
                     </div>
 
-                    {/* ונסיים עם תוכנית פעולה מדויקת */}
+                    {/* שלב 4 */}
                     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300 hover:border-blue-200">
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
                           <CheckCircle className="w-6 h-6 text-white" />
                         </div>
-                        <p className="text-lg md:text-xl text-gray-800 font-semibold">
-                          ונסיים עם תוכנית פעולה מדויקת
-                        </p>
+                        <div>
+                          <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
+                            📋 שלב 4 – יוצאים עם תוכנית פעולה מסודרת
+                          </h4>
+                          <p className="text-lg text-gray-700 leading-relaxed">
+                            בתום הפגישה תהיה לך תוכנית ברורה:<br />
+                            מה בדיוק צריך לקרות כדי להפוך את הדאטה לכסף –<br />
+                            שלב אחרי שלב, עם היגיון, סדר ואסטרטגיה מוכחת.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                   
-                  {/* התוצאה הסופית */}
-                  <div className="bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600 rounded-[2rem] p-8 md:p-10 max-w-4xl mx-auto text-white text-center shadow-2xl relative overflow-hidden">
+                  {/* הערה חשובה */}
+                  <div className="bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 rounded-[2rem] p-6 md:p-8 max-w-4xl mx-auto text-white text-center shadow-2xl relative overflow-hidden mt-8">
                     <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
-                    <div className="relative z-10 flex items-center justify-center gap-3">
-                      <Zap className="w-8 h-8 text-yellow-300" />
-                      <p className="text-xl md:text-2xl font-black leading-tight">
-                        שנראה לך איך אפשר להפוך את הלידים הרדומים לרווחים
+                    <div className="relative z-10">
+                      <p className="text-lg md:text-xl font-bold leading-tight mb-2">
+                        🟢 הפגישה לא מחייבת להמשיך –
+                      </p>
+                      <p className="text-lg md:text-xl font-bold leading-tight">
+                        וגם בשבילנו זו בדיקה לוודא שאנחנו מתאימים לעבודה משותפת.
                       </p>
                     </div>
                   </div>
