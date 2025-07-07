@@ -1085,29 +1085,7 @@ export default function Index() {
               
               <div className="relative z-10 text-center space-y-12">
                 
-                {/* אייקון מרכזי מעוצב */}
-                <motion.div 
-                  className="relative inline-block"
-                  whileHover={{ rotate: 360, scale: 1.1 }}
-                  transition={{ duration: 0.8, type: "spring" }}
-                >
-                  <div className="w-28 h-28 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-600 rounded-3xl shadow-2xl flex items-center justify-center relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-3xl" />
-                    <span className="text-5xl relative z-10">🎁</span>
-                    <motion.div
-                      className="absolute -inset-2 bg-gradient-to-r from-emerald-500/50 to-teal-500/50 rounded-[2rem] blur-xl -z-10"
-                      animate={{ 
-                        scale: [1, 1.2, 1],
-                        opacity: [0.5, 0.8, 0.5]
-                      }}
-                      transition={{ 
-                        duration: 2, 
-                        repeat: Infinity
-                      }}
-                    />
-                  </div>
-                </motion.div>
-                
+                {/* כותרת מרכזית מעוצבת */}
                 <motion.h3 
                   className="text-4xl md:text-6xl font-black text-gray-900 leading-tight"
                   initial={{ opacity: 0, y: 30 }}
@@ -1115,7 +1093,7 @@ export default function Index() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   שני חודשי ליווי –<br />
-                  <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     על בסיס הצלחה בלבד
                   </span>
                 </motion.h3>
@@ -1131,40 +1109,25 @@ export default function Index() {
                     
                     {/* נקודה ראשונה */}
                     <motion.div 
-                      className="flex items-start gap-6 text-right group"
-                      whileHover={{ x: 10 }}
-                      transition={{ type: "spring", stiffness: 300 }}
+                      className="bg-white/80 rounded-2xl p-8 border border-gray-200/50 shadow-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.5 }}
                     >
-                      <motion.div 
-                        className="w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mt-2 flex-shrink-0 shadow-lg"
-                        whileHover={{ scale: 1.2, rotate: 180 }}
-                        transition={{ type: "spring", stiffness: 400 }}
-                      />
-                      <p className="text-xl md:text-2xl text-gray-800 font-semibold leading-relaxed group-hover:text-blue-700 transition-colors duration-300">
+                      <p className="text-xl md:text-2xl text-gray-800 font-semibold leading-relaxed text-center">
                         שלם רק על תוצאה: פגישות שנקבעו, מכירות שבוצעו או לידים איכותיים שנכנסו
                       </p>
                     </motion.div>
                     
                     {/* נקודה שנייה - מודגשת */}
                     <motion.div 
-                      className="flex items-start gap-6 text-right bg-gradient-to-r from-emerald-50 to-green-50 rounded-2xl p-6 border-2 border-emerald-200 group"
-                      whileHover={{ scale: 1.02, x: 10 }}
-                      transition={{ type: "spring", stiffness: 300 }}
+                      className="bg-gradient-to-r from-accent/10 to-primary/10 rounded-2xl p-8 border-2 border-accent/30 shadow-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.7 }}
                     >
-                      <motion.div 
-                        className="w-6 h-6 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full mt-2 flex-shrink-0 shadow-lg"
-                        whileHover={{ scale: 1.3, rotate: 360 }}
-                        transition={{ type: "spring", stiffness: 400 }}
-                      />
-                      <p className="text-xl md:text-2xl font-black text-emerald-700 leading-relaxed">
+                      <p className="text-xl md:text-2xl font-black text-center leading-relaxed bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                         לא הבאנו תוצאה – לא שילמת
-                        <motion.span
-                          className="inline-block ml-2 text-2xl"
-                          animate={{ rotate: [0, 15, -15, 0] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                        >
-                          ✨
-                        </motion.span>
                       </p>
                     </motion.div>
                   </div>
