@@ -1156,7 +1156,7 @@ export default function Index() {
                       </div>
                       <p className="text-xl md:text-2xl text-gray-800 font-bold leading-relaxed text-center">
                         <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-                          🟠 בלי לשלם על תוכנות:
+                          בלי לשלם על תוכנות:
                         </span>
                         <br />
                         <span className="text-gray-700 font-medium">
