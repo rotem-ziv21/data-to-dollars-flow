@@ -1093,9 +1093,31 @@ export default function Index() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   שני חודשי ליווי –<br />
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative">
+                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative inline-block">
                     על בסיס הצלחה בלבד
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                    <motion.div 
+                      className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary rounded-full"
+                      initial={{ scaleX: 0, opacity: 0 }}
+                      whileInView={{ scaleX: 1, opacity: 1 }}
+                      transition={{ 
+                        duration: 1.2, 
+                        delay: 0.5,
+                        ease: "easeOut"
+                      }}
+                      style={{ originX: 0 }}
+                    />
+                    <motion.div 
+                      className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/50 via-accent/50 to-secondary/50 rounded-full blur-sm"
+                      animate={{ 
+                        scaleX: [1, 1.1, 1],
+                        opacity: [0.5, 0.8, 0.5]
+                      }}
+                      transition={{ 
+                        duration: 2, 
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
                   </span>
                 </motion.h3>
                 
