@@ -1555,6 +1555,36 @@ export default function Index() {
                     </div>
                   </div>
                   
+                  {/* הודעת דחיפות מעוצבת */}
+                  <motion.div 
+                    className="text-center mt-8"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                  >
+                    <motion.div 
+                      className="bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 border-4 border-amber-300 rounded-[2rem] px-8 md:px-12 py-6 md:py-8 shadow-2xl inline-block relative overflow-hidden"
+                      animate={{ 
+                        boxShadow: [
+                          "0 0 30px rgba(245, 158, 11, 0.5)",
+                          "0 0 50px rgba(245, 158, 11, 0.8)",
+                          "0 0 30px rgba(245, 158, 11, 0.5)"
+                        ]
+                      }}
+                      transition={{ 
+                        duration: 2, 
+                        repeat: Infinity
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
+                      <p className="text-lg md:text-xl font-black text-white flex items-center justify-center gap-2 relative z-10 text-center">
+                        ההצעה מוגבלת ל-20 העסקים הראשונים<br />
+                        החברה רשאית לשנות את ההצעה בכל רגע נתון ט.ל.ח
+                      </p>
+                    </motion.div>
+                  </motion.div>
+                  
                   {/* כפתור פעולה */}
                   <motion.div 
                     className="text-center mt-8"
@@ -1590,61 +1620,6 @@ export default function Index() {
                 </div>
               </div>
             </div>
-          </motion.div>
-
-          {/* הודעת דחיפות מעוצבת */}
-          <motion.div 
-            className="text-center mt-16"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <motion.div 
-              className="bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 border-4 border-amber-300 rounded-[2rem] px-8 md:px-12 py-6 md:py-8 shadow-2xl inline-block relative overflow-hidden"
-              animate={{ 
-                boxShadow: [
-                  "0 0 30px rgba(245, 158, 11, 0.5)",
-                  "0 0 50px rgba(245, 158, 11, 0.8)",
-                  "0 0 30px rgba(245, 158, 11, 0.5)"
-                ]
-              }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity
-              }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
-              <p className="text-xl md:text-2xl font-black text-white flex items-center justify-center gap-4 relative z-10">
-                <motion.span 
-                  className="text-2xl md:text-3xl"
-                  animate={{ 
-                    rotate: [0, 15, -15, 0],
-                    scale: [1, 1.2, 1]
-                  }}
-                  transition={{ 
-                    duration: 1.5, 
-                    repeat: Infinity
-                  }}
-                >
-                  📍
-                </motion.span>
-                ההצעה זמינה כרגע ללא עלות – למתאמים ראשונים בלבד
-                <motion.span 
-                  className="text-2xl md:text-3xl"
-                  animate={{ 
-                    y: [0, -5, 0],
-                    opacity: [1, 0.7, 1]
-                  }}
-                  transition={{ 
-                    duration: 1, 
-                    repeat: Infinity
-                  }}
-                >
-                  ⚡
-                </motion.span>
-              </p>
-            </motion.div>
           </motion.div>
 
         </div>
