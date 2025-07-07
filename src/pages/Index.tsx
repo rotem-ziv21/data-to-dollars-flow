@@ -1652,38 +1652,130 @@ export default function Index() {
           </motion.h2>
           
           <GlowCard className="p-16 mb-16 bg-white/10 backdrop-blur-xl border-white/20">
-            <div className="grid md:grid-cols-3 gap-12 mb-12">
-              {[
-                { icon: "📞", title: "פגישות", subtitle: "ללא עלות" },
-                { icon: "🎯", title: "לידים", subtitle: "ללא עלות" },
-                { icon: "💰", title: "מכירות", subtitle: "ללא עלות" }
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  className="text-center"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.2 }}
-                  whileHover={{ scale: 1.1, rotate: 2 }}
-                >
-                  <motion.div 
-                    className="text-6xl mb-4"
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+            <div className="max-w-2xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-center mb-12"
+              >
+                <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
+                  הרשמה לפגישת "כסף מהדאטה"
+                </h3>
+                <p className="text-xl text-white/80">
+                  למידע נוסף על איך הופכים דאטה קיימת לרווחים
+                </p>
+              </motion.div>
+
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
                   >
-                    {item.icon}
+                    <label className="block text-white text-lg font-bold mb-2">
+                      שם מלא *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full px-4 py-4 rounded-2xl border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:border-secondary focus:ring-0 focus:outline-none transition-all duration-300 text-lg"
+                      placeholder="הכנס שם מלא"
+                    />
                   </motion.div>
-                  <p className="text-3xl font-black mb-2">{item.title}</p>
-                  <p className="text-xl text-white/80">{item.subtitle}</p>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    <label className="block text-white text-lg font-bold mb-2">
+                      שם חברה *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full px-4 py-4 rounded-2xl border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:border-secondary focus:ring-0 focus:outline-none transition-all duration-300 text-lg"
+                      placeholder="הכנס שם חברה"
+                    />
+                  </motion.div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                  >
+                    <label className="block text-white text-lg font-bold mb-2">
+                      טלפון *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      className="w-full px-4 py-4 rounded-2xl border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:border-secondary focus:ring-0 focus:outline-none transition-all duration-300 text-lg"
+                      placeholder="050-1234567"
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
+                    <label className="block text-white text-lg font-bold mb-2">
+                      מייל *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      className="w-full px-4 py-4 rounded-2xl border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:border-secondary focus:ring-0 focus:outline-none transition-all duration-300 text-lg"
+                      placeholder="example@company.com"
+                    />
+                  </motion.div>
+                </div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="flex items-start gap-3 mt-8"
+                >
+                  <input
+                    type="checkbox"
+                    id="marketing-consent"
+                    required
+                    className="mt-1 w-5 h-5 rounded border-2 border-white/30 bg-white/10 text-secondary focus:ring-secondary focus:ring-2"
+                  />
+                  <label htmlFor="marketing-consent" className="text-white/90 text-lg leading-relaxed cursor-pointer">
+                    אני מאשר קבלת דיוור שיווקי מאופטי וואן בע״מ<br />
+                    <span className="text-secondary font-semibold">(מבטיחים לתת הרבה ערך)</span>
+                  </label>
                 </motion.div>
-              ))}
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="pt-8"
+                >
+                  <motion.button
+                    type="submit"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-gradient-to-r from-secondary to-accent hover:from-secondary/90 hover:to-accent/90 text-white font-black text-xl md:text-2xl py-6 px-8 rounded-3xl shadow-2xl transition-all duration-300 relative overflow-hidden group"
+                  >
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100"
+                      animate={{ x: ['-100%', '100%'] }}
+                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    <span className="relative z-10">🚀 שלח בקשה לפגישה</span>
+                  </motion.button>
+                </motion.div>
+              </form>
             </div>
-            <motion.div
-              className="bg-secondary/30 backdrop-blur-sm rounded-3xl p-8 border-2 border-secondary/50"
-              whileHover={{ scale: 1.05 }}
-            >
-              <p className="text-4xl md:text-5xl font-black">רק תוצאה = תשלום</p>
-            </motion.div>
           </GlowCard>
 
           <div className="space-y-8">
