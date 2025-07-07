@@ -1315,7 +1315,7 @@ export default function Index() {
                     <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
                     <div className="relative z-10">
                       <p className="text-lg md:text-xl font-bold leading-tight mb-2">
-                        🟢 הפגישה לא מחייבת להמשיך –
+                        הפגישה לא מחייבת להמשיך –
                       </p>
                       <p className="text-lg md:text-xl font-bold leading-tight">
                         וגם בשבילנו זו בדיקה לוודא שאנחנו מתאימים לעבודה משותפת.
