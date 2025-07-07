@@ -1171,13 +1171,6 @@ export default function Index() {
                       }}
                     >
                       Win–Win מההתחלה
-                      <motion.span
-                        className="inline-block ml-3 text-3xl"
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      >
-                        🚀
-                      </motion.span>
                     </motion.p>
                   </div>
                 </motion.div>
