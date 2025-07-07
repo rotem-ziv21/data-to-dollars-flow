@@ -1242,7 +1242,7 @@ export default function Index() {
                         </div>
                         <div>
                           <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
-                            🔍 שלב 1 – מיפוי הדאטה שברשותך
+                            שלב 1 – מיפוי הדאטה שברשותך
                           </h4>
                           <p className="text-lg text-gray-700 leading-relaxed">
                             נבחן מה יש היום במערכת או בקבצים –<br />
@@ -1261,7 +1261,7 @@ export default function Index() {
                         </div>
                         <div>
                           <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
-                            🎯 שלב 2 – פיצוח קהל היעד והפנייה הנכונה
+                            שלב 2 – פיצוח קהל היעד והפנייה הנכונה
                           </h4>
                           <p className="text-lg text-gray-700 leading-relaxed">
                             נבין איך נכון לפנות ללידים הקיימים:<br />
@@ -1280,7 +1280,7 @@ export default function Index() {
                         </div>
                         <div>
                           <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
-                            💡 שלב 3 – חידוד ההצעה שלך ואוטומציה לפעולה
+                            שלב 3 – חידוד ההצעה שלך ואוטומציה לפעולה
                           </h4>
                           <p className="text-lg text-gray-700 leading-relaxed">
                             נבנה יחד מסר מדויק שמזיז את הלידים לכיוון פגישה/רכישה.<br />
@@ -1298,7 +1298,7 @@ export default function Index() {
                         </div>
                         <div>
                           <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
-                            📋 שלב 4 – יוצאים עם תוכנית פעולה מסודרת
+                            שלב 4 – יוצאים עם תוכנית פעולה מסודרת
                           </h4>
                           <p className="text-lg text-gray-700 leading-relaxed">
                             בתום הפגישה תהיה לך תוכנית ברורה:<br />
