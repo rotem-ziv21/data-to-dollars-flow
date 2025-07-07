@@ -1187,37 +1187,26 @@ export default function Index() {
                           { icon: Award, text: "תשלום בסיס תוצאה - לא קיבלת לא שילמת", color: "from-red-500 to-red-600", bgColor: "from-red-50 to-red-100" },
                           { icon: Settings, text: "כל המערכות הדרושות עלינו", color: "from-indigo-500 to-indigo-600", bgColor: "from-indigo-50 to-indigo-100" }
                         ].map((item, index) => (
-                          <motion.div
+                          <div
                             key={index}
-                            initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                            transition={{ duration: 0.6, delay: 1.8 + index * 0.15 }}
-                            whileHover={{ scale: 1.03, y: -8 }}
-                            className={`bg-gradient-to-br ${item.bgColor} rounded-3xl p-8 shadow-xl border-2 border-white/50 group cursor-pointer relative overflow-hidden`}
+                            className={`bg-gradient-to-br ${item.bgColor} rounded-3xl p-8 shadow-xl border-2 border-white/50 relative overflow-hidden`}
                           >
-                            <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            
                             <div className="relative z-10 text-center">
-                              <motion.div
+                              <div
                                 className={`w-20 h-20 bg-gradient-to-br ${item.color} rounded-3xl flex items-center justify-center shadow-lg mx-auto mb-6`}
-                                whileHover={{ scale: 1.1 }}
-                                transition={{ duration: 0.4 }}
                               >
                                 <item.icon className="w-10 h-10 text-white" strokeWidth={2.5} />
-                              </motion.div>
-                              <p className="text-xl font-bold text-gray-800 leading-tight group-hover:text-gray-900 transition-colors">
+                              </div>
+                              <p className="text-xl font-bold text-gray-800 leading-tight">
                                 {item.text}
                               </p>
                             </div>
-                          </motion.div>
+                          </div>
                         ))}
                       </div>
                       
                       {/* הודעת סיכום מרכזית */}
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 2.5 }}
+                      <div
                         className="mt-12 text-center"
                       >
                         <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-6 border border-primary/20">
@@ -1225,7 +1214,7 @@ export default function Index() {
                             ✨ הכל מבוסס על הדאטה שכבר יש לך - בלי השקעות נוספות
                           </p>
                         </div>
-                      </motion.div>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
