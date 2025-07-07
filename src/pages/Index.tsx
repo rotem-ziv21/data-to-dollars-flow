@@ -1007,15 +1007,13 @@ export default function Index() {
                       <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-red-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       
                       <div className="relative z-10">
-                        <div className="flex items-center justify-center mb-6">
-                          <motion.div
-                            className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg"
-                            whileHover={{ rotate: 360 }}
-                            transition={{ duration: 0.8 }}
-                          >
-                            <X className="w-10 h-10 text-white" strokeWidth={3} />
-                          </motion.div>
-                        </div>
+                         <div className="flex items-center justify-center mb-6">
+                           <div
+                             className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg"
+                           >
+                             <X className="w-10 h-10 text-white" strokeWidth={3} />
+                           </div>
+                         </div>
                         
                         <h5 className="text-3xl font-black text-gray-800 mb-6 text-center leading-tight">
                           מה אנחנו <span className="text-red-600">לא</span> עושים
@@ -1061,13 +1059,11 @@ export default function Index() {
                       
                       <div className="relative z-10">
                         <div className="flex items-center justify-center mb-6">
-                          <motion.div
-                            className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg"
-                            whileHover={{ rotate: 360 }}
-                            transition={{ duration: 0.8 }}
-                          >
-                            <CheckCircle className="w-10 h-10 text-white" strokeWidth={3} />
-                          </motion.div>
+                           <div
+                             className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg"
+                           >
+                             <CheckCircle className="w-10 h-10 text-white" strokeWidth={3} />
+                           </div>
                         </div>
                         
                         <h5 className="text-3xl font-black text-gray-800 mb-6 text-center leading-tight">
