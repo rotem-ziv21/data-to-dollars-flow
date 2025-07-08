@@ -93,7 +93,7 @@ export default function Index() {
                 </div>
                 <div className="mt-8 text-center">
                   <p className="text-xl font-bold text-white leading-relaxed">
-                    "אם יש לך רשימות לידים, דאטה מהקמפיינים או קהל שלא הגיב – אל תזרוק אותם לפח. 
+                    "אם יש לך רשימות לידים, דאטה מהקמפיינים או קהל שלא הגיב אל תזרוק אותם לפח. 
                     <span className="text-secondary"> אנחנו יודעים להחזיר אותם לחיים.</span>"
                   </p>
                 </div>
@@ -182,7 +182,7 @@ export default function Index() {
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <p className="text-2xl md:text-3xl font-black text-white leading-tight">
-                        אנחנו עושים את העבודה בשבילך –<br />
+                        אנחנו עושים את העבודה בשבילך <br />
                         על בסיס הדאטא הקיימת שלך.
                       </p>
                     </motion.div>
@@ -221,7 +221,7 @@ export default function Index() {
             {[
               { icon: UserPlus, color: "text-green-600", bgColor: "bg-green-100", text: "מסע לקוח שיוצר לקוחות איכותיים" },
               { icon: DollarSign, color: "text-blue-600", bgColor: "bg-blue-100", text: "בלי להוציא שקל על שיווק" },
-              { icon: Settings, color: "text-purple-600", bgColor: "bg-purple-100", text: "כל התוכנות הדרושות – עלינו!" }
+              { icon: Settings, color: "text-purple-600", bgColor: "bg-purple-100", text: "כל התוכנות הדרושות עלינו!" }
             ].map((item, i) => (
               <div key={i} className="bg-white/80 backdrop-blur-xl rounded-3xl box-shadow-intense border border-white/20 relative overflow-hidden p-6 text-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
@@ -399,7 +399,7 @@ export default function Index() {
                   whileInView={{ scale: [0.95, 1] }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  רוב העסקים מקבלים לידים – וסוגרים אולי 10% מהם.
+                  רוב העסקים מקבלים לידים וסוגרים אולי 10% מהם.
                 </motion.p>
                 
                 <motion.p 
@@ -420,7 +420,7 @@ export default function Index() {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-2xl blur-xl"></div>
                 <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-gradient-to-r from-primary/30 to-secondary/30">
                   <p className="text-xl md:text-2xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight mb-4 text-center">
-                    זו בדיוק הדרך שלך למקסם את הרווח מהדאטא שכבר שילמת עליה –
+                    זו בדיוק הדרך שלך למקסם את הרווח מהדאטא שכבר שילמת עליה
                   </p>
                   <motion.p 
                     className="text-xl md:text-2xl font-black bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent leading-tight text-center"
@@ -494,7 +494,7 @@ export default function Index() {
                     בונים קמפיינים חכמים
                   </p>
                   <p className="text-lg font-bold text-green-700">
-                    ואתה מקבל לידים – לשיחה או סגירה
+                    ואתה מקבל לידים לשיחה או סגירה
                   </p>
                 </div>
               </motion.div>
@@ -512,7 +512,7 @@ export default function Index() {
                   רוצה לראות איך זה נראה אצלך?
                 </p>
                 <p className="text-xl md:text-2xl font-bold text-gray-700 mb-8">
-                  לתיאום פגישת "כסף מהדאטא" – ללא עלות וללא התחייבות
+                  לתיאום פגישת "כסף מהדאטא" ללא עלות וללא התחייבות
                 </p>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -557,7 +557,7 @@ export default function Index() {
               <span className="text-xl font-bold">למה לסמוך עלינו?</span>
             </motion.div>
             <h2 className="text-5xl md:text-7xl font-black text-primary mb-8 leading-tight">
-              מה מייחד אותנו –<br />
+              מה מייחד אותנו<br />
               <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
                 ולמה זה באמת עובד?
               </span>
@@ -730,7 +730,7 @@ export default function Index() {
                       <h4 className="text-xl font-black text-accent mb-2">שיטת "שמש" הייחודית</h4>
                       <div className="text-gray-700 leading-relaxed">
                         <p className="mb-2">
-                          <strong className="text-accent">שיווק | מכירה | שיטה</strong> – מודל עבודה שמוביל עסקים לתוצאות אמיתיות.
+                          <strong className="text-accent">שיווק | מכירה | שיטה</strong> מודל עבודה שמוביל עסקים לתוצאות אמיתיות.
                         </p>
                       </div>
                     </div>
@@ -757,7 +757,7 @@ export default function Index() {
                   מוכן לראות איך זה עובד אצלך?
                 </motion.p>
                 <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-                  בניגוד לחברות שעושות "אימייל מרקטינג" כללי –<br />
+                  בניגוד לחברות שעושות "אימייל מרקטינג" כללי<br />
                   <strong>אנחנו מגיעים מהשטח עם תוצאות אמיתיות.</strong>
                 </p>
                 <motion.div
@@ -792,7 +792,7 @@ export default function Index() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-black text-primary mb-8 leading-tight">
-              אבל לא רק האסטרטגיה –<br />
+              אבל לא רק האסטרטגיה<br />
               <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
                 גם הטכנולוגיה משנה את המשחק:
               </span>
@@ -1043,7 +1043,7 @@ export default function Index() {
                            transition={{ type: "spring", stiffness: 300 }}
                          >
                            <p className="text-2xl font-black text-white leading-tight">
-                             אנחנו לוקחים את רשימת הלידים שלך –<br />
+                             אנחנו לוקחים את רשימת הלידים שלך<br />
                              <span className="text-green-100 font-black">ובונים ממנה מכונה שיווקית חכמה</span>
                            </p>
                          </motion.div>
@@ -1089,13 +1089,13 @@ export default function Index() {
                       {
                         icon: Zap,
                         title: "יוצרים קמפיינים אוטומטיים חכמים",
-                        content: "פגישות ביומן, שיחות טלפון עם לקוחות פוטנציאליים, או מכירה בפועל – תלוי במטרה.",
+                        content: "פגישות ביומן, שיחות טלפון עם לקוחות פוטנציאליים, או מכירה בפועל תלוי במטרה.",
                         gradient: "from-orange-500 to-red-500",
                         bgGradient: "from-orange-50 to-red-50"
                       },
                       {
                         icon: Settings,
-                        title: "והכול – נעשה בשבילך",
+                        title: "והכול נעשה בשבילך",
                         content: "אנחנו מנהלים את הקמפיין מא' ועד ת' בשבילך. אין מערכת להתעסק איתה, אין מה ללמוד.",
                         gradient: "from-green-500 to-teal-500",
                         bgGradient: "from-green-50 to-teal-50"
@@ -1174,8 +1174,8 @@ export default function Index() {
 
                       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         {[
-                          { icon: Users, text: "פגישות עם לקוחות רלוונטיים שכבר הכרת – ולא סגרת", color: "from-blue-500 to-blue-600", bgColor: "from-blue-50 to-blue-100" },
-                          { icon: TrendingUp, text: "יותר סגירות – עם עלות שיווקית אפסית", color: "from-green-500 to-green-600", bgColor: "from-green-50 to-green-100" },
+                          { icon: Users, text: "פגישות עם לקוחות רלוונטיים שכבר הכרת ולא סגרת", color: "from-blue-500 to-blue-600", bgColor: "from-blue-50 to-blue-100" },
+                          { icon: TrendingUp, text: "יותר סגירות עם עלות שיווקית אפסית", color: "from-green-500 to-green-600", bgColor: "from-green-50 to-green-100" },
                           { icon: DollarSign, text: "בלי להוציא שקל נוסף על פרסום", color: "from-amber-500 to-orange-500", bgColor: "from-amber-50 to-orange-100" },
                           { icon: UserPlus, text: "בלי להחזיק עובדים", color: "from-purple-500 to-purple-600", bgColor: "from-purple-50 to-purple-100" },
                           { icon: Award, text: "תשלום בסיס תוצאה - לא קיבלת לא שילמת", color: "from-red-500 to-red-600", bgColor: "from-red-50 to-red-100" },
@@ -1280,7 +1280,7 @@ export default function Index() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  שני חודשי ליווי –<br />
+                  שני חודשי ליווי<br />
                   <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative">
                     על בסיס הצלחה בלבד
                     <motion.div 
@@ -1327,7 +1327,7 @@ export default function Index() {
                       </div>
                       <p className="text-xl md:text-2xl font-black text-center">
                         <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-accent bg-clip-text text-transparent text-3xl md:text-4xl">
-                          לא הבאנו תוצאה – לא שילמת
+                          לא הבאנו תוצאה לא שילמת
                         </span>
                       </p>
                     </div>
@@ -1348,7 +1348,7 @@ export default function Index() {
                         </span>
                         <br />
                         <span className="text-gray-700 font-medium">
-                          אנחנו מספקים את כל מה שצריך – מערכת, אוטומציות, דשבורד ודיוורים – הכל כלול.
+                          אנחנו מספקים את כל מה שצריך מערכת, אוטומציות, דשבורד ודיוורים הכל כלול.
                         </span>
                       </p>
                     </div>
@@ -1366,7 +1366,7 @@ export default function Index() {
                   <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-50" />
                   <div className="relative z-10">
                     <p className="text-xl md:text-2xl font-bold leading-relaxed text-center">
-                      אנחנו מציעים את זה כי אנחנו יודעים שזה עובד –
+                      אנחנו מציעים את זה כי אנחנו יודעים שזה עובד
                     </p>
                     <motion.p 
                       className="text-2xl md:text-4xl font-black mt-4 text-center"
@@ -1379,7 +1379,7 @@ export default function Index() {
                         ease: "easeInOut"
                       }}
                     >
-                      Win–Win מההתחלה
+                      Win Win מההתחלה
                     </motion.p>
                   </div>
                 </motion.div>
@@ -1410,10 +1410,10 @@ export default function Index() {
                   </h3>
                   
                   <p className="text-xl md:text-2xl text-gray-600 font-semibold mb-4">
-                    פגישה של עד שעה בזום – ללא עלות וללא התחייבות.
+                    פגישה של עד שעה בזום ללא עלות וללא התחייבות.
                   </p>
                   <p className="text-lg md:text-xl text-gray-700 font-medium">
-                    המטרה? לבדוק יחד איך הופכים את הדאטה שכבר יש לך –<br />
+                    המטרה? לבדוק יחד איך הופכים את הדאטה שכבר יש לך<br />
                     לפגישות, שיחות וסגירות בפועל.
                   </p>
                 </div>
@@ -1430,10 +1430,10 @@ export default function Index() {
                         </div>
                         <div>
                           <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
-                            שלב 1 – מיפוי הדאטה שברשותך
+                            שלב 1 מיפוי הדאטה שברשותך
                           </h4>
                           <p className="text-lg text-gray-700 leading-relaxed">
-                            נבחן מה יש היום במערכת או בקבצים –<br />
+                            נבחן מה יש היום במערכת או בקבצים<br />
                             איזה קהלים קיימים, איזה מידע יש על כל אחד,<br />
                             והאם בכלל ניתן לפנות אליהם בצורה חכמה ומותרת.
                           </p>
@@ -1449,11 +1449,11 @@ export default function Index() {
                         </div>
                         <div>
                           <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
-                            שלב 2 – פיצוח קהל היעד והפנייה הנכונה
+                            שלב 2 פיצוח קהל היעד והפנייה הנכונה
                           </h4>
                           <p className="text-lg text-gray-700 leading-relaxed">
                             נבין איך נכון לפנות ללידים הקיימים:<br />
-                            איך לחמם אותם, לחדש את הקשר, ולהניע לפעולה –<br />
+                            איך לחמם אותם, לחדש את הקשר, ולהניע לפעולה<br />
                             בלי להישמע ספאמי ובלי "להתחיל מאפס".
                           </p>
                         </div>
@@ -1468,11 +1468,11 @@ export default function Index() {
                         </div>
                         <div>
                           <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
-                            שלב 3 – חידוד ההצעה שלך ואוטומציה לפעולה
+                            שלב 3 חידוד ההצעה שלך ואוטומציה לפעולה
                           </h4>
                           <p className="text-lg text-gray-700 leading-relaxed">
                             נבנה יחד מסר מדויק שמזיז את הלידים לכיוון פגישה/רכישה.<br />
-                            נראה אם נדרשת אוטומציה – ואיך בונים אותה נכון.
+                            נראה אם נדרשת אוטומציה ואיך בונים אותה נכון.
                           </p>
                         </div>
                       </div>
@@ -1486,11 +1486,11 @@ export default function Index() {
                         </div>
                         <div>
                           <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
-                            שלב 4 – יוצאים עם תוכנית פעולה מסודרת
+                            שלב 4 יוצאים עם תוכנית פעולה מסודרת
                           </h4>
                           <p className="text-lg text-gray-700 leading-relaxed">
                             בתום הפגישה תהיה לך תוכנית ברורה:<br />
-                            מה בדיוק צריך לקרות כדי להפוך את הדאטה לכסף –<br />
+                            מה בדיוק צריך לקרות כדי להפוך את הדאטה לכסף<br />
                             שלב אחרי שלב, עם היגיון, סדר ואסטרטגיה מוכחת.
                           </p>
                         </div>
@@ -1503,7 +1503,7 @@ export default function Index() {
                     <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent" />
                     <div className="relative z-10">
                       <p className="text-lg md:text-xl font-bold leading-tight mb-2">
-                        הפגישה לא מחייבת להמשיך –
+                        הפגישה לא מחייבת להמשיך
                       </p>
                       <p className="text-lg md:text-xl font-bold leading-tight">
                         וגם בשבילנו זו בדיקה לוודא שאנחנו מתאימים לעבודה משותפת.
