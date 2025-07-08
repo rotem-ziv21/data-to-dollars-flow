@@ -1154,9 +1154,9 @@ export default function Index() {
                     </div>
                     
                     <div className="relative z-10">
-                      <div className="text-center mb-16">
+                      <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                         <motion.h5 
-                          className="text-4xl md:text-6xl font-black mb-6"
+                          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-6"
                           whileHover={{ scale: 1.02 }}
                           transition={{ duration: 0.3 }}
                         >
@@ -1172,7 +1172,7 @@ export default function Index() {
                         />
                       </div>
 
-                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
                         {[
                           { icon: Users, text: "פגישות עם לקוחות רלוונטיים שכבר הכרת ולא סגרת", color: "from-blue-500 to-blue-600", bgColor: "from-blue-50 to-blue-100" },
                           { icon: TrendingUp, text: "יותר סגירות עם עלות שיווקית אפסית", color: "from-green-500 to-green-600", bgColor: "from-green-50 to-green-100" },
@@ -1183,15 +1183,15 @@ export default function Index() {
                         ].map((item, index) => (
                           <div
                             key={index}
-                            className={`bg-gradient-to-br ${item.bgColor} rounded-3xl p-8 shadow-xl border-2 border-white/50 relative overflow-hidden`}
+                            className={`bg-gradient-to-br ${item.bgColor} rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border-2 border-white/50 relative overflow-hidden`}
                           >
                             <div className="relative z-10 text-center">
                               <div
-                                className={`w-20 h-20 bg-gradient-to-br ${item.color} rounded-3xl flex items-center justify-center shadow-lg mx-auto mb-6`}
+                                className={`w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br ${item.color} rounded-3xl flex items-center justify-center shadow-lg mx-auto mb-4 sm:mb-6`}
                               >
-                                <item.icon className="w-10 h-10 text-white" strokeWidth={2.5} />
+                                <item.icon className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" strokeWidth={2.5} />
                               </div>
-                              <p className="text-xl font-bold text-gray-800 leading-tight">
+                              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-800 leading-tight">
                                 {item.text}
                               </p>
                             </div>
@@ -1201,10 +1201,10 @@ export default function Index() {
                       
                       {/* הודעת סיכום מרכזית */}
                       <div
-                        className="mt-12 text-center"
+                        className="mt-8 sm:mt-10 lg:mt-12 text-center"
                       >
-                        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-6 border border-primary/20">
-                          <p className="text-xl font-bold text-gray-700">
+                        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-4 sm:p-6 border border-primary/20">
+                          <p className="text-base sm:text-lg lg:text-xl font-bold text-gray-700">
                             ✨ הכל מבוסס על הדאטה שכבר יש לך - בלי השקעות נוספות
                           </p>
                         </div>
