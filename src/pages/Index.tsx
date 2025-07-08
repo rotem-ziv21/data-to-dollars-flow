@@ -1219,7 +1219,7 @@ export default function Index() {
       </section>
 
       {/* ההצעה שלנו - עיצוב מקצועי ומשכנע */}
-      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/5">
+      <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/5">
         {/* אפקטי רקע */}
         <div className="absolute inset-0">
           <div className="absolute top-10 left-20 w-96 h-96 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl opacity-60"></div>
@@ -1227,11 +1227,11 @@ export default function Index() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-white/40 to-transparent rounded-full"></div>
         </div>
         
-        <div className="max-w-6xl mx-auto px-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* כותרת עם אנימציה מרשימה */}
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -1241,7 +1241,7 @@ export default function Index() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <h2 className="text-5xl md:text-8xl font-black bg-gradient-to-l from-secondary via-accent to-primary bg-clip-text text-transparent mb-8 leading-tight relative">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-black bg-gradient-to-l from-secondary via-accent to-primary bg-clip-text text-transparent mb-6 sm:mb-8 leading-tight relative">
                 ההצעה שלנו
                 <motion.div
                   className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-3xl blur-xl -z-10"
@@ -1261,21 +1261,21 @@ export default function Index() {
 
           {/* ההצעה המרכזית - עיצוב מרשים */}
           <motion.div 
-            className="relative mb-24"
+            className="relative mb-12 sm:mb-16 lg:mb-24"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-white/95 backdrop-blur-xl rounded-[3rem] p-12 md:p-16 shadow-2xl border-2 border-white/50 relative overflow-hidden">
+            <div className="bg-white/95 backdrop-blur-xl rounded-3xl sm:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl border-2 border-white/50 relative overflow-hidden">
               {/* אפקט זוהר */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none" />
               <div className="absolute top-0 left-1/4 w-1/2 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
               
-              <div className="relative z-10 text-center space-y-12">
+              <div className="relative z-10 text-center space-y-6 sm:space-y-8 lg:space-y-12">
                 
                 {/* כותרת מרכזית מעוצבת */}
                 <motion.h3 
-                  className="text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-12"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 leading-tight mb-8 sm:mb-10 lg:mb-12"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
