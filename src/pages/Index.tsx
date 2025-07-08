@@ -1154,61 +1154,67 @@ export default function Index() {
                     </div>
                     
                     <div className="relative z-10">
-                      <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+                      <div className="text-center mb-8 sm:mb-12">
                         <motion.h5 
-                          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-6"
+                          className="text-2xl sm:text-3xl md:text-4xl font-black mb-4 text-gray-900"
                           whileHover={{ scale: 1.02 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                            מה יוצא לך מזה?
-                          </span>
+                          מה יוצא לך מזה?
                         </motion.h5>
-                        <motion.div 
-                          className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto"
-                          initial={{ scaleX: 0 }}
-                          whileInView={{ scaleX: 1 }}
-                          transition={{ duration: 1, delay: 1.7 }}
-                        />
+                        <div className="w-16 h-1 bg-secondary rounded-full mx-auto" />
                       </div>
 
-                      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+                      {/* רשימה פשוטה וברורה במקום גריד */}
+                      <div className="space-y-4 max-w-4xl mx-auto">
                         {[
-                          { icon: Users, text: "פגישות עם לקוחות רלוונטיים שכבר הכרת ולא סגרת", color: "from-blue-500 to-blue-600", bgColor: "from-blue-50 to-blue-100" },
-                          { icon: TrendingUp, text: "יותר סגירות עם עלות שיווקית אפסית", color: "from-green-500 to-green-600", bgColor: "from-green-50 to-green-100" },
-                          { icon: DollarSign, text: "בלי להוציא שקל נוסף על פרסום", color: "from-amber-500 to-orange-500", bgColor: "from-amber-50 to-orange-100" },
-                          { icon: UserPlus, text: "בלי להחזיק עובדים", color: "from-purple-500 to-purple-600", bgColor: "from-purple-50 to-purple-100" },
-                          { icon: Award, text: "תשלום בסיס תוצאה - לא קיבלת לא שילמת", color: "from-red-500 to-red-600", bgColor: "from-red-50 to-red-100" },
-                          { icon: Settings, text: "כל המערכות הדרושות עלינו", color: "from-indigo-500 to-indigo-600", bgColor: "from-indigo-50 to-indigo-100" }
+                          { icon: Users, text: "פגישות עם לקוחות רלוונטיים שכבר הכרת ולא סגרת", emoji: "👥" },
+                          { icon: TrendingUp, text: "יותר סגירות עם עלות שיווקית אפסית", emoji: "📈" },
+                          { icon: DollarSign, text: "בלי להוציא שקל נוסף על פרסום", emoji: "💰" },
+                          { icon: UserPlus, text: "בלי להחזיק עובדים", emoji: "⚡" },
+                          { icon: Award, text: "תשלום בסיס תוצאה - לא קיבלת לא שילמת", emoji: "🎯" },
+                          { icon: Settings, text: "כל המערכות הדרושות עלינו", emoji: "⚙️" }
                         ].map((item, index) => (
-                          <div
+                          <motion.div
                             key={index}
-                            className={`bg-gradient-to-br ${item.bgColor} rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border-2 border-white/50 relative overflow-hidden`}
+                            className="bg-white/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200/50 hover:shadow-xl transition-all duration-300"
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            whileHover={{ scale: 1.02 }}
                           >
-                            <div className="relative z-10 text-center">
-                              <div
-                                className={`w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-to-br ${item.color} rounded-3xl flex items-center justify-center shadow-lg mx-auto mb-4 sm:mb-6`}
-                              >
-                                <item.icon className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" strokeWidth={2.5} />
+                            <div className="flex items-center gap-4">
+                              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-md">
+                                <span className="text-lg sm:text-xl">{item.emoji}</span>
                               </div>
-                              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-800 leading-tight">
-                                {item.text}
-                              </p>
+                              <div className="flex-1">
+                                <p className="text-sm sm:text-base md:text-lg font-bold text-gray-800 leading-relaxed">
+                                  {item.text}
+                                </p>
+                              </div>
+                              <div className="flex-shrink-0">
+                                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                  <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                                </div>
+                              </div>
                             </div>
-                          </div>
+                          </motion.div>
                         ))}
                       </div>
                       
-                      {/* הודעת סיכום מרכזית */}
-                      <div
-                        className="mt-8 sm:mt-10 lg:mt-12 text-center"
+                      {/* הודעת סיכום פשוטה יותר */}
+                      <motion.div
+                        className="mt-8 sm:mt-10 text-center"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8 }}
                       >
-                        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-4 sm:p-6 border border-primary/20">
-                          <p className="text-base sm:text-lg lg:text-xl font-bold text-gray-700">
+                        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-4 sm:p-6 border-2 border-primary/20 max-w-2xl mx-auto">
+                          <p className="text-base sm:text-lg font-black text-gray-800">
                             ✨ הכל מבוסס על הדאטה שכבר יש לך - בלי השקעות נוספות
                           </p>
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
                   </div>
                 </motion.div>
