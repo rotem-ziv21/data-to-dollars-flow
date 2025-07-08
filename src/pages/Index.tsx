@@ -1166,7 +1166,7 @@ export default function Index() {
                       </div>
 
                       {/* רשימה פשוטה וברורה במקום גריד */}
-                      <div className="space-y-4 max-w-4xl mx-auto">
+                      <div className="space-y-4 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                         {[
                           { icon: Users, text: "פגישות עם לקוחות רלוונטיים שכבר הכרת ולא סגרת", emoji: "👥" },
                           { icon: TrendingUp, text: "יותר סגירות עם עלות שיווקית אפסית", emoji: "📈" },
