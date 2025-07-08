@@ -60,24 +60,24 @@ export default function Index() {
       <header 
         className="relative backdrop-blur-xl bg-primary border-b border-primary/60"
       >
-        <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div 
             className="flex items-center justify-center"
           >
             <img 
               src="/lovable-uploads/770b5634-76b0-4acf-a31b-00fdf6c13161.png" 
               alt="Optione - פשוט לשלוט בעסק" 
-              className="h-12 md:h-16"
+              className="h-10 sm:h-12 md:h-16"
             />
           </div>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="min-h-screen flex items-center pt-20 relative bg-gradient-to-br from-primary via-primary/90 to-secondary/20">
+      <section className="min-h-screen flex items-center pt-12 sm:pt-16 lg:pt-20 relative bg-gradient-to-br from-primary via-primary/90 to-secondary/20">
         <div className="absolute inset-0 bg-black/20" />
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Video Section - Left */}
             <motion.div
               initial={{ opacity: 0, x: -100 }}
@@ -85,14 +85,14 @@ export default function Index() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden bg-white/10 backdrop-blur-xl p-8 border border-white/20">
+              <div className="relative rounded-3xl overflow-hidden bg-white/10 backdrop-blur-xl p-4 sm:p-6 lg:p-8 border border-white/20">
                 <div
-                  className="bg-gradient-to-r from-secondary to-accent w-32 h-32 rounded-full flex items-center justify-center mx-auto"
+                  className="bg-gradient-to-r from-secondary to-accent w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-full flex items-center justify-center mx-auto"
                 >
-                  <Play className="w-16 h-16 text-white" fill="white" />
+                  <Play className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-white" fill="white" />
                 </div>
-                <div className="mt-8 text-center">
-                  <p className="text-xl font-bold text-white leading-relaxed">
+                <div className="mt-4 sm:mt-6 lg:mt-8 text-center">
+                  <p className="text-sm sm:text-lg lg:text-xl font-bold text-white leading-relaxed">
                     "אם יש לך רשימות לידים, דאטה מהקמפיינים או קהל שלא הגיב אל תזרוק אותם לפח. 
                     <span className="text-secondary"> אנחנו יודעים להחזיר אותם לחיים.</span>"
                   </p>
@@ -109,7 +109,7 @@ export default function Index() {
             >
 
               <motion.h1 
-                className="text-4xl md:text-6xl font-black mb-4 leading-tight text-white text-center"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight text-white text-center"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -137,7 +137,7 @@ export default function Index() {
                     ease: "easeInOut"
                   }}
                 >
-                  <h2 className="text-2xl md:text-3xl font-black text-white relative">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white relative">
                     <span className="relative inline-block">
                       ויהפוך דאטה מתה לרווחים בפועל
                       <motion.div
@@ -157,31 +157,31 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
               >
-                <h3 className="text-xl md:text-2xl font-bold mb-6 leading-tight text-white/90 text-center">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 leading-tight text-white/90 text-center">
                   השירות שיחזיר לחיים את הלידים 
                   <span className="text-secondary font-black"> "הרדומים" </span> 
                   שלך
                 </h3>
                 
-                <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-3xl p-8 border-2 border-white/30 box-shadow-intense">
+                <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-3xl p-4 sm:p-6 lg:p-8 border-2 border-white/30 box-shadow-intense">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6 }}
                     className="text-center"
                   >
-                    <div className="text-3xl md:text-4xl font-black text-white mb-8 leading-tight space-y-2">
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 sm:mb-6 lg:mb-8 leading-tight space-y-2">
                       <p>לא מערכת</p>
                       <p>לא קורס</p>
                       <p>לא קמפיינר</p>
                     </div>
                     
                     <motion.div 
-                      className="bg-gradient-to-r from-secondary/20 to-accent/20 rounded-2xl p-6 border-2 border-secondary/30"
+                      className="bg-gradient-to-r from-secondary/20 to-accent/20 rounded-2xl p-4 sm:p-6 border-2 border-secondary/30"
                       whileHover={{ scale: 1.02 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <p className="text-2xl md:text-3xl font-black text-white leading-tight">
+                      <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-white leading-tight">
                         אנחנו עושים את העבודה בשבילך <br />
                         על בסיס הדאטא הקיימת שלך.
                       </p>
@@ -200,7 +200,7 @@ export default function Index() {
               >
                 <Button 
                   size="lg" 
-                  className="gradient-secondary hover:opacity-90 hover:scale-105 transition-all duration-300 text-white px-16 py-8 text-xl md:text-2xl font-black rounded-3xl box-shadow-intense relative overflow-hidden group w-full max-w-md mx-auto"
+                  className="gradient-secondary hover:opacity-90 hover:scale-105 transition-all duration-300 text-white px-6 sm:px-12 lg:px-16 py-4 sm:py-6 lg:py-8 text-lg sm:text-xl md:text-2xl font-black rounded-3xl box-shadow-intense relative overflow-hidden group w-full max-w-sm sm:max-w-md mx-auto"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100"
@@ -209,7 +209,7 @@ export default function Index() {
                   />
                   <span className="relative z-10 flex items-center justify-center gap-3">
                     לתיאום שיחת "כסף מהדאטא"
-                    <ArrowLeft className="w-6 h-6" />
+                    <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                   </span>
                 </Button>
               </motion.div>
@@ -217,20 +217,20 @@ export default function Index() {
           </div>
 
           {/* Bottom Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mt-20 mb-12 px-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-12 sm:mt-16 lg:mt-20 mb-8 sm:mb-12 px-0">
             {[
               { icon: UserPlus, color: "text-green-600", bgColor: "bg-green-100", text: "מסע לקוח שיוצר לקוחות איכותיים" },
               { icon: DollarSign, color: "text-blue-600", bgColor: "bg-blue-100", text: "בלי להוציא שקל על שיווק" },
               { icon: Settings, color: "text-purple-600", bgColor: "bg-purple-100", text: "כל התוכנות הדרושות עלינו!" }
             ].map((item, i) => (
-              <div key={i} className="bg-white/80 backdrop-blur-xl rounded-3xl box-shadow-intense border border-white/20 relative overflow-hidden p-6 text-center">
+              <div key={i} className="bg-white/80 backdrop-blur-xl rounded-3xl box-shadow-intense border border-white/20 relative overflow-hidden p-4 sm:p-6 text-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
                 <div className="relative z-10">
                   <div className="space-y-4">
-                    <div className={`w-16 h-16 ${item.bgColor} rounded-2xl flex items-center justify-center mx-auto`}>
-                      <item.icon className={`w-8 h-8 ${item.color}`} />
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 ${item.bgColor} rounded-2xl flex items-center justify-center mx-auto`}>
+                      <item.icon className={`w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 ${item.color}`} />
                     </div>
-                    <p className="text-lg md:text-xl font-bold text-gray-800 leading-tight">{item.text}</p>
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-800 leading-tight">{item.text}</p>
                   </div>
                 </div>
               </div>
@@ -240,13 +240,13 @@ export default function Index() {
       </section>
 
       {/* Problem Statement */}
-      <section className="py-32 relative bg-gradient-to-br from-slate-50 via-white to-purple-50/30 overflow-hidden">
+      <section className="py-16 sm:py-24 lg:py-32 relative bg-gradient-to-br from-slate-50 via-white to-purple-50/30 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="max-w-6xl mx-auto px-8 text-center relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -254,7 +254,7 @@ export default function Index() {
             className="mb-20"
           >
             <motion.h2 
-              className="text-5xl md:text-7xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 bg-clip-text text-transparent mb-12 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 bg-clip-text text-transparent mb-8 sm:mb-12 leading-tight"
               whileInView={{ y: [20, 0], opacity: [0, 1] }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
@@ -268,7 +268,7 @@ export default function Index() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="max-w-4xl mx-auto mb-12"
           >
-            <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-200/30 box-shadow-soft">
+            <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 border border-gray-200/30 box-shadow-soft">
               
               {/* Visual Data Representation */}
               <div className="flex justify-center items-center mb-8">
@@ -280,7 +280,7 @@ export default function Index() {
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 1, delay: 0.6 }}
                 >
-                  <div className="relative w-48 h-48 mx-auto mb-4">
+                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-4">
                     {/* Main circle background - Green */}
                     <div className="absolute inset-0 rounded-full bg-green-500 shadow-lg"></div>
                     
@@ -296,15 +296,15 @@ export default function Index() {
                     />
 
                     {/* Center white circle */}
-                    <div className="absolute inset-6 bg-white rounded-full shadow-inner flex items-center justify-center">
+                    <div className="absolute inset-4 sm:inset-5 md:inset-6 bg-white rounded-full shadow-inner flex items-center justify-center">
                       <div className="text-center space-y-2">
                         <motion.div
                           initial={{ opacity: 0, scale: 0 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 2, duration: 0.8 }}
                         >
-                          <div className="text-3xl font-black text-red-500 mb-1">90%</div>
-                          <div className="text-xs font-bold text-gray-600">לא נסגרו</div>
+                          <div className="text-xl sm:text-2xl md:text-3xl font-black text-red-500 mb-1">90%</div>
+                          <div className="text-xs sm:text-xs font-bold text-gray-600">לא נסגרו</div>
                         </motion.div>
                         
                         <div className="w-8 h-0.5 bg-gray-300 mx-auto"></div>
@@ -314,8 +314,8 @@ export default function Index() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 2.5, duration: 0.8 }}
                         >
-                          <div className="text-lg font-black text-green-500 mb-1">10%</div>
-                          <div className="text-xs font-bold text-gray-600">נסגרו</div>
+                          <div className="text-sm sm:text-base md:text-lg font-black text-green-500 mb-1">10%</div>
+                          <div className="text-xs sm:text-xs font-bold text-gray-600">נסגרו</div>
                         </motion.div>
                       </div>
                     </div>
@@ -357,10 +357,10 @@ export default function Index() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 4 }}
                   >
-                    <p className="text-xl md:text-2xl font-bold text-gray-700">
+                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-700">
                       המצב הנוכחי ברוב העסקים:
                     </p>
-                    <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+                    <p className="text-xl sm:text-2xl md:text-3xl font-black bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
                       90% מהלידים הולכים לפח!
                     </p>
                   </motion.div>
@@ -403,7 +403,7 @@ export default function Index() {
                 </motion.p>
                 
                 <motion.p 
-                  className="text-2xl md:text-3xl font-black text-gray-800 leading-tight"
+                  className="text-xl sm:text-2xl md:text-3xl font-black text-gray-800 leading-tight"
                   whileInView={{ scale: [0.95, 1] }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
@@ -418,12 +418,12 @@ export default function Index() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-2xl blur-xl"></div>
-                <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-gradient-to-r from-primary/30 to-secondary/30">
-                  <p className="text-xl md:text-2xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight mb-4 text-center">
+                <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border-2 border-gradient-to-r from-primary/30 to-secondary/30">
+                  <p className="text-lg sm:text-xl md:text-2xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight mb-4 text-center">
                     זו בדיוק הדרך שלך למקסם את הרווח מהדאטא שכבר שילמת עליה
                   </p>
                   <motion.p 
-                    className="text-xl md:text-2xl font-black bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent leading-tight text-center"
+                    className="text-lg sm:text-xl md:text-2xl font-black bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent leading-tight text-center"
                     animate={{ 
                       backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                     }}
@@ -443,28 +443,28 @@ export default function Index() {
 
           <div className="max-w-4xl mx-auto space-y-8">
             {/* What we DON'T do & What we DO - Side by side */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
               {/* What we DON'T do */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-red-50/80 backdrop-blur-xl rounded-2xl p-8 border-2 border-red-200/50"
+                className="bg-red-50/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-red-200/50"
               >
                 <div className="flex items-center justify-center mb-6">
-                  <div className="bg-red-500 text-white px-4 py-2 rounded-xl text-lg font-black">
+                  <div className="bg-red-500 text-white px-3 sm:px-4 py-2 rounded-xl text-base sm:text-lg font-black">
                     ❌ מה אנחנו לא עושים?
                   </div>
                 </div>
                 <div className="space-y-3 text-center">
-                  <p className="text-lg font-bold text-red-700">
+                  <p className="text-sm sm:text-base lg:text-lg font-bold text-red-700">
                     לא מוכרים לך מערכת טכנולוגית חדשה
                   </p>
-                  <p className="text-lg font-bold text-red-700">
+                  <p className="text-sm sm:text-base lg:text-lg font-bold text-red-700">
                     לא שולחים אותך לקורסים
                   </p>
-                  <p className="text-lg font-bold text-red-700">
+                  <p className="text-sm sm:text-base lg:text-lg font-bold text-red-700">
                     לא מציעים קמפיין עם תקציב פרסום
                   </p>
                 </div>
@@ -476,24 +476,24 @@ export default function Index() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-green-50/80 backdrop-blur-xl rounded-2xl p-8 border-2 border-green-200/50"
+                className="bg-green-50/80 backdrop-blur-xl rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-green-200/50"
               >
                 <div className="flex items-center justify-center mb-6">
-                  <div className="bg-green-500 text-white px-4 py-2 rounded-xl text-lg font-black">
+                  <div className="bg-green-500 text-white px-3 sm:px-4 py-2 rounded-xl text-base sm:text-lg font-black">
                     ✅ מה כן?
                   </div>
                 </div>
                 <div className="space-y-3 text-center">
-                  <p className="text-lg font-bold text-green-700">
+                  <p className="text-sm sm:text-base lg:text-lg font-bold text-green-700">
                     מנתחים את הדאטא הקיימת שלך
                   </p>
-                  <p className="text-lg font-bold text-green-700">
+                  <p className="text-sm sm:text-base lg:text-lg font-bold text-green-700">
                     מפצחים את הפילוחים
                   </p>
-                  <p className="text-lg font-bold text-green-700">
+                  <p className="text-sm sm:text-base lg:text-lg font-bold text-green-700">
                     בונים קמפיינים חכמים
                   </p>
-                  <p className="text-lg font-bold text-green-700">
+                  <p className="text-sm sm:text-base lg:text-lg font-bold text-green-700">
                     ואתה מקבל לידים לשיחה או סגירה
                   </p>
                 </div>
@@ -507,11 +507,11 @@ export default function Index() {
               transition={{ duration: 0.8, delay: 1 }}
               className="bg-gradient-to-br from-primary via-secondary to-accent p-[3px] rounded-3xl"
             >
-              <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-12 text-center">
-                <p className="text-3xl md:text-4xl font-black text-primary mb-6">
+              <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-black text-primary mb-4 sm:mb-6">
                   רוצה לראות איך זה נראה אצלך?
                 </p>
-                <p className="text-xl md:text-2xl font-bold text-gray-700 mb-8">
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-700 mb-6 sm:mb-8">
                   לתיאום פגישת "כסף מהדאטא" ללא עלות וללא התחייבות
                 </p>
                 <motion.div
@@ -520,7 +520,7 @@ export default function Index() {
                 >
                   <Button 
                     size="lg" 
-                    className="gradient-secondary hover:opacity-90 hover:scale-105 transition-all duration-300 text-white px-12 py-6 text-xl font-black rounded-3xl box-shadow-intense"
+                    className="gradient-secondary hover:opacity-90 hover:scale-105 transition-all duration-300 text-white px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 text-lg sm:text-xl font-black rounded-3xl box-shadow-intense w-full sm:w-auto"
                   >
                     לחיצה כאן לתיאום פגישה
                   </Button>
@@ -532,31 +532,31 @@ export default function Index() {
       </section>
 
       {/* About Aviv - What Makes Us Different */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-16 sm:py-24 lg:py-32 relative overflow-hidden">
         {/* Background Design */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-purple-50/30"></div>
         <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
         
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
           <motion.div
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-16 lg:mb-20"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.div 
-              className="inline-flex items-center gap-3 bg-primary/90 backdrop-blur-md border border-primary/30 text-white px-8 py-4 rounded-2xl mb-8 box-shadow-soft hover:bg-primary transition-all duration-300"
+              className="inline-flex items-center gap-2 sm:gap-3 bg-primary/90 backdrop-blur-md border border-primary/30 text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-2xl mb-6 sm:mb-8 box-shadow-soft hover:bg-primary transition-all duration-300"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="bg-white/20 p-2 rounded-xl">
                 <Award className="w-6 h-6" />
               </div>
-              <span className="text-xl font-bold">למה לסמוך עלינו?</span>
+              <span className="text-lg sm:text-xl font-bold">למה לסמוך עלינו?</span>
             </motion.div>
-            <h2 className="text-5xl md:text-7xl font-black text-primary mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-primary mb-6 sm:mb-8 leading-tight">
               מה מייחד אותנו<br />
               <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
                 ולמה זה באמת עובד?
@@ -565,7 +565,7 @@ export default function Index() {
           </motion.div>
 
           {/* Main Content */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 mb-12 sm:mb-16">
             {/* Left Column - Avatar & Stats */}
             <motion.div
               className="lg:col-span-1"
@@ -573,41 +573,41 @@ export default function Index() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <GlowCard className="p-8 text-center h-full">
-                <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gradient-to-br from-secondary to-accent">
+              <GlowCard className="p-4 sm:p-6 lg:p-8 text-center h-full">
+                <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden border-4 border-gradient-to-br from-secondary to-accent">
                   <img 
                     src="/lovable-uploads/05706208-e8be-40d1-b0b5-ebce152b911c.png"
                     alt="אביב שמש - מייסד Optione"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-black mb-2">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-2">
                   <span className="text-secondary">אביב שמש</span>
                 </h3>
-                <p className="text-lg font-bold text-gray-600 mb-8">מייסד Optione</p>
+                <p className="text-base sm:text-lg font-bold text-gray-600 mb-6 sm:mb-8">מייסד Optione</p>
                 
                 <div className="space-y-6">
                   <motion.div 
-                    className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white"
+                    className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-4 sm:p-6 text-white"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className="text-4xl font-black mb-2">
+                    <div className="text-2xl sm:text-3xl lg:text-4xl font-black mb-2">
                       <AnimatedCounter end={2000} />+
                     </div>
-                    <div className="text-sm font-bold">בעלי עסקים שעברו תחתיו בליווים, סדנאות והכשרות</div>
+                    <div className="text-xs sm:text-sm font-bold">בעלי עסקים שעברו תחתיו בליווים, סדנאות והכשרות</div>
                   </motion.div>
                   
                   <motion.div 
-                    className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white"
+                    className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-4 sm:p-6 text-white"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className="text-4xl font-black mb-2">10+</div>
-                    <div className="text-sm font-bold">שנות ניסיון</div>
+                    <div className="text-2xl sm:text-3xl lg:text-4xl font-black mb-2">10+</div>
+                    <div className="text-xs sm:text-sm font-bold">שנות ניסיון</div>
                   </motion.div>
                   
                   <div className="flex justify-center gap-1 mt-4">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
                 </div>
@@ -616,7 +616,7 @@ export default function Index() {
 
             {/* Right Column - Content */}
             <motion.div
-              className="lg:col-span-2 space-y-6"
+              className="lg:col-span-2 space-y-4 sm:space-y-6"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -624,17 +624,17 @@ export default function Index() {
               {/* Key Points */}
               <div className="grid gap-6">
                 <motion.div 
-                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-r-8 border-primary box-shadow-soft"
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-4 sm:p-6 lg:p-8 border-r-4 sm:border-r-8 border-primary box-shadow-soft"
                   whileHover={{ scale: 1.02, x: 10 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
-                      <Target className="w-8 h-8 text-primary" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="bg-primary/10 rounded-full p-2 sm:p-3 flex-shrink-0">
+                      <Target className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                     </div>
                     <div className="text-right">
-                      <h4 className="text-xl font-black text-primary mb-2">מומחה לשיווק ומכירות</h4>
-                      <p className="text-gray-700 leading-relaxed">
+                      <h4 className="text-lg sm:text-xl font-black text-primary mb-2">מומחה לשיווק ומכירות</h4>
+                      <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                         יועץ עסקי בכיר עם התמחות בפיצוח אסטרטגי מבוסס דאטה ולמעלה מעשור של ניסיון בליווי עסקים להגדלת מכירות. בעברו ניהל את מחלקת המכירות של חברת הייעוץ העסקי הגדולה בישראל והכשיר יועצים עסקיים.
                       </p>
                     </div>
@@ -642,74 +642,74 @@ export default function Index() {
                 </motion.div>
 
                 <motion.div 
-                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-r-8 border-secondary box-shadow-soft"
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-4 sm:p-6 lg:p-8 border-r-4 sm:border-r-8 border-secondary box-shadow-soft"
                   whileHover={{ scale: 1.02, x: 10 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="bg-secondary/10 rounded-full p-3 flex-shrink-0">
-                      <TrendingUp className="w-8 h-8 text-secondary" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="bg-secondary/10 rounded-full p-2 sm:p-3 flex-shrink-0">
+                      <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-secondary" />
                     </div>
                     <div className="text-right">
-                      <h4 className="text-xl font-black text-secondary mb-4">עבד עם המותגים הגדולים</h4>
-                      <p className="text-gray-700 leading-relaxed mb-6">
+                      <h4 className="text-lg sm:text-xl font-black text-secondary mb-4">עבד עם המותגים הגדולים</h4>
+                      <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 sm:mb-6">
                         <strong>חלי ממן, כללית שירותי בריאות, מנדי גפנר, אספרסו קלאב, בנקים מובלים, כלל חברה לביטוח, ספיר זיסמן, דנטלון</strong> ועוד מותגים מהשורה הראשונה בישראל.
                       </p>
                       
                       {/* Logos Grid */}
-                      <div className="grid grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6 items-center justify-items-center">
                         <motion.div 
-                          className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                          className="bg-white rounded-2xl p-2 sm:p-3 lg:p-4 shadow-sm hover:shadow-md transition-shadow"
                           whileHover={{ scale: 1.05 }}
                         >
                           <img 
                             src="/lovable-uploads/4e30c075-8a49-4de8-ac81-86f2df88c108.png" 
                             alt="כלל ביטוח" 
-                            className="h-20 w-auto object-contain"
+                            className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
                           />
                         </motion.div>
                         
                         <motion.div 
-                          className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                          className="bg-white rounded-2xl p-2 sm:p-3 lg:p-4 shadow-sm hover:shadow-md transition-shadow"
                           whileHover={{ scale: 1.05 }}
                         >
                           <img 
                             src="/lovable-uploads/95f0e530-803c-478f-ad7b-ee3363030c84.png" 
                             alt="כללית" 
-                            className="h-20 w-auto object-contain"
+                            className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
                           />
                         </motion.div>
                         
                         <motion.div 
-                          className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                          className="bg-white rounded-2xl p-2 sm:p-3 lg:p-4 shadow-sm hover:shadow-md transition-shadow"
                           whileHover={{ scale: 1.05 }}
                         >
                           <img 
                             src="/lovable-uploads/fcb54499-0248-40a8-b561-caa4486588dc.png" 
                             alt="דנטלון" 
-                            className="h-20 w-auto object-contain"
+                            className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
                           />
                         </motion.div>
                         
                         <motion.div 
-                          className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                          className="bg-white rounded-2xl p-2 sm:p-3 lg:p-4 shadow-sm hover:shadow-md transition-shadow"
                           whileHover={{ scale: 1.05 }}
                         >
                           <img 
                             src="/lovable-uploads/981cc350-a982-4231-8537-6ac83883e9ce.png" 
                             alt="אספרסו קלאב" 
-                            className="h-20 w-auto object-contain"
+                            className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
                           />
                         </motion.div>
                         
                         <motion.div 
-                          className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                          className="bg-white rounded-2xl p-2 sm:p-3 lg:p-4 shadow-sm hover:shadow-md transition-shadow"
                           whileHover={{ scale: 1.05 }}
                         >
                           <img 
                             src="/lovable-uploads/78df8547-a9ee-4e74-b6a6-b1dc55d32456.png" 
                             alt="חלי ממן" 
-                            className="h-20 w-auto object-contain"
+                            className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
                           />
                         </motion.div>
                       </div>
@@ -718,17 +718,17 @@ export default function Index() {
                 </motion.div>
 
                 <motion.div 
-                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 border-r-8 border-accent box-shadow-soft"
+                  className="bg-white/80 backdrop-blur-xl rounded-3xl p-4 sm:p-6 lg:p-8 border-r-4 sm:border-r-8 border-accent box-shadow-soft"
                   whileHover={{ scale: 1.02, x: 10 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="bg-accent/10 rounded-full p-3 flex-shrink-0">
-                      <Zap className="w-8 h-8 text-accent" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="bg-accent/10 rounded-full p-2 sm:p-3 flex-shrink-0">
+                      <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-accent" />
                     </div>
                     <div className="text-right">
-                      <h4 className="text-xl font-black text-accent mb-2">שיטת "שמש" הייחודית</h4>
-                      <div className="text-gray-700 leading-relaxed">
+                      <h4 className="text-lg sm:text-xl font-black text-accent mb-2">שיטת "שמש" הייחודית</h4>
+                      <div className="text-sm sm:text-base text-gray-700 leading-relaxed">
                         <p className="mb-2">
                           <strong className="text-accent">שיווק | מכירה | שיטה</strong> מודל עבודה שמוביל עסקים לתוצאות אמיתיות.
                         </p>
